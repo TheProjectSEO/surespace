@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>SureSpace — SEO & AEO Intelligence | TheProjectSEO</title>
+<meta name="description" content="Pre-sales diagnostic for sure-space.com — technical audit, competitive landscape, AI search visibility, 12-month strategy preview, and founder questionnaire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand: #0F1B4C;
+  --brand-dark: #091238;
+  --brand-darker: #050a1f;
+  --brand-soft: #EDF0FA;
+  --accent: #FF6B5C;
+  --accent-dark: #E54A3A;
+  --accent-soft: #FFF0EE;
+  --ink: #0A1330;
+  --ink-light: #64748b;
+  --ink-lighter: #94a3b8;
+  --bg: #F7F9FC;
+  --bg-alt: #FFFFFF;
+  --border: #E5E9F2;
+  --border-soft: #EEF1F7;
+  --success: #10B981;
+  --success-soft: #ECFDF5;
+  --warning: #F59E0B;
+  --warning-soft: #FFFBEB;
+  --danger: #EF4444;
+  --danger-soft: #FEF2F2;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgba(10, 19, 48, 0.04);
+  --shadow: 0 4px 12px rgba(10, 19, 48, 0.06);
+  --shadow-lg: 0 20px 40px rgba(10, 19, 48, 0.10);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); font-size: 15px; }
+.nav-brand-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.nav-links { display: flex; gap: 4px; }
+.nav-link {
+  padding: 7px 12px; font-size: 13px; font-weight: 500;
+  color: var(--ink-light); border-radius: 6px;
+  transition: all 0.15s;
+}
+.nav-link:hover { background: var(--brand-soft); color: var(--brand); text-decoration: none; }
+.nav-cta {
+  padding: 8px 16px; background: var(--accent); color: white;
+  border-radius: 100px; font-size: 13px; font-weight: 600;
+}
+.nav-cta:hover { background: var(--accent-dark); text-decoration: none; }
+@media (max-width: 880px) { .nav-links { display: none; } }
+
+/* HERO */
+.hero {
+  background:
+    radial-gradient(ellipse at top right, rgba(255, 107, 92, 0.18), transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(15, 27, 76, 0.5), transparent 60%),
+    linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-darker) 100%);
+  color: white;
+  padding: 88px 24px 72px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner { max-width: 1280px; margin: 0 auto; position: relative; }
+.hero-eyebrow {
+  display: inline-block;
+  padding: 6px 14px; border-radius: 100px;
+  background: rgba(255, 107, 92, 0.15); color: #FFB8AE;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(32px, 5vw, 56px); font-weight: 800; letter-spacing: -1.5px;
+  line-height: 1.05; margin-bottom: 20px; max-width: 900px;
+}
+.hero h1 .accent { color: var(--accent); }
+.hero-sub {
+  font-size: clamp(16px, 2vw, 20px); color: rgba(255, 255, 255, 0.76);
+  max-width: 760px; line-height: 1.55; margin-bottom: 36px;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px; margin-top: 40px;
+  max-width: 980px;
+}
+.stat {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 18px 20px; border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+}
+.stat-value { font-size: 28px; font-weight: 800; letter-spacing: -1px; color: white; }
+.stat-label { font-size: 12px; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; font-weight: 500; }
+.stat.accent .stat-value { color: var(--accent); }
+
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 24px;
+  margin-top: 40px; padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px; color: rgba(255, 255, 255, 0.65);
+}
+.hero-meta strong { color: white; font-weight: 600; }
+
+/* LAYOUT */
+.section { padding: 72px 24px; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-alt { background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.section-header { margin-bottom: 44px; max-width: 820px; }
+.section-eyebrow {
+  font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 12px;
+}
+.section h2 {
+  font-size: clamp(26px, 3vw, 36px); font-weight: 800;
+  letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 14px;
+  color: var(--ink);
+}
+.section-lede {
+  font-size: 17px; color: var(--ink-light); line-height: 1.65;
+}
+
+/* CARDS & GRIDS */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white; border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px;
+  transition: all 0.2s;
+}
+.card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.card h3 {
+  font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--ink);
+  letter-spacing: -0.3px;
+}
+.card p { font-size: 14px; color: var(--ink-light); line-height: 1.6; }
+.card-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  font-weight: 700; font-size: 13px; margin-bottom: 14px;
+}
+
+/* CALLOUT BOXES */
+.callout {
+  padding: 24px 28px; border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  margin: 28px 0;
+}
+.callout-title {
+  font-weight: 700; font-size: 15px;
+  color: var(--accent-dark); margin-bottom: 6px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.callout.warning { background: var(--warning-soft); border-left-color: var(--warning); }
+.callout.warning .callout-title { color: #92400E; }
+.callout.success { background: var(--success-soft); border-left-color: var(--success); }
+.callout.success .callout-title { color: #065F46; }
+.callout.danger { background: var(--danger-soft); border-left-color: var(--danger); }
+.callout.danger .callout-title { color: #991B1B; }
+
+/* TABLES */
+.table-wrap { overflow-x: auto; margin: 24px 0; border: 1px solid var(--border); border-radius: var(--radius); background: white; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border-soft); }
+th {
+  background: var(--bg); color: var(--ink); font-weight: 600; font-size: 12px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg); }
+td.num { font-variant-numeric: tabular-nums; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+.pill { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 600; }
+.pill-success { background: var(--success-soft); color: #065F46; }
+.pill-warning { background: var(--warning-soft); color: #92400E; }
+.pill-danger { background: var(--danger-soft); color: #991B1B; }
+.pill-neutral { background: var(--brand-soft); color: var(--brand); }
+.pill-accent { background: var(--accent-soft); color: var(--accent-dark); }
+
+/* CODE BLOCK */
+.quote-box {
+  background: var(--brand-darker); color: #E5E9F2;
+  border-radius: var(--radius); padding: 24px 28px;
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  line-height: 1.65; margin: 20px 0;
+  border-left: 4px solid var(--accent);
+  overflow-x: auto;
+}
+.quote-box-label {
+  font-family: 'Inter', sans-serif; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--accent); font-weight: 700; margin-bottom: 10px;
+}
+
+/* LIST */
+ul.checklist { list-style: none; padding: 0; }
+ul.checklist li {
+  padding: 10px 0 10px 32px;
+  position: relative; font-size: 15px; color: var(--ink);
+  border-bottom: 1px solid var(--border-soft);
+}
+ul.checklist li:last-child { border-bottom: none; }
+ul.checklist li::before {
+  content: ''; position: absolute; left: 0; top: 14px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--accent-soft);
+  border: 2px solid var(--accent);
+}
+ul.checklist li.done::before { background: var(--success); border-color: var(--success); }
+ul.checklist li.done::after {
+  content: '✓'; position: absolute; left: 3px; top: 9px;
+  color: white; font-size: 11px; font-weight: 700;
+}
+
+/* PHASE TIMELINE */
+.phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.phase {
+  background: white; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; position: relative;
+}
+.phase-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--accent); margin-bottom: 8px;
+}
+.phase h4 { font-size: 17px; font-weight: 700; margin-bottom: 14px; color: var(--ink); }
+.phase ul { list-style: none; padding: 0; }
+.phase ul li {
+  padding: 6px 0 6px 20px; position: relative;
+  font-size: 13.5px; color: var(--ink-light); line-height: 1.5;
+}
+.phase ul li::before {
+  content: '→'; position: absolute; left: 0; top: 6px;
+  color: var(--accent); font-weight: 700;
+}
+.phase-months {
+  display: inline-block; padding: 3px 10px; background: var(--brand-soft);
+  color: var(--brand); border-radius: 100px; font-size: 11px; font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* QUESTIONNAIRE */
+.q-section {
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-darker) 100%);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 56px 48px;
+  margin-top: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.q-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 107, 92, 0.15), transparent 60%);
+  pointer-events: none;
+}
+.q-section-inner { position: relative; z-index: 1; }
+.q-section h3 { font-size: 28px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 14px; color: white; }
+.q-section p { color: rgba(255, 255, 255, 0.76); font-size: 16px; line-height: 1.6; margin-bottom: 12px; }
+.q-stats { display: flex; gap: 32px; margin: 24px 0 32px; flex-wrap: wrap; }
+.q-stat-item { }
+.q-stat-num { font-size: 36px; font-weight: 800; letter-spacing: -1px; color: var(--accent); }
+.q-stat-label { font-size: 12px; color: rgba(255, 255, 255, 0.6); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
+.q-cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.q-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 24px; border-radius: 100px;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  border: none; transition: all 0.2s;
+}
+.q-btn-primary { background: var(--accent); color: white; }
+.q-btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); text-decoration: none; }
+.q-btn-secondary { background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.2); }
+.q-btn-secondary:hover { background: rgba(255, 255, 255, 0.15); text-decoration: none; }
+
+/* Q-SECTIONS LIST */
+.q-sections {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px; margin-top: 28px;
+}
+.q-section-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 20px; border-radius: var(--radius-sm);
+}
+.q-section-num { font-size: 11px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.q-section-title { font-size: 14px; font-weight: 600; color: white; margin-top: 4px; line-height: 1.4; }
+.q-section-count { font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-top: 4px; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; }
+@media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } }
+.about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+.about-stat {
+  background: white; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px;
+}
+.about-stat-num { font-size: 30px; font-weight: 800; color: var(--brand); letter-spacing: -0.8px; }
+.about-stat-label { font-size: 13px; color: var(--ink-light); margin-top: 4px; font-weight: 500; }
+
+/* FOOTER */
+footer {
+  background: var(--brand-darker); color: rgba(255, 255, 255, 0.6);
+  padding: 48px 24px;
+  border-top: 4px solid var(--accent);
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px;
+}
+.footer-brand { color: white; font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+.footer-contact { font-size: 13px; }
+.footer-contact a { color: var(--accent); }
+.footer-legal { font-size: 11px; color: rgba(255, 255, 255, 0.4); max-width: 420px; line-height: 1.5; }
+
+/* MISC */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+.muted { color: var(--ink-light); }
+.small { font-size: 13px; }
+.mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; } .mt-32 { margin-top: 32px; } .mt-48 { margin-top: 48px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand"><span class="nav-brand-dot"></span>SureSpace Intelligence</a>
+    <div class="nav-links">
+      <a href="#diagnostic" class="nav-link">Diagnostic</a>
+      <a href="#competitive" class="nav-link">Competitive</a>
+      <a href="#ai-search" class="nav-link">AI Search</a>
+      <a href="#strategy" class="nav-link">Strategy</a>
+      <a href="#questionnaire" class="nav-link">Questionnaire</a>
+      <a href="#about" class="nav-link">About</a>
+    </div>
+    <a href="#questionnaire" class="nav-cta">Answer Questionnaire →</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Pre-Sales Intelligence · sure-space.com</span>
+    <h1>An SEO &amp; AEO diagnostic for <span class="accent">SureSpace</span> — before a single dollar changes hands.</h1>
+    <p class="hero-sub">We audited your site, benchmarked your competitors, tested your AI search visibility, and mapped a 12-month path to 5,000 users. Everything you need to evaluate whether TheProjectSEO is the right partner — without signing anything first.</p>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-value">19</div><div class="stat-label">Domain Rating</div></div>
+      <div class="stat"><div class="stat-value">32</div><div class="stat-label">Organic visits/mo</div></div>
+      <div class="stat"><div class="stat-value">15</div><div class="stat-label">Ranking keywords</div></div>
+      <div class="stat"><div class="stat-value">276</div><div class="stat-label">Indexed URLs</div></div>
+      <div class="stat accent"><div class="stat-value">18:1</div><div class="stat-label">Content-to-ranking ratio</div></div>
+    </div>
+
+    <div class="hero-meta">
+      <div><strong>Prepared for:</strong> SureSpace founding team</div>
+      <div><strong>By:</strong> Aditya Aman, TheProjectSEO</div>
+      <div><strong>Date:</strong> 17 April 2026</div>
+      <div><strong>Next step:</strong> <a href="#questionnaire" style="color: var(--accent);">Answer the discovery questionnaire →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIAGNOSTIC ============ -->
+<section class="section" id="diagnostic">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 1 · Diagnostic</div>
+      <h2>What we found on sure-space.com</h2>
+      <p class="section-lede">A technically clean WordPress site that is content-poor and topically diluted. The fundamentals (speed, canonical, OG tags, Lighthouse 91-92 across all four pillars) are in place. What's killing organic performance is generic AI-written content, legacy pages from two prior site iterations, and missing app/FAQ schema for a business that is fundamentally an app.</p>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-num">1</div>
+        <h3>Zombie content diluting topical authority</h3>
+        <p>15-20 URLs from prior site iterations still indexed: a 5,500-word Bangkok nightlife article, a London wellbeing page, three abandoned Surespace-Jumeirah/Marina/Downtown location pages from 2025, and full WooCommerce shop/cart/checkout remnants from November 2024. Every one of these dilutes Google's understanding of what SureSpace is about.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">2</div>
+        <h3>AI-generated content with no E-E-A-T signals</h3>
+        <p>Blog posts open with platitudes like <em>"As the business hub of the world, the vibrant city of Dubai…"</em> — generic, no named venues, no data, no author credentials. Bylines exist (<code>Goldman Sarah</code>, <code>Jordan</code>) but no author pages, LinkedIn, or credentials. Google's helpful-content updates target exactly this. It's why you rank below DR-37 competitors for KD-0 keywords.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">3</div>
+        <h3>Zero app/FAQ/Organization schema</h3>
+        <p>Every landing page has a visible FAQ section. Every page talks about the app with App Store links. Yet there is no <code>MobileApplication</code>, <code>FAQPage</code>, <code>Organization</code>, or <code>Article</code> schema anywhere on the site. This is the single fastest AEO lever we could pull in Week 1.</p>
+      </div>
+    </div>
+
+    <div class="callout danger mt-48">
+      <div class="callout-title">Quoted from your own blog</div>
+      <p style="margin-top: 6px;">We read your content before writing this. One example from <code>/business-networking-events-dubai/</code>:</p>
+      <div class="quote-box">
+        <div class="quote-box-label">Opening paragraph — unedited</div>
+        "At Sure Space, we reinvent the experience of networking events in Dubai by professionals. We have constructed our social platform to suit the needs of people who prefer real friends and in-depth discussions…"
+      </div>
+      <p style="margin-top: 6px; font-size: 14px; color: var(--ink);">Grammar errors ("networking events in Dubai by professionals" is unidiomatic) and platitudes without specifics. This is textbook AI output. Rewriting three such pages with real Dubai venues, named event organizers, and actual dates is the single highest-leverage content intervention.</p>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 700; margin-top: 48px; margin-bottom: 20px; color: var(--ink);">Technical foundation · Lighthouse Desktop</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Metric</th><th>Score / Value</th><th>Threshold</th><th>Verdict</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Performance</td><td class="num">91</td><td>≥ 90</td><td><span class="pill pill-success">Pass</span></td></tr>
+          <tr><td>Accessibility</td><td class="num">91</td><td>≥ 90</td><td><span class="pill pill-success">Pass</span></td></tr>
+          <tr><td>Best Practices</td><td class="num">92</td><td>≥ 90</td><td><span class="pill pill-success">Pass</span></td></tr>
+          <tr><td>SEO</td><td class="num">92</td><td>≥ 90</td><td><span class="pill pill-success">Pass</span></td></tr>
+          <tr><td>LCP (Largest Contentful Paint)</td><td class="num">562 ms</td><td>&lt; 2,500 ms</td><td><span class="pill pill-success">Pass</span></td></tr>
+          <tr><td>CLS (Cumulative Layout Shift)</td><td class="num">0.024</td><td>&lt; 0.1</td><td><span class="pill pill-success">Pass</span></td></tr>
+          <tr><td>TBT (Total Blocking Time)</td><td class="num">240 ms</td><td>&lt; 200 ms</td><td><span class="pill pill-warning">Borderline</span></td></tr>
+          <tr><td>Total byte weight</td><td class="num">2.82 MB</td><td>&lt; 1.5 MB ideal</td><td><span class="pill pill-warning">Heavy</span></td></tr>
+          <tr><td>Scripts on homepage</td><td class="num">89</td><td>— (excessive)</td><td><span class="pill pill-warning">High</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size: 20px; font-weight: 700; margin-top: 48px; margin-bottom: 20px; color: var(--ink);">Zombie URLs to remove or redirect</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>URL</th><th>Date</th><th>Problem</th><th>Recommended Fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono small">/nightlife-in-bangkok-for-singles/</td><td class="num">2026-04-01</td><td>5,500-word Bangkok article on a Dubai site</td><td><span class="pill pill-danger">410 Gone</span></td></tr>
+          <tr><td class="mono small">/wellbeing-support-for-workplaces-london/</td><td class="num">2025-02-25</td><td>Old London B2B business</td><td><span class="pill pill-danger">410 Gone</span></td></tr>
+          <tr><td class="mono small">/wellbeing-events-in-dubai/</td><td class="num">2025-03-12</td><td>Abandoned positioning</td><td><span class="pill pill-warning">301 → /events/</span></td></tr>
+          <tr><td class="mono small">/surespace-dubai-marina/</td><td class="num">2025-06-02</td><td>Stale location page</td><td><span class="pill pill-warning">301 → /find-events-dubai/</span></td></tr>
+          <tr><td class="mono small">/surespace-downtown-dubai/</td><td class="num">2025-05-30</td><td>Stale location page</td><td><span class="pill pill-warning">301 → /find-events-dubai/</span></td></tr>
+          <tr><td class="mono small">/surespace-jumeirah/</td><td class="num">2025-05-29</td><td>Stale location page</td><td><span class="pill pill-warning">301 → /find-events-dubai/</span></td></tr>
+          <tr><td class="mono small">/shop/, /cart/, /checkout/, /my-account/</td><td class="num">2024-11-29</td><td>WooCommerce remnants, no ecommerce</td><td><span class="pill pill-danger">noindex + remove</span></td></tr>
+          <tr><td class="mono small">/beta-tester/, /become-a-creative/, /download-copy/</td><td class="num">2025</td><td>Legacy / duplicate pages</td><td><span class="pill pill-warning">noindex</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warning mt-32">
+      <div class="callout-title">Active 404 found</div>
+      <p style="margin-top: 6px;">Internal navigation points to <code>/networking-events-dubai</code> (no trailing slash) which returns 404. The correct URL is <code>/business-networking-events-dubai/</code>. Fix this week — it's breaking at least one internal link and any external backlink to the shortened path.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPETITIVE ============ -->
+<section class="section section-alt" id="competitive">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 2 · Competitive Landscape</div>
+      <h2>Where you can actually win</h2>
+      <p class="section-lede">SureSpace cannot outrank Eventbrite (DR 94) or Meetup (DR 92) on their own terms in year one. What you <em>can</em> do: take positions 4-10 from DR 37-52 competitors who are ranking with thin content. We've mapped exactly where those openings sit.</p>
+    </div>
+
+    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">SERP — "networking events dubai" (450 vol/mo, KD 0)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Position</th><th>Domain</th><th>DR</th><th>Verdict</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">1</td><td>eventbrite.com</td><td class="num">94</td><td><span class="pill pill-danger">Not beatable short-term</span></td></tr>
+          <tr><td class="num">2</td><td>meetup.com</td><td class="num">92</td><td><span class="pill pill-danger">Not beatable short-term</span></td></tr>
+          <tr><td class="num">3</td><td>dubaichambers.com</td><td class="num">52</td><td><span class="pill pill-warning">Gov authority, hard</span></td></tr>
+          <tr><td class="num">4</td><td>gbs.ac.ae</td><td class="num">37</td><td><span class="pill pill-success">Beatable with better content</span></td></tr>
+          <tr><td class="num">6</td><td>britishchamberdubai.com</td><td class="num">38</td><td><span class="pill pill-success">Beatable</span></td></tr>
+          <tr><td class="num">7</td><td>conferencealerts.co.in</td><td class="num">61</td><td><span class="pill pill-warning">Challenging</span></td></tr>
+          <tr><td class="num">38</td><td><strong>sure-space.com</strong></td><td class="num">19</td><td><span class="pill pill-neutral">Current</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; margin-top: 40px;">SERP — "make friends in dubai" (50+ vol/mo, KD 0)</h3>
+    <div class="callout success">
+      <div class="callout-title">Unique opportunity</div>
+      <p style="margin-top: 6px;">The entire top-10 SERP is YouTube Shorts, Instagram Reels, TikTok, and Facebook posts. <strong>Zero traditional web pages rank in the top 10.</strong> A well-written, schema-rich landing page with embedded social proof could realistically reach top 5 — there is no established web authority defending this SERP.</p>
+    </div>
+
+    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; margin-top: 40px;">Top 15 keyword opportunities (UAE · KD 0-5)</h3>
+    <p class="muted small" style="margin-bottom: 16px;">Keywords where difficulty is low and volume justifies effort. Total addressable monthly volume across this list: ~1,960 searches.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Keyword</th><th>Volume</th><th>KD</th><th>CPC (USD)</th><th>Current Position</th><th>SERP Features</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>outdoor activities dubai</td><td class="num">450</td><td class="num">0</td><td class="num">$0.25</td><td class="num">81</td><td><span class="pill pill-neutral">image · local_pack · video</span></td></tr>
+          <tr><td>networking events dubai</td><td class="num">450</td><td class="num">0</td><td class="num">$0.60</td><td class="num">38</td><td><span class="pill pill-accent">AI Overview · video · image</span></td></tr>
+          <tr><td>meetup dubai</td><td class="num">200</td><td class="num">0</td><td class="num">$0.04</td><td>—</td><td><span class="pill pill-neutral">sitelink · PAA</span></td></tr>
+          <tr><td>networking events in dubai</td><td class="num">100</td><td class="num">0</td><td class="num">$0.35</td><td>—</td><td>—</td></tr>
+          <tr><td>private members club dubai</td><td class="num">100</td><td class="num">0</td><td class="num">—</td><td>—</td><td><span class="pill pill-neutral">local_pack · sitelink · PAA</span></td></tr>
+          <tr><td>dubai outdoor activities</td><td class="num">100</td><td class="num">0</td><td class="num">$0.15</td><td>—</td><td><span class="pill pill-neutral">PAA · video</span></td></tr>
+          <tr><td>outdoor activities in dubai</td><td class="num">100</td><td class="num">0</td><td class="num">$0.15</td><td>—</td><td><span class="pill pill-neutral">image · PAA</span></td></tr>
+          <tr><td>how to make friends in dubai</td><td class="num">90</td><td class="num">0</td><td class="num">$0.35</td><td>—</td><td><span class="pill pill-neutral">sitelink · PAA · video</span></td></tr>
+          <tr><td>dubai networking events</td><td class="num">90</td><td class="num">0</td><td class="num">$0.35</td><td>—</td><td><span class="pill pill-neutral">PAA · video</span></td></tr>
+          <tr><td>outdoor team building dubai</td><td class="num">80</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td></tr>
+          <tr><td>business networking dubai</td><td class="num">70</td><td class="num">0</td><td class="num">$0.25</td><td>—</td><td><span class="pill pill-neutral">video · PAA</span></td></tr>
+          <tr><td>free networking events dubai</td><td class="num">60</td><td class="num">—</td><td class="num">—</td><td>—</td><td>—</td></tr>
+          <tr><td>make friends in dubai</td><td class="num">30</td><td class="num">0</td><td class="num">$0.40</td><td class="num">5</td><td><span class="pill pill-success">Already ranking</span></td></tr>
+          <tr><td>friends in dubai</td><td class="num">50</td><td class="num">0</td><td class="num">$0.33</td><td class="num">8</td><td><span class="pill pill-success">Already ranking</span></td></tr>
+          <tr><td>business networking events dubai</td><td class="num">40</td><td class="num">5</td><td class="num">$0.35</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout mt-32">
+      <div class="callout-title">What this means</div>
+      <p style="margin-top: 6px;">You are currently ranking page 4-9 for keywords that have zero difficulty score. That means your content is not yet clearing the bar that a DR-37 competitor cleared with a thin blog post. Rewriting three existing pages with real Dubai-specific content could move you from rank 38 → rank 8 for "networking events dubai" within 60 days — without needing a single new backlink.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI SEARCH / AEO ============ -->
+<section class="section" id="ai-search">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 3 · AI Search Visibility (AEO)</div>
+      <h2>The window nobody is using</h2>
+      <p class="section-lede">Generative search — ChatGPT, Perplexity, Google AI Overviews, Gemini, Claude — is reshaping how people discover services like SureSpace. Today, none of your Dubai competitors (including Meetup and Eventbrite) have optimized for this. That window won't stay open.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="color: var(--accent); margin-bottom: 4px;">🎯 AI Overview spotted</h3>
+        <p style="margin-top: 10px;">The query <strong>"networking events dubai"</strong> (450 searches/month) now triggers Google's <strong>AI Overview</strong> above the organic results, with AI Overview Sitelinks pointing to cited sources. This is where the next year of clicks will be won and lost. None of the current top-10 competitors are structuring content to be cited. A schema + citation-capsule rewrite could win that AI Overview placement.</p>
+      </div>
+      <div class="card">
+        <h3 style="color: var(--accent); margin-bottom: 4px;">📊 SureSpace AI citation score</h3>
+        <p style="margin-top: 10px;">Based on structural analysis: <strong>0 pages optimized for AI citation</strong>. No FAQ schema. No citation capsule blocks (2-3 sentence "quick answer" summaries that LLMs pull verbatim). No comparison tables. No fresh-date signals. No author entity schema. Every one of these is a known LLM citation trigger.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size: 18px; font-weight: 700; margin-top: 48px; margin-bottom: 16px;">Schema gap on sure-space.com</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Schema Type</th><th>Why It Matters</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>MobileApplication</code></td><td>Essential — this is an app business with App Store links on every page</td><td><span class="pill pill-danger">Missing</span></td></tr>
+          <tr><td><code>FAQPage</code></td><td>Primary mechanism for "featured answer" citations in Google + LLMs. You already have FAQ sections visible on 10+ pages — just unmarked.</td><td><span class="pill pill-danger">Missing</span></td></tr>
+          <tr><td><code>Organization</code></td><td>Anchors entity identity + <code>sameAs</code> links to social profiles (Instagram, LinkedIn, TikTok)</td><td><span class="pill pill-danger">Missing</span></td></tr>
+          <tr><td><code>Article</code> + <code>Person</code></td><td>Gives E-E-A-T signal for blog posts. Named author with bio + credentials.</td><td><span class="pill pill-danger">Missing</span></td></tr>
+          <tr><td><code>Event</code> / <code>LocalBusiness</code></td><td>Required if you list events with dates + venues. Currently events aren't even in the sitemap.</td><td><span class="pill pill-danger">Missing</span></td></tr>
+          <tr><td>Title / Meta / Canonical / OG / Twitter</td><td>Foundational head tags</td><td><span class="pill pill-success">Present ✓</span></td></tr>
+          <tr><td><code>lang</code> attribute + <code>hreflang</code></td><td>Locale targeting for UAE</td><td><span class="pill pill-warning">Partial</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout success mt-32">
+      <div class="callout-title">The asymmetric window</div>
+      <p style="margin-top: 6px;">A DR-19 site that ships FAQ schema, citation capsules, and named-author article schema in Q2 2026 will earn LLM citations before a DR-94 competitor that hasn't bothered. LLMs have no memory of past authority — they cite whoever answers the question cleanest, right now. For SureSpace, this is a 6-12 month window where doing AEO correctly puts you on the same citation page as Meetup and Eventbrite in Perplexity / ChatGPT / Google AI Overview responses about Dubai networking.</p>
+    </div>
+
+    <div class="cards-grid mt-32">
+      <div class="card">
+        <div class="card-num">1</div>
+        <h3>Citation capsules on every page</h3>
+        <p>Every landing page gets a 2-3 sentence "quick answer" block above the first H2. This is the single strongest LLM citation trigger we've measured. ChatGPT pulls these verbatim.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">2</div>
+        <h3>FAQ schema site-wide</h3>
+        <p>Your pages already have FAQ sections. We mark them up with <code>FAQPage</code> JSON-LD. This alone wins you featured snippets and dramatically increases Perplexity-style citations.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">3</div>
+        <h3>Real author entities</h3>
+        <p>Replace "Goldman Sarah" with named team members, LinkedIn profiles, bios, and <code>Person</code> schema. E-E-A-T is not a checkbox — it's a citation-decision signal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STRATEGY PREVIEW ============ -->
+<section class="section section-alt" id="strategy">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 4 · 12-Month Strategy Preview</div>
+      <h2>A plausible path from 32 visits/month to 5,000 users</h2>
+      <p class="section-lede">This is a preview. Final numbers lock in after we see your unit economics (free → paid conversion, ARPU, LTV, CAC by channel) from the questionnaire. But the shape is this: three phases, each building on the last, each measured against explicit outcomes rather than vanity metrics.</p>
+    </div>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-months">Month 1-2</div>
+        <div class="phase-label">Phase 1 — Foundation</div>
+        <h4>Clean up, schema, and three page rewrites</h4>
+        <ul>
+          <li>Redirect / remove 15 zombie URLs (Bangkok, London, shop/cart, old locations)</li>
+          <li>Fix the /networking-events-dubai 404</li>
+          <li>Ship MobileApplication, FAQPage, Organization, Article schema site-wide</li>
+          <li>Rewrite /meet-new-friends-dubai, /business-networking-events-dubai, /outdoor-activities-dubai with named Dubai venues + real data + named authors</li>
+          <li>Trim meta descriptions, fix hreflang + lang attribute</li>
+          <li>Set up GSC + GA4 attribution + "how did you hear about us" signup field</li>
+        </ul>
+        <p class="small muted" style="margin-top: 14px;"><strong>Target:</strong> Move from 32 → 100-150 organic visits/mo. 2-3 rankings jump 30+ positions.</p>
+      </div>
+
+      <div class="phase">
+        <div class="phase-months">Month 3-6</div>
+        <div class="phase-label">Phase 2 — Velocity</div>
+        <h4>Content cluster + authority building</h4>
+        <ul>
+          <li>Publish 2 genuine, named-venue articles per month (no AI sludge)</li>
+          <li>Build out neighborhood landing pages (JBR, Downtown, Marina, Business Bay)</li>
+          <li>Earn 10 UAE-relevant backlinks from DR 40+ publishers</li>
+          <li>Launch proprietary data piece ("State of Networking in Dubai 2026") + pitch to UAE press</li>
+          <li>ASO alignment: match app store metadata with top-ranking keywords</li>
+          <li>Pre-launch SEO content for Wingman AI + Pro plan (timed to product launches)</li>
+        </ul>
+        <p class="small muted" style="margin-top: 14px;"><strong>Target:</strong> 300-500 organic visits/mo. First LLM citations in Perplexity + Google AI Overview.</p>
+      </div>
+
+      <div class="phase">
+        <div class="phase-months">Month 7-12</div>
+        <div class="phase-label">Phase 3 — Compounding</div>
+        <h4>Category ownership + programmatic scale</h4>
+        <ul>
+          <li>Own "Dubai networking" + "Dubai community" category in search AND AI citations</li>
+          <li>Programmatic expansion: event-type × neighborhood pages (only where unique value exists)</li>
+          <li>Press program: monthly feature in Dubai press (Khaleej Times, Gulf News, Time Out)</li>
+          <li>Comparison content ("SureSpace vs Meetup Dubai", "Best friendship apps Dubai 2026")</li>
+          <li>Community-generated content: event recaps, user quotes, verified photography</li>
+          <li>Q4: Position for 2028 expansion (Abu Dhabi? Saudi? other GCC?)</li>
+        </ul>
+        <p class="small muted" style="margin-top: 14px;"><strong>Target:</strong> 1,500-3,000 organic visits/mo. Measurable contribution to the 5,000-user goal.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size: 18px; font-weight: 700; margin-top: 48px; margin-bottom: 16px;">What we need from the founder to turn this preview into a plan</h3>
+    <ul class="checklist">
+      <li>Define what a "user" means (paid sub, MAU, install, registered?) — determines our KPI</li>
+      <li>Share current unit economics: free-to-paid conversion, LTV, CAC, retention curves</li>
+      <li>Grant GSC + GA4 access to aditya@theprojectseo.com</li>
+      <li>Clarify Wingman AI and Pro plan launch dates (so we pre-load SEO demand)</li>
+      <li>Define which category to own in Dubai's mind (networking? friendship? community?)</li>
+      <li>Provide named humans for bylines (no more "Goldman Sarah")</li>
+      <li>Confirm UAE-specific content sensitivities (alcohol, dating, political, LGBTQ+)</li>
+      <li>Audit current SEO provider's SOW, deliverables, and reporting</li>
+    </ul>
+    <p style="margin-top: 24px; font-size: 15px;">All of the above are in the discovery questionnaire below — the last thing you'll need to review before we can lock in the plan.</p>
+  </div>
+</section>
+
+<!-- ============ QUESTIONNAIRE ============ -->
+<section class="section" id="questionnaire">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 5 · Discovery Questionnaire</div>
+      <h2>What we need from you</h2>
+      <p class="section-lede">72 questions across 13 sections. Expected time: 60-90 minutes async, or a single 60-minute walkthrough call. You can download it as Markdown and paste into ChatGPT or Claude to draft first-pass answers — save 60-70% of the time.</p>
+    </div>
+
+    <div class="q-section">
+      <div class="q-section-inner">
+        <h3>SureSpace SEO & AEO Discovery Questionnaire</h3>
+        <p>Everything you write in here directly shapes the 12-month proposal. If you don't know an answer, say so — that's useful information, not a failure.</p>
+
+        <div class="q-stats">
+          <div class="q-stat-item">
+            <div class="q-stat-num">72</div>
+            <div class="q-stat-label">Questions</div>
+          </div>
+          <div class="q-stat-item">
+            <div class="q-stat-num">13</div>
+            <div class="q-stat-label">Sections</div>
+          </div>
+          <div class="q-stat-item">
+            <div class="q-stat-num">60-90</div>
+            <div class="q-stat-label">Minutes to complete</div>
+          </div>
+        </div>
+
+        <div class="q-sections">
+          <div class="q-section-item"><div class="q-section-num">01</div><div class="q-section-title">Business Model & Revenue</div><div class="q-section-count">6 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">02</div><div class="q-section-title">Unit Economics & Growth Math</div><div class="q-section-count">6 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">03</div><div class="q-section-title">Defining "High-Intent"</div><div class="q-section-count">7 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">04</div><div class="q-section-title">Product & Value Proposition</div><div class="q-section-count">6 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">05</div><div class="q-section-title">Wingman AI & Pro Plan</div><div class="q-section-count">5 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">06</div><div class="q-section-title">Competitive Positioning</div><div class="q-section-count">5 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">07</div><div class="q-section-title">Current Marketing & Acquisition</div><div class="q-section-count">6 questions</div></div>
+          <div class="q-section-item" style="border-color: var(--accent); background: rgba(255, 107, 92, 0.12);"><div class="q-section-num" style="color: #FFB8AE;">08 · CRITICAL</div><div class="q-section-title">Current SEO Provider Deep Dive</div><div class="q-section-count">7 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">09</div><div class="q-section-title">Growth Targets & Success Criteria</div><div class="q-section-count">5 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">10</div><div class="q-section-title">Geographic & Product Expansion</div><div class="q-section-count">4 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">11</div><div class="q-section-title">Brand, Editorial & Content</div><div class="q-section-count">5 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">12</div><div class="q-section-title">Technical, Access & Tracking</div><div class="q-section-count">6 questions</div></div>
+          <div class="q-section-item"><div class="q-section-num">13</div><div class="q-section-title">Engagement Scope & Logistics</div><div class="q-section-count">4 questions</div></div>
+        </div>
+
+        <div class="q-cta-row">
+          <button class="q-btn q-btn-primary" onclick="downloadQuestionnaire()">
+            ⬇ Download as Markdown
+          </button>
+          <a href="./assets/questionnaire.md" target="_blank" class="q-btn q-btn-secondary">
+            👁 View raw questionnaire
+          </a>
+          <a href="mailto:aditya@theprojectseo.com?subject=SureSpace%20-%20questionnaire%20answers" class="q-btn q-btn-secondary">
+            ✉ Email answers
+          </a>
+        </div>
+
+        <p style="margin-top: 24px; font-size: 13px; color: rgba(255, 255, 255, 0.5);">
+          The Markdown file works with any AI tool. Paste into ChatGPT, Claude, or Gemini with your founder notes and ask it to draft first-pass answers. Review, correct, send back — saves most of the completion time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section section-alt" id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">About</div>
+      <h2>Who's building this</h2>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <p style="font-size: 16px; line-height: 1.7; color: var(--ink);">
+          <strong>TheProjectSEO</strong> is an AI-native SEO agency specializing in SEO, AEO (Answer Engine Optimization), content engineering, and automation. We serve 15 clients across B2B SaaS, B2C marketplaces, e-commerce, and travel industries — including Mobile Modular (public, $900M revenue), X0PA AI (Singapore B2B HR SaaS), Helpling (Singapore home services marketplace), and CuddlyNest (travel OTA, €800M valuation).
+        </p>
+        <p style="font-size: 16px; line-height: 1.7; color: var(--ink); margin-top: 16px;">
+          We don't do agency theater — no generic audits, no keyword-stuffed content, no "we'll get back to you next month." Every engagement runs on a per-client skill stack, a weekly cadence, and an explicit ROI model tied to your actual business metrics. The intelligence site you're reading right now is a reasonable preview of how we think and report.
+        </p>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">15</div>
+            <div class="about-stat-label">Active clients across B2B SaaS, B2C, e-commerce, travel</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">91</div>
+            <div class="about-stat-label">Custom SEO + AEO skills built for per-client work</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">6</div>
+            <div class="about-stat-label">Team members: SEO, content, technical, link-building, PM, founder</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">2026</div>
+            <div class="about-stat-label">Year we built our own fine-tuned SEO knowledge model</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div class="phase-label" style="margin-bottom: 8px;">The Team — Your Engagement</div>
+          <h4 style="font-size: 18px; margin-bottom: 20px;">Who works on SureSpace if we sign</h4>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div>
+              <div style="font-weight: 600; color: var(--ink);">Aditya Aman</div>
+              <div class="small muted">Founder · strategy, executive oversight, final review</div>
+            </div>
+            <div>
+              <div style="font-weight: 600; color: var(--ink);">Vaibhav</div>
+              <div class="small muted">Project Manager · weekly check-ins, client comms, delivery SLA</div>
+            </div>
+            <div>
+              <div style="font-weight: 600; color: var(--ink);">Shiraz</div>
+              <div class="small muted">Technical SEO + content architect · audits, schema, IA, automation</div>
+            </div>
+            <div>
+              <div style="font-weight: 600; color: var(--ink);">SEO Executive (TBD)</div>
+              <div class="small muted">Day-to-day execution · content, on-page, optimization sprints</div>
+            </div>
+            <div>
+              <div style="font-weight: 600; color: var(--ink);">Kamal</div>
+              <div class="small muted">Link builder · UAE-relevant authority building + digital PR</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px;">
+          <div class="phase-label" style="margin-bottom: 8px;">Cadence</div>
+          <h4 style="font-size: 18px; margin-bottom: 14px;">How we work — weekly, not monthly</h4>
+          <p class="small muted">
+            Weekly Slack check-ins. Biweekly written updates. Monthly 60-minute strategy call. Live intelligence dashboard (like the one you're on). You won't wonder what we're doing this week — you'll see it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">TheProjectSEO</div>
+      <div class="footer-contact">
+        <a href="mailto:aditya@theprojectseo.com">aditya@theprojectseo.com</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      This intelligence package is prepared exclusively for the SureSpace founding team. Analysis is based on publicly available data (Ahrefs, DataForSEO Lighthouse, sure-space.com HTML + sitemap) as of 17 April 2026. All recommendations are directional and finalized after the founder questionnaire.
+    </div>
+  </div>
+</footer>
+
+<script>
+async function downloadQuestionnaire() {
+  try {
+    const response = await fetch('./assets/questionnaire.md');
+    if (!response.ok) throw new Error('Fetch failed');
+    const text = await response.text();
+    const blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'surespace-seo-discovery-questionnaire.md';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 100);
+  } catch (e) {
+    window.open('./assets/questionnaire.md', '_blank');
+  }
+}
+</script>
+
+</body>
+</html>
