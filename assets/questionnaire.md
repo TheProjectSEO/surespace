@@ -2,314 +2,174 @@
 
 **Prepared by:** Aditya Aman, TheProjectSEO
 **For:** SureSpace founding team
-**Date sent:** 2026-04-17
-**Estimated time to complete:** 60-90 minutes
-**How to return:** Reply inline in this document, or schedule a 60-min call where we walk through it together (our preference — faster and higher-quality answers)
+**Date:** April 2026
+**Estimated time:** 45-60 minutes async, or a single 45-minute walkthrough call
+**Return to:** SEO@theprojectseo.com
 
 ---
 
-## Why we're asking these questions
+## Why we're asking first, and why we're asking this
 
-We've already run a technical + content audit of sure-space.com (the full diagnostic is linked on the intelligence site). That audit tells us **what's wrong with the website**. It does not tell us **what SureSpace is trying to become**, how you make money, who your ideal user is, or what "winning" looks like to you.
+Before we can have a useful conversation about SEO for SureSpace, we need to understand the business the way you see it — not the way a third-party tool guesses at it. This questionnaire is how we do that.
 
-Without those answers we can only build a generic SEO program — the kind that ranks a site for keywords but does not reliably move paid subscribers. Given your target of 5,000 users by end of 2027 and 15,000 the year after, we need to build something tighter: a program where every page we publish, every backlink we earn, and every schema block we ship is traceable to a user acquisition outcome.
+No audit. No assumptions about what's wrong with your site. We haven't looked at your analytics because we don't have access, and we wouldn't want to pretend otherwise. Everything that comes after this — our diagnostic, our recommendations, our proposal — will be grounded in the answers you give here.
 
-This questionnaire is organized into 13 sections. Some questions will have short factual answers. Others are strategic and deserve 2-3 paragraphs. A handful will make you realize a decision you haven't made yet — that's exactly the point.
+If a question doesn't apply, write "N/A." If you don't know the answer, write "Don't know" — that's useful information, not a failure. If you want to skip something and discuss on a call, flag it.
 
-If a question doesn't apply, write "N/A." If you don't know the answer, write "Don't know" — that's useful information, not a failure.
-
-**Tip for speed:** Paste this file into ChatGPT / Claude / Gemini with your founder notes and have it draft first-pass answers. Then review and correct. You save 60-70% of the time and the accuracy is typically fine for a first round.
+**Tip:** Paste this into ChatGPT / Claude / Gemini with your founder notes and have it draft first-pass answers. Review, correct, send back. Saves most of the time.
 
 ---
 
-## Section 1 — Business Model & Revenue (6 questions)
+## 1. Business Model & Revenue (3 questions)
 
-*Why we ask: SEO for a free app is fundamentally different from SEO for a subscription app. We need to know where money enters the business and when.*
+**Q1.** How does SureSpace make money today, and how does that change in 2026-2027? Walk us through every active and planned revenue line — subscriptions, event tickets, venue partnerships, sponsorships, B2B offerings, anything else.
 
-**Q1.** How does SureSpace make money **today**? Walk us through every active revenue line (if any) — subscriptions, event tickets, venue partnerships, sponsorships, brand collabs, affiliate, ads, anything else.
+**Q2.** What's the planned pricing architecture? Free tier (what's included vs gated), AED 30/mo tier (features, audience), Pro plan (price, features, launch date), anything else planned.
 
-**Q2.** What's the monetization model you're moving to in **2026-2027**? We understand AED 30/month starts rolling in 2026 — what exactly gets gated behind that paywall vs. what stays free?
-
-**Q3.** What's the planned **pricing architecture** across all tiers?
-  - Free tier: what's included, what's gated
-  - AED 30/mo tier: features, target audience
-  - Pro plan: pricing, feature set, target audience, launch date
-  - Any annual / lifetime / premium tiers planned?
-
-**Q4.** Are there any **non-subscription revenue lines** you expect to develop? Examples: ticketed events, venue referral commissions, corporate/team memberships, ticket fees from Eventbrite-style event hosting, premium features, creator/host monetization.
-
-**Q5.** What's your approximate **revenue mix goal** for Year 2 (2027)? For example: "70% subscription, 20% event revenue, 10% B2B" — or whatever your breakdown looks like. Even a rough guess helps us know which SEO pages have commercial priority.
-
-**Q6.** Have you raised capital? If yes — total raised, runway, when's the next round, and what metrics does the next round expect (MAU? paid subs? revenue? retention?). This shapes whether we optimize for growth-at-all-costs or revenue-efficient growth.
+**Q3.** Have you raised capital? Rough context only — runway, next milestone, what metrics the next round cares about (MAU? paid subs? revenue? retention?). This shapes whether we optimize for growth-at-all-costs or revenue-efficient growth.
 
 ---
 
-## Section 2 — Unit Economics & Growth Math (6 questions)
+## 2. Unit Economics & Growth Math (3 questions)
 
-*Why we ask: Getting to 5,000 users means nothing without knowing the cost and value of each user. SEO's ROI math depends on this.*
+**Q4.** Today's snapshot — rough numbers are fine:
+- App installs (cumulative + last 30 days)
+- MAU / DAU
+- Paid subscribers (if subscription is live)
+- Waitlist or registered accounts
 
-**Q7.** Today's snapshot — what are your current numbers for:
-  - App installs (iOS + Android, cumulative + last 30 days)
-  - Registered accounts
-  - Monthly Active Users (MAU)
-  - Daily Active Users (DAU)
-  - Paid subscribers (if subscription is live)
-  - Waitlist signups
+**Q5.** What's your retention curve — D1, D7, D30? And your free-to-paid conversion rate (actual or assumed)? If you don't track these yet, say so — it's something we'd want to close in the first 30 days.
 
-**Q8.** What's your **retention curve**? Specifically: D1, D7, D30 retention % for new signups. If you don't track this yet, say so — it's a gap we'd want to close immediately.
-
-**Q9.** If your AED 30/mo tier is already live, what's your **free-to-paid conversion rate**? If it's not live yet, what rate are you assuming in your financial model?
-
-**Q10.** What's your **ARPU** (average revenue per user) assumption? And your **LTV** (lifetime value) assumption — i.e., how many months does an average paid sub stick around?
-
-**Q11.** What's your **target CAC** (customer acquisition cost) — per install, per registered user, and per paid sub? What CAC would make you kill a channel?
-
-**Q12.** What's your **monthly burn** or operating cost? We don't need exact numbers — a range is fine. This helps us set the SEO budget at a proportion that doesn't strangle other growth work.
+**Q6.** What's your target CAC per install and per paid sub, and what CAC would make you kill a channel? If you don't have numbers, share the ballpark assumption you're running on.
 
 ---
 
-## Section 3 — Ideal Customer Profile: Defining "High-Intent" (7 questions)
+## 3. Ideal Customer Profile (4 questions)
 
-*Why we ask: You told us you don't want "anyone and everyone" — you want high-intent users. That word means different things to different founders. We need your specific definition so our keyword + content strategy filters for those users at the query level.*
+**Q7.** Describe your ideal paying user in as much detail as possible. Age, profession, income, expat vs Emirati, nationality clusters, where they live in Dubai, any other markers that matter.
 
-**Q13.** Describe your **ideal paying user** in as much detail as possible. Age range, gender split, profession, seniority, income bracket, expat vs local Emirati, nationality clusters if relevant, marital status if relevant, where they live in Dubai.
+**Q8.** What does "high intent" mean to you? Is it a user willing to pay without trial, someone who attends 2+ events/month, someone who upgrades to Pro within 90 days, or something else? Pick the definition that's closest to your mental model.
 
-**Q14.** What does "**high intent**" mean to you? Rank these definitions 1-5 in order of importance (or add your own):
-  - [ ] Willing to pay AED 30/mo without trial incentive
-  - [ ] Attends 2+ events/month
-  - [ ] Actively messaging other users daily
-  - [ ] Upgrades to Pro within 90 days
-  - [ ] Refers another user within 30 days
-  - [ ] Other: __________
+**Q9.** Who is NOT a fit for SureSpace? We want explicit exclusions — "under 25," "casual daters," "tourists," "business-leads-only." This protects us from attracting the wrong traffic.
 
-**Q15.** What are the **top 3 psychographic triggers** that make someone the right user for SureSpace? Examples: loneliness in a new city, career ambition, discomfort with dating apps, burnout on Instagram, wanting friends outside work. Be specific.
-
-**Q16.** Who is **NOT a fit** for SureSpace? We want explicit exclusions — e.g., "under 25," "casual daters," "tourists," "people looking for business leads only." This protects us from attracting the wrong traffic.
-
-**Q17.** Do you have **persona profiles** drafted (written or in a deck)? If yes, share them. If not, describe your **top 2-3 personas** in 2-3 sentences each.
-
-**Q18.** Why does someone pay **AED 30/mo** instead of using free alternatives (Facebook Groups, Meetup, Eventbrite, Bumble BFF, Instagram DMs)? We need the exact "because" sentence — this becomes the meta description of your homepage and the core SEO positioning.
-
-**Q19.** Of the users who use SureSpace today, **which segment has the highest retention and highest payment conversion**? Where do they come from — referral, event, paid ad, organic? We want to double-lookalike them.
+**Q10.** Why does someone pay AED 30/mo instead of using free alternatives (Facebook Groups, Meetup, Eventbrite, Bumble BFF, Instagram DMs)? Give us the exact "because" sentence — this becomes the core of your positioning.
 
 ---
 
-## Section 4 — Product & Value Proposition (6 questions)
+## 4. Product & Value Proposition (3 questions)
 
-*Why we ask: SEO content can't promise what the product doesn't deliver. We need to understand the actual product experience from signup to paid.*
+**Q11.** What makes SureSpace different from Meetup, Eventbrite, Bumble BFF, Facebook Groups, and WhatsApp communities? One sentence per competitor. Be honest — if the difference is thin for one, say so.
 
-**Q20.** Walk us through the **onboarding journey** from first app install to first meaningful action (first event attended, first friend messaged, first community joined). How long does this take in days? What are the key drop-off points you've observed?
+**Q12.** What verification do you do on users? Phone, email, ID, selfie, manual review? Trust and safety is a potential positioning edge in Dubai, and we'd want to build content around it if it's real.
 
-**Q21.** What makes SureSpace **different** from Meetup, Eventbrite, Bumble BFF, Facebook Groups, and WhatsApp communities? One sentence per competitor. Be honest — if the difference is thin in one case, say so.
-
-**Q22.** What **verification** do you do on users? Phone? Email? ID? Selfie? Manual review? This is a safety-story differentiator we'd highlight heavily if it's robust.
-
-**Q23.** Is SureSpace primarily an **app** or **web** experience? What % of current users are on iOS vs Android vs web-only? What's the web for — marketing, or is there an actual functional web app?
-
-**Q24.** What is your **events model**? Who picks venues, who hosts, how often, at what price to users? Are events free / ticketed / subscription-gated? Is there an events-ops team?
-
-**Q25.** What's the **one feature or moment** that turns a casual user into a loyal user? This is the "aha moment." If you don't know, describe your best guess — we'll look for this in content angles.
+**Q13.** What's the "aha moment" — the one feature or experience that turns a casual user into a loyal one? If you don't know yet, describe your best guess.
 
 ---
 
-## Section 5 — Wingman AI & Pro Plan Roadmap (5 questions)
+## 5. Wingman AI & Pro Plan Roadmap (3 questions)
 
-*Why we ask: You mentioned Wingman AI and a Pro plan. These are strategic unlocks — if SEO is aligned with them, we can launch content that "pre-loads" search demand weeks before the feature ships, so day-1 adoption isn't flat.*
+**Q14.** Wingman AI — what does it actually do? Match people to people, people to events, both? What inputs does it use (profile, behavior, preferences, LinkedIn, natural-language)?
 
-**Q26.** **Wingman AI** — what exactly does it do? Does it match people to other people? People to events? Recommend communities? Both? Describe the intended user interaction (e.g., "the AI suggests 3 events tailored to you every Monday").
+**Q15.** When does Wingman ship? When does Pro plan launch? For each: target month, is there a web surface we'd want to SEO-optimize in advance, and is the target audience different from your AED 30 base?
 
-**Q27.** What **inputs** does Wingman use — profile data, behavior data, preferences, LinkedIn import, natural-language input, something else?
-
-**Q28.** **When does Wingman ship** (target month/quarter)? Is it launching inside the app only, or will there be a web surface we can SEO-optimize (e.g., "/ai-matching" or blog content about AI-powered networking)?
-
-**Q29.** **Pro plan** — expected launch date, expected price point, and the core feature differentiators vs the AED 30 tier. Is it meant for power users (more matches, priority events) or for a different audience entirely (business networkers, event hosts, recruiters)?
-
-**Q30.** Are there **other paid services** in the roadmap? Examples: corporate team memberships, venue/organizer partnerships, sponsored events, creator monetization, B2B offerings. Anything you're considering in the next 18 months.
+**Q16.** Any other paid services in the roadmap for the next 18 months? Corporate memberships, venue/organizer partnerships, sponsored events, B2B, creator monetization.
 
 ---
 
-## Section 6 — Competitive Positioning (5 questions)
+## 6. Competitive Positioning (3 questions)
 
-*Why we ask: Google ranks the most useful answer to a query. AI search cites the clearest authority on a topic. Both need us to know where you sit vs. competitors — and where you refuse to sit.*
+**Q17.** Name the 5 companies/apps you most often get compared to — not what you'd like to be compared to, but the actual comparisons you hear from users, press, investors.
 
-**Q31.** Name the **5 companies/apps you most often get compared to** (by users, press, investors). Don't list what you'd like to be compared to — list the actual comparisons you hear.
+**Q18.** What's your 10-word positioning statement? ("We are the ___ for ___.") If you have multiple candidates, list them all.
 
-**Q32.** When a user **leaves SureSpace**, which competitor do they most often go to? When they **arrive at SureSpace**, which product did they most recently give up on?
-
-**Q33.** What's your **10-word positioning statement**? ("We are the ___ for ___.") If you have multiple candidate positionings, list them all.
-
-**Q34.** What **category do you want to own** in Dubai's mind? Social networking? Friendship app? Professional networking? Community platform? Events discovery? Something else? You can only pick one for SEO purposes — which do you bet on?
-
-**Q35.** Is there a competitor or comparison you **would refuse** to be associated with? (e.g., "We don't want to be called a dating app.") We need to know what to avoid even when search volume would tempt us.
+**Q19.** What category do you want to own in Dubai's mind? Social networking, friendship app, professional networking, community platform, events discovery, something new? You can only pick one for SEO purposes — which do you bet on? And is there a comparison you'd refuse (e.g., "we're not a dating app")?
 
 ---
 
-## Section 7 — Current Marketing & Acquisition (6 questions)
+## 7. Current Marketing & Acquisition (3 questions)
 
-*Why we ask: SEO doesn't work in isolation. We need to understand what else is driving your funnel so we're additive, not duplicative.*
+**Q20.** What are your current acquisition channels ranked by install volume (%)? Paid social, influencer, events IRL, PR, organic, app store, referrals, word of mouth, other.
 
-**Q36.** What are your **current acquisition channels** ranked by install volume? Estimate % for each: paid social, influencer, events IRL, PR, organic search, app store organic, referrals, word of mouth, other.
+**Q21.** Which channel is delivering your highest-LTV users, even if CAC is higher? Which channel do you wish was bigger?
 
-**Q37.** What **CAC** (or estimated cost) are you seeing per channel? Which channel has the **highest-LTV users**, even if CAC is higher?
-
-**Q38.** What **ad creative** is working best right now (top-performing 1-2 examples in paid social)? Share links/screenshots if possible — we'll reverse-engineer the creative hooks into SEO landing page angles.
-
-**Q39.** Do you have a **referral program**? If yes, what are the incentives and what's the current referral rate per MAU? If no, is one planned?
-
-**Q40.** What's your **content creation status** today? Is someone (internal or external) producing blog posts, social content, event recaps, etc.? Who, at what frequency, with what editorial review?
-
-**Q41.** Looking at your own blog, we noticed posts like `/why-networking-in-dubai-feels-superficial/` and `/how-to-actually-make-real-friends-in-dubai-practical-guide/` — who is producing these today (in-house writer, AI tool, the current SEO agency, freelancer)? Are you directing topics or are they being chosen for you?
+**Q22.** Do you have a referral program, content program, or active community manager today? Brief description of each.
 
 ---
 
-## Section 8 — Current SEO Provider Deep Dive (7 questions) *[Critical]*
+## 8. Current SEO Provider Deep Dive (5 questions) *[Critical — you told us you're unhappy]*
 
-*Why we ask: You've told us you have an SEO provider today and you're not fully satisfied. Before we can position ourselves, we need to understand exactly what they're doing, what you're paying for, and where the gap is. We want to build on what's working and fix what's not — not duplicate it, not ignore it, not badmouth them.*
+**Q23.** Who is your current SEO provider — agency name, lead contact, how long you've worked together, and what's the monthly fee + contract structure (notice period, auto-renew, lock-in)?
 
-**Q42.** Who is your **current SEO provider**? Agency name, location, lead contact, and how long you've been working with them.
+**Q24.** What's the scope / SOW they committed to? How many pages per month, technical work, link building targets, reporting cadence, tools they run on your behalf. Share the SOW document if you have one.
 
-**Q43.** What's the **monthly retainer or fee** you pay them, and what's the **contract structure** — month-to-month, 6-month, 12-month lock-in, notice period for termination?
+**Q25.** What have they actually delivered in the last 3-6 months? Specifically — pages published (titles or URLs), technical fixes shipped, backlinks earned, strategy documents or keyword maps. Any artifact you can show us.
 
-**Q44.** What's the **Statement of Work (SOW) or scope** they committed to? Share the actual document or summarize the key deliverables. Specifically, we need to know:
-  - How many blog posts / landing pages per month
-  - Technical SEO work (audits, schema, speed, etc.)
-  - Link building (number of backlinks, domain quality targets)
-  - Keyword research / strategy refresh cadence
-  - Reporting deliverables
-  - Paid tools or licenses they use on your behalf (Ahrefs, Semrush, etc.)
+**Q26.** What reporting do you receive, in what format, on what cadence? You mentioned once a month. Is that a call, a written report, a deck, a dashboard? Can we see the last 2-3 reports?
 
-**Q45.** **What have they actually delivered in the last 3-6 months?** Be as specific as possible:
-  - Pages/posts published — give us titles or URLs if you can list them
-  - Technical fixes shipped — any changelog or completion notes?
-  - Backlinks earned — a list ideally
-  - Strategy documents, keyword maps, content calendars — any artifact we can review?
-
-**Q46.** What **reporting** do they provide, in what format, on what cadence? You mentioned it's once a month — is that a call, a written report, a deck, a dashboard? Can we see the last 2-3 reports? We specifically want to understand:
-  - Do they report on rankings, traffic, conversions, all three?
-  - Do they tie SEO activity to business outcomes (signups, paid subs)?
-  - Do they show work-in-progress transparently, or only completed items?
-
-**Q47.** What **specifically are you unhappy about**? Be as direct as possible. Examples we hear often:
-  - "Traffic isn't growing"
-  - "They publish content but it doesn't rank"
-  - "They don't communicate weekly / I feel disconnected"
-  - "I don't understand what they're actually doing"
-  - "The content doesn't sound like our brand"
-  - "They promised X and delivered Y"
-  - "They don't understand our product / audience / market"
-  - "Reports are full of jargon and I can't tell if it's working"
-
-**Q48.** Are you planning to **transition away** from them, or **run both providers in parallel**? If transitioning, what's the timeline and notice period? If parallel, which parts of SEO would you want each of us to own (so we don't overlap)? Also: do you have a content archive — drafts, published content, keyword research, meeting notes — we'd get access to post-transition?
+**Q27.** What specifically are you unhappy about? Be as direct as possible — "traffic isn't growing," "content doesn't sound like our brand," "I don't understand what they're doing," "they promised X and delivered Y," "reports are jargon," "we don't talk often enough." The more specific, the better we can avoid repeating it.
 
 ---
 
-## Section 9 — Growth Targets & Success Criteria (5 questions)
+## 9. Growth Targets & Success Criteria (3 questions)
 
-*Why we ask: "5,000 by end of next year" is a directional target. Turning it into an SEO KPI requires knowing exactly what counts as a "user" and which metrics we're ultimately accountable for.*
+**Q28.** When you say 5,000 users by end of 2027 — do you mean paid subs, MAU, registered accounts, or app installs? If your board had to pick one number that matters most, which is it?
 
-**Q49.** When you say **5,000 users by end of 2027** — do you mean paid subscribers, monthly active users, registered accounts, or app installs? If you had to pick the one number that matters most to your board/team/co-founders, which is it?
+**Q29.** Break down that 5,000 goal by channel — roughly how many from paid, organic, referrals, events, partnerships? Best guess is fine.
 
-**Q50.** Break down the **5,000 goal**: how many do you expect from each channel? Paid, organic, referrals, events, partnerships. Give your best guess even if it's rough.
-
-**Q51.** What's the **absolute floor** — the number below which you'd consider the year a failure, even if everything else went right?
-
-**Q52.** What **3 metrics** do you want on a weekly dashboard that an SEO engagement influences? Examples: organic traffic, organic app installs, organic-attributed paid subs, SEO-keyword-ranking count, AI citation count, branded search volume.
-
-**Q53.** Imagine it's **December 2026 and you're renewing our contract**. What would have needed to happen during 2026 for you to hit the renew button without hesitation? List the 3-5 concrete outcomes.
+**Q30.** If it's December 2026 and you're deciding whether to renew with us — what would have needed to happen for you to hit the renew button without hesitation? List the 3-5 outcomes.
 
 ---
 
-## Section 10 — Geographic & Product Expansion (4 questions)
+## 10. Expansion & Roadmap (2 questions)
 
-*Why we ask: SEO architecture (URL structure, hreflang, subfolders) is hard to change later. We need to build it once, correctly, for where you'll be in 24 months.*
+**Q31.** In the next 24 months — are you expanding beyond Dubai? If yes, in what order (Abu Dhabi, Saudi, Qatar, Bahrain, London, SE Asia, other)? If Dubai-only, confirm — that changes our approach significantly.
 
-**Q54.** In the next 24 months, are you expanding **beyond Dubai**? If yes — in what order: Abu Dhabi, other UAE emirates, Saudi (Riyadh/Jeddah), Qatar, Bahrain, London (given the legacy London content), South/Southeast Asia (given the Bangkok article), elsewhere? If you're staying Dubai-only, confirm — that's a valid strategic choice and changes our approach significantly.
-
-**Q55.** Any plans for **Arabic language** content and interface? UAE has strong Arabic search demand in some segments (local Emiratis, some GCC nationals) but your ICP today looks English-first. Which side wins?
-
-**Q56.** What **event types** will SureSpace prioritize in 2026-2027? Networking dinners, coffee meetups, outdoor/sports, wellness, nightlife, culture/arts, hobby-based, professional industry-specific. We'll build content clusters around the top 3-5.
-
-**Q57.** Are you planning **partnerships** with venues, event organizers, or Dubai tourism bodies? If yes, list them — they're SEO link and co-marketing opportunities.
+**Q32.** Arabic language interface + content — yes, no, maybe later? And which event types will you prioritize in 2026-2027 (networking dinners, coffee, outdoor, wellness, nightlife, culture, professional)?
 
 ---
 
-## Section 11 — Brand, Editorial & Content (5 questions)
+## 11. Brand, Editorial & Content (3 questions)
 
-*Why we ask: Your current blog reads as AI-generated with no named people, no venues, no data. We can't beat DR 37-94 competitors with that. We need real people, real places, real perspectives — and a brand voice we can execute consistently.*
+**Q33.** What's your brand voice in 5 adjectives? And 3 anti-adjectives — what you're NOT? (e.g., "warm, confident, curious, unpretentious, local" / "not corporate, not preachy, not generic.")
 
-**Q58.** What's your **brand voice** in 5 adjectives? (e.g., "warm, confident, curious, unpretentious, local.") And 3 anti-adjectives — things you're NOT? (e.g., "not corporate, not preachy, not generic.")
+**Q34.** Who are the real humans on the founding / early team whose names, photos, and credentials we could use for article bylines and LinkedIn bios? This matters more than most people realize — named human authors outrank anonymous content.
 
-**Q59.** Who are the **real humans** on the founding/early team we could name, photograph, and byline content under? Building E-E-A-T (Experience, Expertise, Authoritativeness, Trust) requires named authors with credentials — AI-generated "Goldman Sarah" bylines actively hurt rankings now.
-
-**Q60.** Do you have a **community manager** (or similar role) who can feed us weekly data — which events are running, which venues, which community groups are hottest, user quotes, event photos? This is the oxygen for genuine local content.
-
-**Q61.** In the **UAE cultural/legal context**, what topics or framings are **off-limits** or sensitive?
-  - Alcohol/nightlife references
-  - Dating framing (is SureSpace explicitly not-dating? Or dating-adjacent?)
-  - LGBTQ+ content
-  - Political/religious topics
-  - Gender-specific events
-  - Any others we should know about
-  (Being explicit protects you from content we'd otherwise produce that gets you in trouble.)
-
-**Q62.** Who **approves published content** — you personally, or a team member, or no review? What's the SLA for approval (24 hours? 72 hours? longer)? A slow approval chain breaks content cadence and is a common reason SEO programs stall.
+**Q35.** In the UAE cultural / legal context, what topics or framings are off-limits or sensitive? Alcohol, dating framing, LGBTQ+, political, religious, gender-specific — any others we should know about.
 
 ---
 
-## Section 12 — Technical, Access & Tracking (6 questions)
+## 12. Engagement Scope & Logistics (3 questions)
 
-*Why we ask: A lot of our recommendations require site access and deployment authority. We can't fix schema, redirects, or page templates without one of these. Please grant the access in parallel with returning this questionnaire so we can hit the ground running.*
+**Q36.** What's your monthly SEO budget range? Ballpark is fine. We build programs across a wide range — letting us know where you're comfortable helps us scope correctly instead of over- or under-shooting.
 
-**Q63.** Please grant the following access to **`aditya@theprojectseo.com`** before our next call. Tick as you complete each:
-  - [ ] **Google Search Console** — property-level, full user (for the sure-space.com property, including any subdomains if separate properties)
-  - [ ] **Google Analytics 4** — Viewer role minimum, Editor preferred
-  - [ ] **Google Tag Manager** — if used, Read + Publish preferred
-  - [ ] **WordPress admin** — editor role minimum; admin preferred for schema/plugin work
-  - [ ] **Rank Math admin** — for schema, title templates, sitemap configuration
-  - [ ] **iOS App Store Connect** — read access (for ASO metadata review)
-  - [ ] **Google Play Console** — read access (for ASO metadata review)
-  - [ ] **Hosting / CDN panel** — only if edge-level redirects or caching rules need to change
-  - [ ] **Social profile admin** (Instagram, LinkedIn, X, TikTok) — for Organization schema sameAs + brand signals
+**Q37.** What's your decision timeline and who signs off? When do you want to start, when do you need to see first results, and are there other stakeholders involved in the decision?
 
-**Q64.** Who's your **web development resource**? Internal dev? Agency? Freelancer? The site is on WordPress + Elementor + Rank Math + WP Rocket — can that person ship HTML/CSS/JS changes, modify PHP templates, or are they limited to Elementor/no-code? Average SLA for dev tickets?
-
-**Q65.** Describe any **tracking setup** today — GA4 events, server-side tracking, MMP (Adjust / AppsFlyer / Branch?), deep linking, app-install attribution. If this is not set up, we need to add it before SEO attribution works.
-
-**Q66.** Do you have a **"How did you hear about us?"** field or similar attribution signal in your signup / waitlist / download flows? If not, we need to add one. LLM-driven traffic shows up as "direct" in analytics, and without this field we cannot measure AEO ROI.
-
-**Q67.** Are there **infrastructure decisions** we should know about? Upcoming site redesign? Platform migration (e.g., leaving WordPress)? Subdomain plans (app.sure-space.com vs sure-space.com/app)? Any of these can blow up an SEO program if we don't know in advance.
-
-**Q68.** Confirm (or correct) the list of **legacy URLs in the audit**. We flagged 15 URLs (Bangkok nightlife, London wellbeing, Surespace-Jumeirah, WooCommerce shop/cart/checkout, etc.) for 410 or 301. Any we should keep? Any we missed?
+**Q38.** What reporting cadence do you want — weekly, biweekly, monthly? Format — live dashboard, written report, Slack, call? (For context: we default to weekly Slack check-ins + biweekly written update + monthly strategy call. Adjustable.)
 
 ---
 
-## Section 13 — Engagement Scope & Logistics (4 questions)
+## Optional: Access
 
-*Why we ask: We'd rather know budget and decision timeline upfront than build a proposal that overshoots or misses the mark.*
+If — and only if — you'd like us to run a quick analysis on your actual performance data before we meet, grant the following to **`SEO@theprojectseo.com`**:
 
-**Q69.** What's your **monthly SEO budget range**? We build programs from $1,500/mo (basic content + technical) up to $6,000/mo (full SEO + AEO + content + link building + dev). Rough ballpark is fine.
+- [ ] Google Search Console (property-level, full user)
+- [ ] Google Analytics 4 (Viewer role)
 
-**Q70.** What's your **decision timeline**? When do you want to start? When do you need to see first results? Who else signs off on the engagement?
-
-**Q71.** What **reporting cadence** do you want — weekly, biweekly, monthly? Format preference — live dashboard, written report, voice walkthrough on a call? (For context: we default to a weekly Slack check-in, biweekly written update, and a monthly 60-min strategy call. Adjustable.)
-
-**Q72.** Who are the **stakeholders** on your side? List name, role, and their main concern (e.g., "founder — obsessed with MAU growth," "CTO — doesn't want dev tickets that take >2 hours," "marketing lead — wants brand consistency"). This helps us tailor reports for each person instead of dumping one generic update.
+Everything else (WordPress, App Store, Play Console, hosting) we'll request only if and when we sign. We don't need it to put together an initial point of view.
 
 ---
 
 ## Closing
 
-Thank you for taking this seriously. Everything you write here directly shapes the proposal and — if we sign — the first 12 months of work.
+Thank you. Everything here directly shapes what we bring back to you.
 
-**Next step:** Return this document (or schedule a walkthrough call). Within 5 business days of receiving answers, we'll come back with:
+**What happens next:**
 
-1. A **diagnostic memo** — what we heard, what it implies for SEO + AEO strategy, where your assumptions may need revisiting
-2. A **12-month roadmap** with explicit month-by-month targets tied to your 5,000-user goal
-3. A **3-month pilot proposal** with defined deliverables, KPIs, and a renewal decision gate at Day 90
-4. A **current-provider transition plan** (if you decide to switch) — what to extract from them before leaving, what we take over in Week 1, what to park until Week 4
-
-If during your answers you realize you don't have enough data on a particular question (retention, CAC, conversion rates), mark it as a gap — we'll prioritize closing that measurement gap in the first 30 days so the next conversation is data-backed.
+1. We read your answers and form a point of view grounded in your actual business — not a generic SEO audit
+2. We come back with a diagnostic memo, a 12-month roadmap framework tied to your 5,000-user target, and a transition plan for your current provider
+3. If you'd like to move forward, we propose scope and kick off within a week
 
 **Aditya Aman**
 Founder, TheProjectSEO
 aditya@theprojectseo.com
+SEO@theprojectseo.com (for access grants only)
