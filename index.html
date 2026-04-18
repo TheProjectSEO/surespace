@@ -276,6 +276,13 @@ code, pre, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-
   color: var(--ink); letter-spacing: -0.4px; line-height: 1.3;
 }
 .obs-card p { font-size: 14.5px; color: var(--ink-light); line-height: 1.6; }
+.obs-card p em { color: var(--ink); font-style: italic; font-weight: 500; }
+.obs-source {
+  font-size: 11.5px !important; color: var(--ink-lighter) !important;
+  border-top: 1px dashed var(--border); padding-top: 12px !important;
+  margin-top: 16px !important; font-style: italic;
+  letter-spacing: 0.2px;
+}
 
 /* BIG IDEA (plays) */
 .plays { display: flex; flex-direction: column; gap: 28px; margin-top: 16px; }
@@ -628,46 +635,37 @@ footer {
 <section class="section section-alt" id="market">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-eyebrow">Part 2 · What we see</div>
-      <h2>Market signals from <span class="serif">outside the glass</span></h2>
-      <p class="section-lede">External observations only — how people search, what AI assistants get asked, where incumbents are and aren't investing. None of this is about your site specifically. It's about the category you're operating in, and where the pressure points are.</p>
+      <div class="section-eyebrow">Part 2 · Where the edge is</div>
+      <h2>Four things about this category that <span class="serif">aren't obvious</span></h2>
     </div>
 
     <div class="observations">
       <div class="obs-card">
-        <span class="obs-tag">Demand signal</span>
-        <h3>Emotional-intent queries are growing faster than transactional ones</h3>
-        <p>"How to make friends in Dubai as a new expat," "what to do alone in Dubai on weekends," "feeling lonely in Dubai" — these aren't vanity blog topics. They're where the real acquisition windows sit. Incumbents rank for transactional queries but don't answer the emotional ones well.</p>
+        <span class="obs-tag">The unit-economics gap</span>
+        <h3>Incumbents ignore emotional-intent queries on purpose — not by accident</h3>
+        <p>Eventbrite and Meetup have large, sophisticated SEO operations. They've <em>chosen</em> not to compete for queries like "feeling lonely in Dubai" or "finding real friends here" — because per-ticket and ad-supported economics can't justify the CAC for top-of-funnel emotional intent. A subscription model at AED 30/mo inverts that math. These pockets aren't unserved because nobody thought of them; they're unserved because incumbents can't profit from them. You can.</p>
+        <p class="obs-source">The principle: match your SEO target to your monetization model's CAC tolerance, not to what competitors do.</p>
       </div>
 
       <div class="obs-card">
-        <span class="obs-tag">Incumbent blind spot</span>
-        <h3>Eventbrite and Meetup have SEO real estate — no AEO strategy</h3>
-        <p>When you search Dubai social-networking queries in ChatGPT or Perplexity today, the cited sources are a scattered mix of Reddit, Time Out Dubai, and Quora. Not Eventbrite. Not Meetup. Nobody has structured their content for LLM citation. That creates a citation-ownership window that doesn't exist once someone with more authority wakes up to it.</p>
+        <span class="obs-tag">AEO asymmetry</span>
+        <h3>LLM citation doesn't follow Domain Rating — it follows structure</h3>
+        <p>ChatGPT, Perplexity, Gemini, and Claude cite whichever page answers the query best — retrievable, structured, well-formatted. The authority metrics that dominate Google backlink ranking don't transfer cleanly. A DR-19 site with citation capsules, FAQ schema, and clean entity structure can get cited more often than a DR-90+ incumbent with sprawling, conversion-focused pages. This is the asymmetry AEO quietly created.</p>
+        <p class="obs-source">Source: Backlinko — LLM citation behavior research, 2024-2025.</p>
       </div>
 
       <div class="obs-card">
-        <span class="obs-tag">Format shift</span>
-        <h3>Social media is eating the top of several high-intent SERPs</h3>
-        <p>Search "make friends in Dubai" on Google UAE and the first page is almost entirely YouTube Shorts, Instagram Reels, TikTok, and Facebook. A well-built landing page with real humans and structured content could realistically take SERP territory back — but the strategy has to include social surface, not just web.</p>
+        <span class="obs-tag">Native content advantage</span>
+        <h3>Google's 2024-25 updates reward exactly what your app already produces</h3>
+        <p>The Helpful Content Update and subsequent core updates moved ranking weight toward first-person, community-generated content — which is why Reddit surged. For a community app, the Google-rewarded format is already being produced inside your product. Event recaps, member conversations, real user questions. Surfacing the public-safe subset (with consent) as indexable pages turns the app itself into an SEO compounding asset — not a separate content program.</p>
+        <p class="obs-source">Source: Backlinko — analysis of 2024 Google Core Updates and Helpful Content Update impact.</p>
       </div>
 
       <div class="obs-card">
-        <span class="obs-tag">Under-served pocket</span>
-        <h3>Dubai has a large Arabic-first segment that nobody writes for</h3>
-        <p>Roughly a third of Dubai's population searches in Arabic. The community / networking / meetup content landscape in Arabic is thin to nonexistent. It's a segmentation edge most English-first competitors won't bother with — which makes it an unfair advantage if you bother.</p>
-      </div>
-
-      <div class="obs-card">
-        <span class="obs-tag">Platform convergence</span>
-        <h3>The App Store is a search engine. Most founders under-invest in it.</h3>
-        <p>ASO (title, subtitle, keywords, reviews) is a distinct search surface with its own algorithm and user intent. For an app business, treating Google web, Google Play, Apple App Store, and LLM assistants as one acquisition surface — not four separate channels — compounds returns.</p>
-      </div>
-
-      <div class="obs-card">
-        <span class="obs-tag">Trust premium</span>
-        <h3>Verified-identity messaging is a pricing justifier in Dubai</h3>
-        <p>Dubai users pay up for safety signals in ways they don't in other markets. If verification, moderation, and curation are real parts of the SureSpace product — not just brochure copy — then content that demonstrates those mechanics is both an SEO asset and a paid-conversion asset in one.</p>
+        <span class="obs-tag">Hidden metric</span>
+        <h3>AI Overview mentions work even when nobody clicks</h3>
+        <p>AI Overviews sit above organic results and contain the direct answer. Users read them, don't click, but remember the brand. Traditional CTR attribution undervalues this dramatically. The correct outcome isn't click-through — it's branded search volume uplift over 3-6 months. A different instrumentation, a different success metric, and a different content shape. Getting cited in the AI Overview is worth more than ranking #2 below it.</p>
+        <p class="obs-source">Source: Moz — AI Overviews and brand-recall research.</p>
       </div>
     </div>
   </div>
