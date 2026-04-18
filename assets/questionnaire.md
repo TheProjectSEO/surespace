@@ -8,11 +8,9 @@
 
 ---
 
-## Why we're asking first, and why we're asking this
+## Why this comes first
 
-Before we can have a useful conversation about SEO for SureSpace, we need to understand the business the way you see it — not the way a third-party tool guesses at it. This questionnaire is how we do that.
-
-No audit. No assumptions about what's wrong with your site. We haven't looked at your analytics because we don't have access, and we wouldn't want to pretend otherwise. Everything that comes after this — our diagnostic, our recommendations, our proposal — will be grounded in the answers you give here.
+Before we can build a useful 12-month plan for SureSpace, we need to understand the business the way you see it. This questionnaire is how we do that — once it's answered, the recommendations and proposal are grounded in your actual reality, not guesses.
 
 If a question doesn't apply, write "N/A." If you don't know the answer, write "Don't know" — that's useful information, not a failure. If you want to skip something and discuss on a call, flag it.
 
@@ -165,7 +163,7 @@ Thank you. Everything here directly shapes what we bring back to you.
 
 **What happens next:**
 
-1. We read your answers and form a point of view grounded in your actual business — not a generic SEO audit
+1. We read your answers and form a point of view grounded in your actual business
 2. We come back with a diagnostic memo, a 12-month roadmap framework tied to your 5,000-user target, and a transition plan for your current provider
 3. If you'd like to move forward, we propose scope and kick off within a week
 
