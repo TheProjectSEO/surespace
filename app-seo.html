@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>SureSpace — App-to-Web Architecture | TheProjectSEO</title>
+<meta name="description" content="How every event, community, and venue in the SureSpace app becomes an indexable web page. The Reddit/Meetup/Airbnb playbook, adapted for Dubai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--brand:#0F1B4C;--brand-dark:#091238;--brand-darker:#050a1f;--brand-soft:#EDF0FA;--accent:#FF6B5C;--accent-dark:#E54A3A;--accent-soft:#FFF0EE;--ink:#0A1330;--ink-light:#64748b;--ink-lighter:#94a3b8;--bg:#F7F9FC;--bg-alt:#FFFFFF;--border:#E5E9F2;--border-soft:#EEF1F7;--success:#10B981;--success-soft:#ECFDF5;--warning:#F59E0B;--warning-soft:#FFFBEB;--danger:#EF4444;--danger-soft:#FEF2F2;--radius:12px;--radius-sm:8px;--radius-lg:20px;--shadow-sm:0 1px 2px rgba(10,19,48,.04);--shadow:0 4px 12px rgba(10,19,48,.06);--shadow-lg:0 20px 40px rgba(10,19,48,.10);--dot-grid:radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+a{color:var(--accent);text-decoration:none;transition:color .15s}
+a:hover{text-decoration:underline}
+code,.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.92em}
+
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60}
+.progress-bar{height:100%;background:var(--accent);width:0%;transition:width .06s linear}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.2px}
+.nav-brand-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav-links{display:flex;gap:2px}
+.nav-link{padding:7px 11px;font-size:13px;font-weight:500;color:var(--ink-light);border-radius:6px;transition:all .15s}
+.nav-link:hover,.nav-link.active{background:var(--brand-soft);color:var(--brand);text-decoration:none}
+.nav-link.active{font-weight:600}
+.nav-cta{padding:8px 16px;background:var(--accent);color:white;border-radius:100px;font-size:13px;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--accent-dark);text-decoration:none;transform:translateY(-1px)}
+@media (max-width:960px){.nav-links{display:none}}
+
+.hero{background:var(--dot-grid) 0 0/24px 24px,radial-gradient(ellipse at top right,rgba(255,107,92,.18),transparent 60%),radial-gradient(ellipse at bottom left,rgba(15,27,76,.4),transparent 60%),linear-gradient(135deg,var(--brand-dark) 0%,var(--brand-darker) 100%);color:white;padding:88px 24px 72px;position:relative;overflow:hidden}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:100px;background:rgba(255,107,92,.15);color:#FFB8AE;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 1.8s ease-in-out infinite}
+.hero h1{font-size:clamp(34px,4.8vw,56px);font-weight:800;letter-spacing:-1.8px;line-height:1.04;margin-bottom:20px;max-width:960px}
+.hero h1 .serif{font-weight:400;letter-spacing:-1.4px;color:var(--accent);font-style:italic}
+.hero-sub{font-size:clamp(16px,1.7vw,20px);color:rgba(255,255,255,.78);max-width:820px;line-height:1.55}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:36px;max-width:980px}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:18px 20px;border-radius:var(--radius);backdrop-filter:blur(10px)}
+.stat-value{font-size:30px;font-weight:800;letter-spacing:-1px;color:white;line-height:1}
+.stat-value .accent{color:var(--accent);font-family:'Instrument Serif',serif;font-weight:400;font-style:italic}
+.stat-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px;margin-top:6px;font-weight:500}
+.stat-arrow{font-size:14px;color:#FFB8AE;margin-top:4px;font-weight:500}
+
+.section{padding:88px 24px;position:relative}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-alt{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.section-dark{background:var(--brand-dark);color:rgba(255,255,255,.9);background-image:var(--dot-grid),linear-gradient(135deg,var(--brand-dark) 0%,var(--brand-darker) 100%);background-size:28px 28px,100% 100%}
+.section-header{margin-bottom:44px;max-width:820px}
+.section-eyebrow{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:inline-flex;align-items:center;gap:10px}
+.section-eyebrow::after{content:'';height:1px;width:36px;background:var(--accent);opacity:.4}
+.section h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-1.2px;line-height:1.1;margin-bottom:18px;color:var(--ink)}
+.section h2 .serif{font-weight:400;letter-spacing:-1px;color:var(--accent);font-style:italic}
+.section-dark h2{color:white}
+.section-dark .section-eyebrow{color:var(--accent)}
+.section-lede{font-size:17px;color:var(--ink-light);line-height:1.65}
+.section-dark .section-lede{color:rgba(255,255,255,.72)}
+
+/* REFRAME PANELS */
+.reframe{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+@media (max-width:768px){.reframe{grid-template-columns:1fr}}
+.reframe-panel{padding:32px 34px;border-radius:var(--radius);position:relative;overflow:hidden}
+.reframe-panel.today{background:#FEF2F2;border:1px solid #FCA5A5}
+.reframe-panel.should{background:linear-gradient(135deg,#ECFDF5 0%,#D1FAE5 100%);border:1px solid #6EE7B7}
+.reframe-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px}
+.reframe-panel.today .reframe-label{color:#991B1B}
+.reframe-panel.should .reframe-label{color:#065F46}
+.reframe-panel h3{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.4px;margin-bottom:12px;line-height:1.3}
+.reframe-panel p{font-size:14.5px;color:var(--ink);line-height:1.6;margin-bottom:14px}
+.reframe-number{font-family:'Instrument Serif',serif;font-size:68px;font-style:italic;line-height:1;font-weight:400;margin-top:18px}
+.reframe-panel.today .reframe-number{color:#DC2626}
+.reframe-panel.should .reframe-number{color:#10B981}
+.reframe-number small{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink-light);font-style:normal;letter-spacing:0;display:block;margin-top:4px}
+
+/* PLAYBOOK GRID */
+.playbook{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:24px}
+.pb-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:24px 26px;transition:all .25s;border-left:4px solid var(--accent)}
+.pb-card.wrong{border-left-color:var(--ink-lighter);opacity:.8}
+.pb-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.pb-brand{font-size:17px;font-weight:800;color:var(--ink);letter-spacing:-.3px;margin-bottom:4px}
+.pb-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:10px}
+.pb-card.wrong .pb-label{color:var(--ink-lighter)}
+.pb-pattern{font-size:13.5px;color:var(--ink);line-height:1.5;margin-bottom:10px}
+.pb-outcome{font-size:12.5px;color:var(--ink-light);line-height:1.5;padding-top:10px;border-top:1px dashed var(--border-soft);font-style:italic}
+
+/* DATA-TO-PAGES MAPPING */
+.mapping{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-top:24px;overflow-x:auto}
+.mapping-table{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:13.5px;min-width:720px}
+.mapping-table th{padding:10px 14px;text-align:left;font-weight:700;color:var(--ink);font-size:11.5px;text-transform:uppercase;letter-spacing:.5px}
+.mapping-table td{padding:14px 16px;background:var(--bg);vertical-align:middle}
+.mapping-table tr td:first-child{border-radius:var(--radius-sm) 0 0 var(--radius-sm);font-weight:700;color:var(--accent-dark);font-family:'JetBrains Mono',monospace;font-size:12px}
+.mapping-table tr td:last-child{border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-weight:700;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
+.mapping-url{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-light);word-break:break-all}
+
+/* TIER CARDS */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:24px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+@media (max-width:880px){.tier-grid{grid-template-columns:1fr}}
+.tier{background:white;padding:32px 28px;border-right:1px solid var(--border)}
+.tier:last-child{border-right:none}
+.tier-num{font-family:'Instrument Serif',serif;font-size:56px;font-style:italic;color:var(--accent);line-height:1;margin-bottom:6px;font-weight:400}
+.tier-title{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent-dark);margin-bottom:14px}
+.tier-desc{font-size:13px;color:var(--ink-light);line-height:1.55;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border-soft)}
+.tier ul{list-style:none;padding:0}
+.tier ul li{padding:8px 0;font-size:13.5px;color:var(--ink);line-height:1.5}
+.tier ul li strong{font-weight:700;display:block;margin-bottom:2px}
+.tier ul li span{color:var(--ink-light);font-size:12.5px}
+
+/* GROWTH CHART */
+.chart-container{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;margin-top:24px}
+.chart-title{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px}
+.chart-subtitle{font-size:13.5px;color:var(--ink-light);margin-bottom:24px}
+.chart-legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:18px;font-size:13px}
+.legend-item{display:flex;align-items:center;gap:8px;color:var(--ink)}
+.legend-dot{width:14px;height:4px;border-radius:2px}
+svg.chart{width:100%;height:auto;overflow:visible}
+
+/* ARCHITECTURE OPTIONS */
+.arch-options{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+@media (max-width:880px){.arch-options{grid-template-columns:1fr}}
+.arch{background:white;border:2px solid var(--border);border-radius:var(--radius);padding:28px 30px;position:relative;transition:all .25s}
+.arch.recommended{border-color:var(--accent);background:linear-gradient(180deg,#FFF0EE 0%,white 40%)}
+.arch.recommended::before{content:'RECOMMENDED';position:absolute;top:-10px;left:20px;background:var(--accent);color:white;font-size:10px;font-weight:800;letter-spacing:1px;padding:4px 10px;border-radius:100px}
+.arch-letter{font-family:'Instrument Serif',serif;font-size:44px;font-style:italic;color:var(--ink-lighter);line-height:1;margin-bottom:6px;font-weight:400}
+.arch.recommended .arch-letter{color:var(--accent)}
+.arch h3{font-size:17px;font-weight:800;color:var(--ink);letter-spacing:-.3px;margin-bottom:10px}
+.arch p.desc{font-size:13.5px;color:var(--ink-light);line-height:1.55;margin-bottom:16px}
+.arch-specs{display:flex;flex-direction:column;gap:10px;padding-top:12px;border-top:1px solid var(--border-soft)}
+.arch-spec{display:flex;justify-content:space-between;font-size:12.5px;gap:12px}
+.arch-spec-label{color:var(--ink-light);font-weight:500}
+.arch-spec-value{font-weight:600;color:var(--ink);text-align:right}
+.arch-pros-cons{margin-top:14px;padding-top:14px;border-top:1px solid var(--border-soft);font-size:12.5px;line-height:1.55}
+.arch-pros-cons .pro{color:var(--success);font-weight:600;margin-bottom:6px}
+.arch-pros-cons .con{color:#991B1B;font-weight:600}
+
+/* PRIVACY MATRIX */
+.privacy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:24px}
+.priv-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:24px 26px;border-top:4px solid var(--success)}
+.priv-card.opt-in{border-top-color:var(--warning)}
+.priv-card.never{border-top-color:var(--danger)}
+.priv-level{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px}
+.priv-card.default .priv-level{color:#065F46}
+.priv-card.opt-in .priv-level{color:#92400E}
+.priv-card.never .priv-level{color:#991B1B}
+.priv-card h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.2px;line-height:1.35}
+.priv-card ul{list-style:none;padding:0}
+.priv-card ul li{padding:6px 0 6px 18px;position:relative;font-size:13px;color:var(--ink-light);line-height:1.5}
+.priv-card ul li::before{content:'•';position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* TIMELINE */
+.timeline-rail{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:36px;margin-top:24px;position:relative}
+.tl-months{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-bottom:20px}
+.tl-month{text-align:center;font-size:10.5px;font-weight:700;color:var(--ink-light);padding:6px 0}
+.tl-bar{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;padding:6px;border-radius:var(--radius-sm);background:var(--bg);margin-bottom:10px}
+.tl-segment{padding:14px 0;border-radius:4px;font-size:11px;font-weight:600;text-align:center;white-space:nowrap;overflow:hidden}
+.tl-empty{background:transparent}
+.tl-phase-1{background:var(--accent-soft);color:var(--accent-dark)}
+.tl-phase-2{background:var(--accent);color:white}
+.tl-phase-3{background:var(--brand);color:white}
+.tl-label{font-size:13px;font-weight:600;color:var(--ink);margin-left:12px;display:flex;align-items:center;gap:8px}
+.tl-label::before{content:'';width:12px;height:12px;border-radius:3px}
+.tl-label.p1::before{background:var(--accent-soft);border:1px solid var(--accent)}
+.tl-label.p2::before{background:var(--accent)}
+.tl-label.p3::before{background:var(--brand)}
+
+/* ECONOMICS REVISED */
+.econ-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+@media (max-width:768px){.econ-grid{grid-template-columns:1fr}}
+.econ-card{padding:28px 30px;border-radius:var(--radius);border:1px solid var(--border);background:white}
+.econ-card.new{background:linear-gradient(135deg,#FFF0EE 0%,#FFE5E2 100%);border-color:#FFB8AE}
+.econ-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--ink-light);margin-bottom:8px}
+.econ-card.new .econ-label{color:var(--accent-dark)}
+.econ-value{font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--ink);line-height:1;margin-bottom:4px}
+.econ-value .accent{color:var(--accent);font-family:'Instrument Serif',serif;font-weight:400;font-style:italic}
+.econ-sub{font-size:13px;color:var(--ink-light);line-height:1.5;margin-bottom:16px}
+.econ-list{list-style:none;padding:0;border-top:1px solid rgba(0,0,0,.08);padding-top:14px;margin-top:8px}
+.econ-list li{padding:5px 0;font-size:13px;color:var(--ink);display:flex;justify-content:space-between;gap:10px}
+.econ-list li span:last-child{color:var(--ink-light);font-weight:600;font-variant-numeric:tabular-nums}
+
+/* CALLOUT */
+.callout{background:white;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius-sm);padding:22px 28px;margin-top:28px}
+.callout-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent-dark);margin-bottom:6px}
+.callout p{font-size:14.5px;color:var(--ink);line-height:1.65;margin:0}
+.callout p strong{font-weight:700}
+
+footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gradient(to bottom,var(--brand-darker),#030614);background-size:26px 26px,100% 100%;color:rgba(255,255,255,.6);padding:56px 24px 40px;border-top:4px solid var(--accent)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
+.footer-brand{color:white;font-weight:700;font-size:16px;margin-bottom:10px;letter-spacing:-.2px}
+.footer-contact{font-size:13.5px;line-height:1.8}
+.footer-contact a{color:var(--accent)}
+.footer-legal{font-size:11.5px;color:rgba(255,255,255,.42);max-width:480px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="./" class="nav-brand"><span class="nav-brand-dot"></span>SureSpace × TheProjectSEO</a>
+    <div class="nav-links">
+      <a href="./" class="nav-link">Overview</a>
+      <a href="./proposal.html" class="nav-link">Proposal</a>
+      <a href="./strategy.html" class="nav-link">Strategy</a>
+      <a href="./competitors.html" class="nav-link">Competitors</a>
+      <a href="./app-seo.html" class="nav-link active">App SEO</a>
+    </div>
+    <a href="./proposal.html#commit" class="nav-cta">Let's go →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">App-to-Web Architecture</span>
+    <h1>Every event, every community, every venue — <span class="serif">one indexable page each</span>.</h1>
+    <p class="hero-sub">SureSpace is app-first. That doesn't mean web-irrelevant — it means the web becomes an indexable <em style="font-style:normal;color:#FFB8AE">display</em> of app data. Reading is free. Engaging requires the app. This is the Reddit / Meetup / Airbnb pattern, adapted for Dubai.</p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-value">~276</div>
+        <div class="stat-label">Pages today</div>
+        <div class="stat-arrow">Static marketing</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value"><span class="accent">~10,000</span></div>
+        <div class="stat-label">Pages by Month 24</div>
+        <div class="stat-arrow">App-data-driven</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">36×</div>
+        <div class="stat-label">Page-count multiplier</div>
+        <div class="stat-arrow">Compounding asset</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">5,000+</div>
+        <div class="stat-label">Organic visits/mo ceiling</div>
+        <div class="stat-arrow">From dynamic alone</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE REFRAME -->
+<section class="section" id="reframe">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 1 · The reframe</div>
+      <h2>What the web is <span class="serif">for</span></h2>
+      <p class="section-lede">Most app-first founders treat their website as a brochure. Sign-up link, App Store badge, three screenshots, done. The winning ones treat the website as a <em style="color:var(--ink);font-style:italic">second surface of the product</em> — a place where the same data gets displayed in a way Google can crawl, LLMs can cite, and non-users can discover before installing.</p>
+    </div>
+
+    <div class="reframe">
+      <div class="reframe-panel today">
+        <div class="reframe-label">SureSpace web today</div>
+        <h3>Marketing site</h3>
+        <p>~276 pages. AI-generated editorial. 15 real-traffic keywords. Zero pages representing real app content — no event pages, no community pages, no venue pages. The app has 1,000+ users; none of it is indexable.</p>
+        <div class="reframe-number">276<small>total indexable pages · static</small></div>
+      </div>
+      <div class="reframe-panel should">
+        <div class="reframe-label">SureSpace web — upgraded</div>
+        <h3>Product surface</h3>
+        <p>Every event the app runs → 1 indexable page. Every community → 1 page. Every venue → 1 page. Every month → 1 recap page. Multiply by time and the architecture compounds into a long-tail traffic machine no editorial strategy can match.</p>
+        <div class="reframe-number">~10K<small>pages by Month 24 · self-compounding</small></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">The principle</div>
+      <p><strong>Reading is free. Engaging requires the app.</strong> That asymmetry is the acquisition flywheel — the web converts searchers into app-installs, the app converts installs into subscribers. Same pattern behind Reddit, Meetup, Airbnb, Letterboxd, Strava.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THE PLAYBOOK -->
+<section class="section section-alt" id="playbook">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 2 · The playbook</div>
+      <h2>Who does this <span class="serif">right</span> — and who doesn't</h2>
+      <p class="section-lede">The distinction isn't about monthly users or category — it's about whether the app's content is surfaced publicly. Brands that surface it compound traffic. Brands that don't leave it trapped.</p>
+    </div>
+
+    <h3 style="font-size:15px;font-weight:700;color:var(--ink);margin:20px 0 10px;text-transform:uppercase;letter-spacing:.5px">Got it right — the pattern SureSpace should steal</h3>
+    <div class="playbook">
+      <div class="pb-card">
+        <div class="pb-label">Events marketplace</div>
+        <div class="pb-brand">Meetup</div>
+        <div class="pb-pattern">Every group + every event + every city/activity hub is a public indexable page. You need the app to RSVP, but the page itself is crawlable.</div>
+        <div class="pb-outcome">UAE subdomain: 1,741 organic visits/mo despite minimal investment since 2020.</div>
+      </div>
+      <div class="pb-card">
+        <div class="pb-label">Event marketplace</div>
+        <div class="pb-brand">Eventbrite</div>
+        <div class="pb-pattern">Every event → public page with Event schema. Millions of pages globally. Each event is a long-tail acquisition asset.</div>
+        <div class="pb-outcome">6,874 UAE visits/mo. Owns "networking events dubai" at position 1.</div>
+      </div>
+      <div class="pb-card">
+        <div class="pb-label">Community platform</div>
+        <div class="pb-brand">Reddit</div>
+        <div class="pb-pattern">Every thread public by default. Every subreddit is a landing page. User-generated content becomes SEO content at scale.</div>
+        <div class="pb-outcome">Surge in Google rankings 2024-2025 after Helpful Content Update favored first-person content.</div>
+      </div>
+      <div class="pb-card">
+        <div class="pb-label">Short-term rental</div>
+        <div class="pb-brand">Airbnb</div>
+        <div class="pb-pattern">Every listing is a fully indexable page with rich schema. Browsing is free; booking requires account.</div>
+        <div class="pb-outcome">Ranks for "[neighborhood] rental" queries in every city globally. Zero paid search needed for long-tail.</div>
+      </div>
+      <div class="pb-card">
+        <div class="pb-label">Film community</div>
+        <div class="pb-brand">Letterboxd</div>
+        <div class="pb-pattern">Every film, every user list, every review is public and indexed. User-generated content = SEO asset.</div>
+        <div class="pb-outcome">Ranks for film queries globally. Community curation becomes Google-valued content.</div>
+      </div>
+      <div class="pb-card">
+        <div class="pb-label">Fitness tracking</div>
+        <div class="pb-brand">Strava</div>
+        <div class="pb-pattern">Activities, segments, routes all public by default (opt-out model). Creates massive indexable surface.</div>
+        <div class="pb-outcome">Dominates "[route name] running" queries. Builds brand equity from user content.</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:15px;font-weight:700;color:var(--ink);margin:36px 0 10px;text-transform:uppercase;letter-spacing:.5px">Got it wrong — what happens when content stays trapped</h3>
+    <div class="playbook">
+      <div class="pb-card wrong">
+        <div class="pb-label">Messaging</div>
+        <div class="pb-brand">Discord</div>
+        <div class="pb-pattern">Servers, conversations, events — all private by default. Brilliant product, catastrophic SEO footprint.</div>
+        <div class="pb-outcome">200M+ MAU. Nearly invisible to Google for anything beyond the brand itself.</div>
+      </div>
+      <div class="pb-card wrong">
+        <div class="pb-label">Social audio</div>
+        <div class="pb-brand">Clubhouse</div>
+        <div class="pb-pattern">Audio content ephemeral, rooms private. Zero web surface for SEO to even work with.</div>
+        <div class="pb-outcome">Growth plateau correlated with inability to acquire new users organically. Most users arrived via referrals.</div>
+      </div>
+      <div class="pb-card wrong">
+        <div class="pb-label">Neighborhood network</div>
+        <div class="pb-brand">Nextdoor</div>
+        <div class="pb-pattern">Most content gated behind neighborhood verification. Public pages are thin landing pages, not real content.</div>
+        <div class="pb-outcome">Weak organic presence despite 30M+ US users. Heavy reliance on paid acquisition.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT SURESPACE CAN EXPOSE -->
+<section class="section" id="exposure">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 3 · What SureSpace can expose</div>
+      <h2>Three tiers of <span class="serif">app-to-web</span> surfacing</h2>
+      <p class="section-lede">Not all app content should be public. This is the staged model — what's default-public, what's opt-in, what stays in the app forever. Built for UAE privacy norms.</p>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier">
+        <div class="tier-num">01</div>
+        <div class="tier-title">Immediate · High ROI</div>
+        <div class="tier-desc">Default-public, anonymized. Ships Month 4-6.</div>
+        <ul>
+          <li><strong>Individual event pages</strong><span>Name, date, venue, type, anonymized count. Event schema.</span></li>
+          <li><strong>Community / group pages</strong><span>Name, description, host bio (consented), upcoming events.</span></li>
+          <li><strong>Venue pages</strong><span>Name, neighborhood, events hosted, aggregate reviews.</span></li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <div class="tier-num">02</div>
+        <div class="tier-title">Aggregation · The 10×</div>
+        <div class="tier-desc">Programmatic layer drawn from live app activity. Ships Month 6-9.</div>
+        <ul>
+          <li><strong>Activity × Neighborhood hubs</strong><span>Real events in that area, auto-refreshed weekly.</span></li>
+          <li><strong>Audience × Activity hubs</strong><span>Founder meetups, female-focused events, etc.</span></li>
+          <li><strong>Monthly recap pages</strong><span>"Dubai social scene — April 2026" auto-generated.</span></li>
+          <li><strong>Weekly temporal</strong><span>"This weekend in Dubai — curated" refreshed Fridays.</span></li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <div class="tier-num">03</div>
+        <div class="tier-title">Consented · High-trust</div>
+        <div class="tier-desc">Opt-in only. Reviewed. Ships Month 9-12+.</div>
+        <ul>
+          <li><strong>Featured host profiles</strong><span>Community managers who want web visibility.</span></li>
+          <li><strong>Event recap photos</strong><span>Per-event opt-in, face-blurred by default.</span></li>
+          <li><strong>Member stories</strong><span>Curated, Anish-approved, identity-light.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA TO PAGES MAPPING -->
+<section class="section section-alt" id="mapping">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 4 · The mapping</div>
+      <h2>Every data field → a <span class="serif">page type</span></h2>
+      <p class="section-lede">For a 24-month horizon at SureSpace's anticipated event cadence. Numbers assume 4 events/day average + 100 active communities + 30 venue partners.</p>
+    </div>
+
+    <div class="mapping">
+      <table class="mapping-table">
+        <thead>
+          <tr>
+            <th>Data field (in app)</th>
+            <th>Page template (on web)</th>
+            <th>URL pattern</th>
+            <th style="text-align:right">24-mo volume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Event</td>
+            <td>Event detail page</td>
+            <td class="mapping-url">/events/{slug}-{date}</td>
+            <td>~2,900</td>
+          </tr>
+          <tr>
+            <td>Community / group</td>
+            <td>Community landing page</td>
+            <td class="mapping-url">/communities/{slug}</td>
+            <td>~150</td>
+          </tr>
+          <tr>
+            <td>Venue</td>
+            <td>Venue + event list</td>
+            <td class="mapping-url">/venues/{slug}</td>
+            <td>~50</td>
+          </tr>
+          <tr>
+            <td>Host (opt-in)</td>
+            <td>Host profile</td>
+            <td class="mapping-url">/hosts/{slug}</td>
+            <td>~30-80</td>
+          </tr>
+          <tr>
+            <td>Activity × Neighborhood</td>
+            <td>Auto-populated hub</td>
+            <td class="mapping-url">/{activity}-{neighborhood}</td>
+            <td>~875</td>
+          </tr>
+          <tr>
+            <td>Audience × Activity</td>
+            <td>Persona-filtered hub</td>
+            <td class="mapping-url">/{activity}-for-{audience}-dubai</td>
+            <td>~450</td>
+          </tr>
+          <tr>
+            <td>Month aggregate</td>
+            <td>Monthly recap</td>
+            <td class="mapping-url">/dubai-social-scene-{month}</td>
+            <td>~24</td>
+          </tr>
+          <tr>
+            <td>Week aggregate</td>
+            <td>Weekly temporal</td>
+            <td class="mapping-url">/this-weekend-in-dubai</td>
+            <td>~1 (refreshed weekly)</td>
+          </tr>
+          <tr>
+            <td>Tag / topic</td>
+            <td>Topic landing</td>
+            <td class="mapping-url">/topics/{tag}</td>
+            <td>~100-200</td>
+          </tr>
+          <tr>
+            <td>Editorial (existing ontology)</td>
+            <td>Pillar + spokes (current plan)</td>
+            <td class="mapping-url">/{editorial-slug}</td>
+            <td>~500</td>
+          </tr>
+          <tr style="background:#FFF0EE;font-weight:800">
+            <td style="color:var(--accent-dark)!important;background:#FFF0EE!important">TOTAL</td>
+            <td style="background:#FFF0EE!important">All page types combined</td>
+            <td style="background:#FFF0EE!important">—</td>
+            <td style="background:#FFF0EE!important;color:var(--accent-dark)!important">~5,000-10,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH TRAJECTORY -->
+<section class="section" id="trajectory">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 5 · Growth trajectory</div>
+      <h2>What the <span class="serif">page inventory</span> looks like over 24 months</h2>
+      <p class="section-lede">Marketing pages plateau at ~500. Dynamic app-data pages compound with every event, community, venue, and day. This is the shape of the asset being built.</p>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">Cumulative indexable pages over 24 months</div>
+      <div class="chart-subtitle">Static pages (editorial + programmatic from current ontology) plateau. Dynamic pages (app-data-driven) compound.</div>
+
+      <svg class="chart" viewBox="0 0 820 420" style="max-width:100%">
+        <g stroke="#E5E9F2" stroke-width="1">
+          <line x1="70" y1="40" x2="70" y2="360"/>
+          <line x1="70" y1="360" x2="790" y2="360"/>
+          <line x1="70" y1="90" x2="790" y2="90" stroke-dasharray="3 3"/>
+          <line x1="70" y1="140" x2="790" y2="140" stroke-dasharray="3 3"/>
+          <line x1="70" y1="200" x2="790" y2="200" stroke-dasharray="3 3"/>
+          <line x1="70" y1="260" x2="790" y2="260" stroke-dasharray="3 3"/>
+          <line x1="70" y1="310" x2="790" y2="310" stroke-dasharray="3 3"/>
+        </g>
+        <g font-family="Inter" font-size="11" fill="#64748b">
+          <text x="60" y="44" text-anchor="end">10K</text>
+          <text x="60" y="94" text-anchor="end">7.5K</text>
+          <text x="60" y="144" text-anchor="end">5K</text>
+          <text x="60" y="204" text-anchor="end">2.5K</text>
+          <text x="60" y="264" text-anchor="end">1K</text>
+          <text x="60" y="314" text-anchor="end">500</text>
+          <text x="60" y="364" text-anchor="end">0</text>
+          <text x="25" y="200" text-anchor="middle" font-weight="600" fill="#0A1330" transform="rotate(-90 25 200)">Pages indexed</text>
+        </g>
+        <g font-family="Inter" font-size="11" fill="#64748b" text-anchor="middle">
+          <text x="100" y="380">M1</text>
+          <text x="160" y="380">M3</text>
+          <text x="220" y="380">M6</text>
+          <text x="310" y="380">M9</text>
+          <text x="400" y="380">M12</text>
+          <text x="490" y="380">M15</text>
+          <text x="580" y="380">M18</text>
+          <text x="670" y="380">M21</text>
+          <text x="760" y="380">M24</text>
+          <text x="430" y="405" text-anchor="middle" font-weight="600" fill="#0A1330">Month</text>
+        </g>
+
+        <!-- Phase backgrounds -->
+        <rect x="70" y="40" width="180" height="320" fill="#FFF0EE" opacity="0.3"/>
+        <text x="160" y="55" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#E54A3A" opacity="0.6">PHASE 1 · FOUNDATION</text>
+
+        <rect x="250" y="40" width="180" height="320" fill="#FEF3C7" opacity="0.3"/>
+        <text x="340" y="55" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#92400E" opacity="0.6">PHASE 2 · DYNAMIC LAUNCH</text>
+
+        <rect x="430" y="40" width="360" height="320" fill="#ECFDF5" opacity="0.3"/>
+        <text x="610" y="55" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#065F46" opacity="0.6">PHASE 3 · COMPOUNDING</text>
+
+        <!-- Static/editorial line (plateaus around 500-600) -->
+        <!-- M1:280 M3:300 M6:380 M9:450 M12:520 M15:540 M18:555 M24:580 -->
+        <path d="M 100,344 L 160,340 L 220,324 L 310,310 L 400,296 L 490,292 L 580,289 L 670,287 L 760,284"
+              fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6 4"/>
+
+        <!-- Dynamic line (explodes from M4 onward) -->
+        <!-- M1:0 M3:0 M4:20 M6:150 M9:800 M12:1800 M15:3200 M18:5000 M21:7200 M24:9500 -->
+        <path d="M 100,360 L 160,360 L 220,330 L 310,200 L 400,104 L 490,72 L 580,52 L 670,52 L 760,48"
+              fill="none" stroke="#FF6B5C" stroke-width="3.5"/>
+        <path d="M 100,360 L 160,360 L 220,330 L 310,200 L 400,104 L 490,72 L 580,52 L 670,52 L 760,48 L 760,360 L 100,360 Z"
+              fill="#FF6B5C" opacity="0.12"/>
+
+        <!-- Markers -->
+        <circle cx="220" cy="330" r="5" fill="#FF6B5C" stroke="white" stroke-width="2"/>
+        <text x="220" y="320" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#E54A3A">Dynamic ships</text>
+
+        <circle cx="400" cy="104" r="5" fill="#FF6B5C" stroke="white" stroke-width="2"/>
+        <text x="400" y="96" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#E54A3A">~1,800 pages</text>
+
+        <circle cx="760" cy="48" r="6" fill="#FF6B5C" stroke="white" stroke-width="2.5"/>
+        <text x="760" y="34" text-anchor="middle" font-family="Inter" font-size="11" font-weight="800" fill="#E54A3A">~9,500 pages</text>
+      </svg>
+
+      <div class="chart-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:#94A3B8"></span> Static content (editorial + programmatic ontology)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#FF6B5C;height:4px"></span> <strong>Dynamic app-data pages (compounding)</strong></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">What the curves tell us</div>
+      <p>The static content strategy (our current plan) peaks at about 580 pages by Month 24 — useful, but bounded by editorial velocity. The dynamic layer has no bound — it grows with events, communities, and activity. <strong>By Month 24, ~94% of indexable pages come from app data, not editorial.</strong> That's the asset. That's the moat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE OPTIONS -->
+<section class="section section-dark" id="architecture">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 6 · Architecture</div>
+      <h2>Three paths, <span class="serif">one recommended</span></h2>
+      <p class="section-lede">The architecture choice determines speed, scale, and maintenance. Each path has real tradeoffs — effort upfront vs scale ceiling vs complexity.</p>
+    </div>
+
+    <div class="arch-options">
+      <div class="arch">
+        <div class="arch-letter">A</div>
+        <h3>Headless subfolder</h3>
+        <p class="desc">Next.js or Astro serving /events/, /communities/, /venues/ via ISR. WordPress keeps marketing pages.</p>
+        <div class="arch-specs">
+          <div class="arch-spec"><span class="arch-spec-label">Build effort</span><span class="arch-spec-value">80-120 hours</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Monthly maintenance</span><span class="arch-spec-value">$1,500-2,500</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Scale ceiling</span><span class="arch-spec-value">Millions of pages</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Complexity</span><span class="arch-spec-value">Two stacks</span></div>
+        </div>
+        <div class="arch-pros-cons">
+          <div class="pro">+ Scales to millions, fast, proper SEO</div>
+          <div class="con">− Dev effort upfront, two-stack maintenance</div>
+        </div>
+      </div>
+
+      <div class="arch">
+        <div class="arch-letter">B</div>
+        <h3>WP plugin sync</h3>
+        <p class="desc">Custom WordPress plugin pulls from app API, creates custom post types. Single-stack.</p>
+        <div class="arch-specs">
+          <div class="arch-spec"><span class="arch-spec-label">Build effort</span><span class="arch-spec-value">40-60 hours</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Monthly maintenance</span><span class="arch-spec-value">$800-1,200</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Scale ceiling</span><span class="arch-spec-value">~5,000 pages</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Complexity</span><span class="arch-spec-value">Single stack</span></div>
+        </div>
+        <div class="arch-pros-cons">
+          <div class="pro">+ Single CMS, Elementor-compatible, cheapest</div>
+          <div class="con">− WP struggles at 5K+ dynamic pages, slower page gen</div>
+        </div>
+      </div>
+
+      <div class="arch recommended">
+        <div class="arch-letter">C</div>
+        <h3>Hybrid</h3>
+        <p class="desc">WordPress for editorial + programmatic ontology. Next.js ISR for /events/, /communities/, /venues/. Proxy joins both.</p>
+        <div class="arch-specs">
+          <div class="arch-spec"><span class="arch-spec-label">Build effort</span><span class="arch-spec-value">60-90 hours</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Monthly maintenance</span><span class="arch-spec-value">$1,200-1,800</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Scale ceiling</span><span class="arch-spec-value">Millions (dynamic side)</span></div>
+          <div class="arch-spec"><span class="arch-spec-label">Complexity</span><span class="arch-spec-value">Moderate — Cloudflare proxy</span></div>
+        </div>
+        <div class="arch-pros-cons">
+          <div class="pro">+ Each stack does what it's good at</div>
+          <div class="con">− Slightly more complex routing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UAE PRIVACY -->
+<section class="section" id="privacy">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 7 · UAE privacy + cultural guardrails</div>
+      <h2>What's public by default, what needs <span class="serif">opt-in</span>, what never goes on web</h2>
+      <p class="section-lede">The engineering is straightforward. The privacy architecture is where most brands get this wrong. UAE PDPL compliance + cultural context means default-private, explicit-consent for anything identifiable, and hard never-list for sensitive signals.</p>
+    </div>
+
+    <div class="privacy-grid">
+      <div class="priv-card default">
+        <div class="priv-level">Default public</div>
+        <h4>Event metadata</h4>
+        <ul>
+          <li>Event name + type</li>
+          <li>Date + duration</li>
+          <li>Venue + neighborhood</li>
+          <li>Anonymized attendee count ("15 attendees")</li>
+          <li>Event category tags</li>
+        </ul>
+      </div>
+
+      <div class="priv-card default">
+        <div class="priv-level">Default public</div>
+        <h4>Community metadata</h4>
+        <ul>
+          <li>Community name + topic</li>
+          <li>Member count (aggregate only)</li>
+          <li>Host username (not name/photo)</li>
+          <li>Recent activity signals (anonymized)</li>
+        </ul>
+      </div>
+
+      <div class="priv-card opt-in">
+        <div class="priv-level">Opt-in · user confirms</div>
+        <h4>Identifiable surfacing</h4>
+        <ul>
+          <li>Real names on host profiles</li>
+          <li>Member photos (face-blurred by default)</li>
+          <li>Quoted testimonials</li>
+          <li>Member-authored stories</li>
+          <li>Public attendee lists</li>
+        </ul>
+      </div>
+
+      <div class="priv-card opt-in">
+        <div class="priv-level">Opt-in · event-level</div>
+        <h4>Post-event content</h4>
+        <ul>
+          <li>Event recap photos (consent per attendee)</li>
+          <li>Video highlights</li>
+          <li>Guest-written event reviews</li>
+          <li>Attendee quotes</li>
+        </ul>
+      </div>
+
+      <div class="priv-card never">
+        <div class="priv-level">Never on web</div>
+        <h4>Sensitive signals</h4>
+        <ul>
+          <li>Direct messages / conversations</li>
+          <li>Member contact details</li>
+          <li>Member residential neighborhood (beyond city)</li>
+          <li>Political / religious identifiers</li>
+          <li>Age / nationality / marital status per individual</li>
+        </ul>
+      </div>
+
+      <div class="priv-card never">
+        <div class="priv-level">Never on web</div>
+        <h4>Cultural red lines</h4>
+        <ul>
+          <li>Anything that could conflict with UAE content norms</li>
+          <li>LGBTQ+ identifiable content without explicit opt-in + review</li>
+          <li>Content where alcohol / nightlife is the primary frame</li>
+          <li>Dating-framed member content (SureSpace is explicitly non-dating)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Right-to-be-forgotten</div>
+      <p>User deletes their SureSpace account → every exposed web page referencing them returns 410 Gone within 24 hours, and every image referencing them is purged. This is both PDPL-compliant and ethically necessary. Engineered in from day one, not retrofitted.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section section-alt" id="timeline">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 8 · Timeline</div>
+      <h2>When the <span class="serif">dynamic surface</span> ships</h2>
+      <p class="section-lede">This isn't Month 1 work. The foundation (ontology, schema, editorial, attribution) comes first. Dynamic surfacing begins once the base is stable.</p>
+    </div>
+
+    <div class="timeline-rail">
+      <div class="tl-months">
+        <div class="tl-month">M1</div><div class="tl-month">M2</div><div class="tl-month">M3</div>
+        <div class="tl-month">M4</div><div class="tl-month">M5</div><div class="tl-month">M6</div>
+        <div class="tl-month">M7</div><div class="tl-month">M8</div><div class="tl-month">M9</div>
+        <div class="tl-month">M10</div><div class="tl-month">M11</div><div class="tl-month">M12</div>
+      </div>
+
+      <div class="tl-bar">
+        <div class="tl-segment tl-phase-1">Architecture</div>
+        <div class="tl-segment tl-phase-1">Architecture</div>
+        <div class="tl-segment tl-phase-1">Spec</div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+      </div>
+      <div class="tl-label p1">Planning + architecture decision + API spec</div>
+
+      <div class="tl-bar">
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-phase-2">Build</div>
+        <div class="tl-segment tl-phase-2">Build</div>
+        <div class="tl-segment tl-phase-2">Events live</div>
+        <div class="tl-segment tl-phase-2">Communities</div>
+        <div class="tl-segment tl-phase-2">Venues</div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+      </div>
+      <div class="tl-label p2">Dynamic surface build + tier 1 launch (events, communities, venues)</div>
+
+      <div class="tl-bar">
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-empty"></div>
+        <div class="tl-segment tl-phase-3">Aggregation</div>
+        <div class="tl-segment tl-phase-3">Monthly recaps</div>
+        <div class="tl-segment tl-phase-3">Opt-in tier</div>
+        <div class="tl-segment tl-phase-3">Full ecosystem</div>
+      </div>
+      <div class="tl-label p3">Aggregation layer, monthly recaps, consented content surfacing</div>
+    </div>
+
+    <div class="callout" style="margin-top:28px">
+      <div class="callout-label">Why not Month 1?</div>
+      <p>Three reasons. <strong>First</strong>, it's premature to build a dynamic layer on top of an unclean foundation — zombie URLs, missing schema, no attribution tracking. Fix those first. <strong>Second</strong>, the SureSpace app team needs to build the public-facing API endpoints — estimate 4-6 weeks of their engineering for that alone. <strong>Third</strong>, we want to validate what's working (Month 1-3) before investing in volume. If friendship-cluster pages are converting well at Month 3, we know to prioritize event/community surfacing that reinforces that. If not, we pivot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ECONOMICS REVISED -->
+<section class="section" id="economics">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 9 · Economics</div>
+      <h2>How <span class="serif">10,000 pages</span> changes the breakeven math</h2>
+      <p class="section-lede">The current proposal's breakeven assumes 400-800 indexable pages and organic conversion rates from that base. A 10,000-page inventory changes the ceiling dramatically — not because conversion rate improves, but because the addressable query space multiplies.</p>
+    </div>
+
+    <div class="econ-grid">
+      <div class="econ-card">
+        <div class="econ-label">Current proposal — static only</div>
+        <div class="econ-value">AED <span class="accent">9,916</span><span style="font-size:18px;color:var(--ink-light);font-weight:500">/mo</span></div>
+        <div class="econ-sub">SEO + Web Dev retainer (current scope)</div>
+        <ul class="econ-list">
+          <li><span>Pages at Month 12</span><span>~450</span></li>
+          <li><span>Pages at Month 24</span><span>~580</span></li>
+          <li><span>Monthly breakeven</span><span>Month 11</span></li>
+          <li><span>Cumulative breakeven</span><span>Month 17</span></li>
+          <li><span>Organic ceiling (24mo)</span><span>8K visits/mo</span></li>
+        </ul>
+      </div>
+
+      <div class="econ-card new">
+        <div class="econ-label">Proposed add-on — dynamic surface</div>
+        <div class="econ-value">AED <span class="accent">9,916 + 5,500-7,500</span><span style="font-size:18px;color:var(--ink-light);font-weight:500">/mo</span></div>
+        <div class="econ-sub">Starting Month 4+ · builds + ongoing</div>
+        <ul class="econ-list">
+          <li><span>Pages at Month 12</span><span>~2,200</span></li>
+          <li><span>Pages at Month 24</span><span>~10,000</span></li>
+          <li><span>Monthly breakeven</span><span>Month 9-10</span></li>
+          <li><span>Cumulative breakeven</span><span>Month 14-16</span></li>
+          <li><span>Organic ceiling (24mo)</span><span>30-50K visits/mo</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:28px">
+      <div class="callout-label">How to think about the ROI</div>
+      <p>The add-on isn't a cost line — it's a capital-building investment. Ten thousand indexable pages is the difference between being a "marketing site with a blog" and being the <strong>product surface Google crawls every day</strong>. It's what turns SureSpace from content-marketing-agency-driven into a compounding growth machine. The static plan works; the dynamic plan compounds.</p>
+    </div>
+
+    <div class="econ-grid" style="margin-top:18px">
+      <div class="econ-card">
+        <div class="econ-label">One-time build investment</div>
+        <div class="econ-value">AED <span class="accent">22-30K</span></div>
+        <div class="econ-sub">Paid over Months 1-4, covers architecture + initial build</div>
+      </div>
+      <div class="econ-card">
+        <div class="econ-label">Ongoing (Month 5+)</div>
+        <div class="econ-value">AED <span class="accent">4,500-6,700</span><span style="font-size:18px;color:var(--ink-light);font-weight:500">/mo</span></div>
+        <div class="econ-sub">Sync maintenance, template iteration, schema updates, moderation tooling</div>
+      </div>
+    </div>
+
+    <p style="font-size:14px;color:var(--ink-light);margin-top:20px;line-height:1.6">
+      Worth noting: the SureSpace app team owns the API side of this. Our engineering covers the web consumption side. So the total program cost to SureSpace is <strong>TheProjectSEO's retainer + whatever SureSpace's own dev team spends on API endpoint work</strong> (estimated 40-80 hours at their team's rate). That's important context for the ROI math — it's not all on us.
+    </p>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="section section-alt" id="next">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 10 · Decision</div>
+      <h2>How we'd treat this in the <span class="serif">proposal</span></h2>
+      <p class="section-lede">Three paths for how this integrates with the current $2,700/mo proposal. Each is honest about what's bundled vs what's add-on.</p>
+    </div>
+
+    <div class="arch-options">
+      <div class="arch">
+        <div class="arch-letter">1</div>
+        <h3>Decide later (default)</h3>
+        <p class="desc">Sign the $2,700/mo engagement as proposed. Review dynamic layer at Month 3 Day-90 gate with full data.</p>
+        <div class="arch-pros-cons" style="margin-top:20px;padding-top:0;border:none">
+          <div class="pro">+ Zero added commitment, validate first</div>
+          <div class="con">− Delays compounding asset by 3 months</div>
+        </div>
+      </div>
+
+      <div class="arch recommended">
+        <div class="arch-letter">2</div>
+        <h3>Commit in phases</h3>
+        <p class="desc">Sign current engagement now. Plan add-on for Month 4. Budget reserved, architecture specced during Months 1-3.</p>
+        <div class="arch-pros-cons" style="margin-top:20px;padding-top:0;border:none">
+          <div class="pro">+ De-risks, matches real rollout needs</div>
+          <div class="con">− Slight coordination overhead</div>
+        </div>
+      </div>
+
+      <div class="arch">
+        <div class="arch-letter">3</div>
+        <h3>Bundled engagement</h3>
+        <p class="desc">Combine both at commitment. Higher monthly ($4,500-7,700) but single contract, single rhythm.</p>
+        <div class="arch-pros-cons" style="margin-top:20px;padding-top:0;border:none">
+          <div class="pro">+ One decision, compounding starts earlier</div>
+          <div class="con">− Higher upfront commitment</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:32px;font-size:16px;color:var(--ink);max-width:760px;line-height:1.7">
+      <strong>Our recommendation: Option 2.</strong> The current $2,700/mo proposal does legitimate work on its own — it's not diminished by this add-on. And the dynamic surface is genuinely dependent on clean foundations. Do the foundations first, ship the dynamic layer at Month 4 once the base is healthy. This is also better for your VC conversation — you want to show a clean growth curve, not a speculative bet.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">TheProjectSEO</div>
+      <div class="footer-contact">
+        <a href="mailto:aditya@theprojectseo.com">aditya@theprojectseo.com</a><br>
+        <a href="https://theprojectseo.com" target="_blank" style="color:rgba(255,255,255,.5)">theprojectseo.com</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      App-to-web architecture module, prepared as a proposal add-on for SureSpace. Volume estimates assume 4 events/day average, 100 active communities, 30 venue partners over 24 months. UAE PDPL compliance built in from day one.
+    </div>
+  </div>
+</footer>
+
+<script>
+const bar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  bar.style.width = pct + '%';
+}, { passive: true });
+</script>
+
+</body>
+</html>
