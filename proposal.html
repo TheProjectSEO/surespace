@@ -245,43 +245,135 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
 <section class="section" id="scope">
   <div class="section-inner">
     <div class="section-header">
-      <div class="section-eyebrow">Part 1 · Scope</div>
-      <h2>What's in the <span class="serif">engagement</span>, month after month</h2>
-      <p class="section-lede">Not 50 things spread thin — 12 things done well. Split across SEO/AEO/content and web dev so one retainer covers both sides of organic growth.</p>
+      <div class="section-eyebrow">Part 1 · Pricing + Scope</div>
+      <h2>One retainer. Four tiers. Every raise <span class="serif">earned</span>, not automatic.</h2>
+      <p class="section-lede"><strong>Value-based pricing.</strong> Start at AED 7,000/mo — a softer entry while we prove the work. Every 3-4 months we review against KPIs. Hit them → pricing steps up. Miss them → pricing stays. You never pay for work that isn't earning its keep, and we never cap our upside when we're genuinely delivering it.</p>
     </div>
 
-    <div class="chart-container">
-      <div class="chart-title">Monthly retainer breakdown</div>
-      <div class="chart-subtitle">$2,700 = $2,200 SEO + $500 Web Dev. Each side fully scoped below.</div>
-      <div class="donut-wrap">
-        <svg class="chart" viewBox="0 0 220 220" style="max-width:220px">
-          <!-- SEO slice: 81.5% -->
-          <circle cx="110" cy="110" r="80" fill="none" stroke="#FF6B5C" stroke-width="38" stroke-dasharray="409.7 502.7" transform="rotate(-90 110 110)"/>
-          <!-- Web dev slice: 18.5% -->
-          <circle cx="110" cy="110" r="80" fill="none" stroke="#0F1B4C" stroke-width="38" stroke-dasharray="93 502.7" stroke-dashoffset="-409.7" transform="rotate(-90 110 110)"/>
-          <text x="110" y="106" text-anchor="middle" font-family="Inter" font-size="28" font-weight="800" fill="#0A1330">$2,700</text>
-          <text x="110" y="128" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#64748b" letter-spacing="1" text-transform="uppercase">per month</text>
-        </svg>
-        <div class="donut-legend">
-          <div class="donut-legend-item">
-            <span class="donut-swatch" style="background:#FF6B5C"></span>
-            <div class="donut-label"><strong>$2,200 · SEO + AEO + Content</strong> <span class="sub">81.5% · AED 8,079 — strategy, content, schema, links, AEO, reporting</span></div>
+    <!-- Tiered pricing staircase -->
+    <div class="chart-container" style="margin-top:24px">
+      <div class="chart-title">The pricing staircase</div>
+      <div class="chart-subtitle">Four tiers · three KPI gates · terminal price at Month 11+. Gates are reviewed jointly, not imposed.</div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;position:relative">
+        <!-- Tier 1 -->
+        <div style="background:white;border:2px solid var(--accent);border-radius:var(--radius);padding:22px 20px;position:relative">
+          <div style="position:absolute;top:-10px;left:20px;background:var(--accent);color:white;font-size:10px;font-weight:800;letter-spacing:1px;padding:4px 10px;border-radius:100px">ENTRY</div>
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--ink-light);margin-bottom:6px;margin-top:4px">Months 1-4</div>
+          <div style="font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--ink);line-height:1">AED 7,000<span style="font-size:13px;color:var(--ink-light);font-weight:500">/mo</span></div>
+          <div style="font-size:13px;color:var(--ink-light);margin-top:12px;line-height:1.5">Softer entry. Full scope from day one. Gate 1 KPI review at Month 4.</div>
+        </div>
+
+        <!-- Tier 2 -->
+        <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--ink-light);margin-bottom:6px">Months 5-7</div>
+          <div style="font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--ink);line-height:1">AED 8,500<span style="font-size:13px;color:var(--ink-light);font-weight:500">/mo</span></div>
+          <div style="font-size:13px;color:var(--ink-light);margin-top:12px;line-height:1.5">Unlocked by Gate 1 KPIs. Velocity phase begins. Gate 2 review at Month 7.</div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--ink-light);margin-bottom:6px">Months 8-10</div>
+          <div style="font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--ink);line-height:1">AED 10,000<span style="font-size:13px;color:var(--ink-light);font-weight:500">/mo</span></div>
+          <div style="font-size:13px;color:var(--ink-light);margin-top:12px;line-height:1.5">Unlocked by Gate 2 KPIs. Content compounding phase. Gate 3 review at Month 10.</div>
+        </div>
+
+        <!-- Tier 4 -->
+        <div style="background:linear-gradient(135deg,#0F1B4C 0%,#050a1f 100%);color:white;border:1px solid var(--brand);border-radius:var(--radius);padding:22px 20px;position:relative">
+          <div style="position:absolute;top:-10px;left:20px;background:#10B981;color:white;font-size:10px;font-weight:800;letter-spacing:1px;padding:4px 10px;border-radius:100px">TERMINAL</div>
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:#FFB8AE;margin-bottom:6px;margin-top:4px">Month 11+</div>
+          <div style="font-size:32px;font-weight:800;letter-spacing:-1px;color:white;line-height:1">AED 12,500<span style="font-size:13px;color:rgba(255,255,255,.6);font-weight:500">/mo</span></div>
+          <div style="font-size:13px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.5">Unlocked by Gate 3 KPIs. Terminal price commensurate with compounding value delivered.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;padding:14px 18px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:var(--radius-sm);font-size:13.5px;color:var(--ink);line-height:1.55">
+        <strong style="color:var(--accent-dark)">Year 1 total: AED 108,500</strong> &nbsp;·&nbsp; Year 2 terminal annualized: AED 150,000 &nbsp;·&nbsp; Only increases if we earn them by hitting the KPIs below.
+      </div>
+    </div>
+
+    <!-- KPI Gates -->
+    <div class="chart-container" style="margin-top:28px">
+      <div class="chart-title">The three KPI gates</div>
+      <div class="chart-subtitle">Specific, measurable, tied to outcomes — not effort. Defined together before signing.</div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:24px">
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;font-weight:800;font-size:14px">1</span>
+            <div>
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent)">Gate 1 · End of Month 4</div>
+              <div style="font-size:14px;color:var(--ink);font-weight:600">Unlocks AED 8,500</div>
+            </div>
           </div>
-          <div class="donut-legend-item">
-            <span class="donut-swatch" style="background:#0F1B4C"></span>
-            <div class="donut-label"><strong>$500 · Web Development</strong> <span class="sub">18.5% · AED 1,836 — deployment, tech fixes, CRO, tracking, ASO coordination</span></div>
+          <ul class="scope-list" style="font-size:13px">
+            <li>UAE organic traffic ≥ 500/mo (2× baseline)</li>
+            <li>25+ indexable pages shipped</li>
+            <li>Schema deployed site-wide (all 7 types)</li>
+            <li>Attribution tracking live + GSC/GA4 wired</li>
+            <li>3+ keywords ranking in top 10</li>
+            <li>Events filling: 1st curated event via SEO-attributed attendee</li>
+          </ul>
+        </div>
+
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;font-weight:800;font-size:14px">2</span>
+            <div>
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent)">Gate 2 · End of Month 7</div>
+              <div style="font-size:14px;color:var(--ink);font-weight:600">Unlocks AED 10,000</div>
+            </div>
           </div>
+          <ul class="scope-list" style="font-size:13px">
+            <li>UAE organic traffic ≥ 1,200/mo (5× baseline)</li>
+            <li>Events consistently filling via organic</li>
+            <li>10-20 paid app installs from organic/mo</li>
+            <li>D7 retention ≥ 25% for organic cohort</li>
+            <li>3+ UAE DR 40+ authority backlinks</li>
+            <li>1+ AI Overview citation for target keyword</li>
+          </ul>
+        </div>
+
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;font-weight:800;font-size:14px">3</span>
+            <div>
+              <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent)">Gate 3 · End of Month 10</div>
+              <div style="font-size:14px;color:var(--ink);font-weight:600">Unlocks AED 12,500 (terminal)</div>
+            </div>
+          </div>
+          <ul class="scope-list" style="font-size:13px">
+            <li>UAE organic traffic ≥ 2,500/mo</li>
+            <li>3+ paid subscribers/mo from organic</li>
+            <li>D30 retention ≥ 15% for organic cohort</li>
+            <li>10+ DR 40+ UAE backlinks earned</li>
+            <li>3+ AI Overview citations</li>
+            <li>Monthly MRR from organic ≥ retainer within 4 months</li>
+          </ul>
         </div>
       </div>
     </div>
 
+    <!-- Founder quote pullout -->
+    <div style="margin-top:32px;padding:28px 32px;background:linear-gradient(135deg,#0F1B4C 0%,#050a1f 100%);color:white;border-radius:var(--radius);position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(255,107,92,.15),transparent 60%);pointer-events:none"></div>
+      <div style="position:relative;z-index:1">
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);margin-bottom:12px">Anish's framing — from the 18-Apr call</div>
+        <blockquote style="font-family:'Instrument Serif',serif;font-style:italic;font-size:22px;line-height:1.4;letter-spacing:-.5px;color:white;margin:0;max-width:800px">"The website should be a funnel for the app. The event system is a KPI I would measure because if all those dinners, high-intent users are coming in through SEO and people are really going to those dinners, then that's covering our cost."</blockquote>
+      </div>
+    </div>
+
+    <!-- Scope cards -->
+    <h3 style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.5px;margin-top:40px;margin-bottom:14px">What's <span class="serif" style="font-style:italic;color:var(--accent)">inside</span> that retainer — every tier.</h3>
+    <p style="font-size:15px;color:var(--ink-light);line-height:1.65;margin-bottom:24px">The same scope at every tier. You don't pay separately for content, links, or web dev. Everything is bundled. Scope is <strong style="color:var(--ink)">web only</strong> — your in-house dev team handles the app.</p>
+
     <div class="scope-grid">
       <div class="scope-card primary">
-        <span class="scope-card-tag">Primary · $2,200 / mo</span>
-        <h3>SEO + AEO + Content</h3>
-        <div class="scope-card-price">8-10 pages/month · weekly cadence · monthly strategy review</div>
+        <span class="scope-card-tag">Included · every tier</span>
+        <h3>Content + SEO + AEO + Links</h3>
+        <div class="scope-card-price">8-10 pages/mo · weekly cadence · monthly strategy review</div>
         <ul class="scope-list">
-          <li><strong>Strategy:</strong> Execute the 9-cluster topical ontology (Friendship + Events + Wingman AI priority)</li>
+          <li><strong>Strategy:</strong> 9-cluster topical ontology (Friendship + Events + Wingman AI priority)</li>
           <li><strong>Content:</strong> 2-3 editorial pillars/spokes · 4-5 programmatic · 1-2 Wingman AI pre-launch pieces · 1 comparison/listicle per month</li>
           <li><strong>Schema:</strong> MobileApplication · FAQPage · Organization · Article · Person · Event · BreadcrumbList</li>
           <li><strong>AEO:</strong> Citation capsules on every editorial · LLM monitoring · FAQ schema site-wide</li>
@@ -293,9 +385,9 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
       </div>
 
       <div class="scope-card">
-        <span class="scope-card-tag">Secondary · $500 / mo</span>
+        <span class="scope-card-tag">Included · web only</span>
         <h3>Web Development</h3>
-        <div class="scope-card-price">Deployment + CRO + tracking · coordinated with SEO</div>
+        <div class="scope-card-price">Web side of product · your in-house devs own app side</div>
         <ul class="scope-list">
           <li><strong>Schema deployment</strong> to WP + Elementor</li>
           <li><strong>Technical SEO fixes</strong> (Core Web Vitals, redirects, canonical)</li>
@@ -307,6 +399,11 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
           <li><strong>ASO coordination</strong> once App Store Connect access granted</li>
         </ul>
       </div>
+    </div>
+
+    <!-- Out of scope -->
+    <div style="margin-top:28px;padding:20px 24px;background:var(--bg);border:1px dashed var(--border);border-radius:var(--radius);font-size:14px;color:var(--ink-light);line-height:1.6">
+      <strong style="color:var(--ink);font-weight:700">What's NOT in scope:</strong> App-side engineering (your in-house team handles) · Paid media management · Product strategy / design · Customer support / community moderation. Happy to scope any of these separately if the need arises.
     </div>
   </div>
 </section>
@@ -350,19 +447,20 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
             <th style="text-align:left">Scenario</th>
             <th>ARPU</th>
             <th>Churn</th>
-            <th>M12 traffic target</th>
+            <th>M12 UAE traffic</th>
             <th>M12 new paid/mo</th>
             <th>Monthly BE</th>
             <th>Cumulative BE</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td style="text-align:left">Base <span style="font-size:11px;color:var(--ink-light);font-weight:400">(the floor)</span></td><td>204</td><td>10%</td><td>2,500</td><td>6</td><td>Month 17</td><td>Month 24</td></tr>
-          <tr class="milestone"><td style="text-align:left"><strong>Target · our commitment</strong></td><td><strong>213</strong></td><td><strong>9%</strong></td><td><strong>3,500</strong></td><td><strong>11</strong></td><td><strong>Month 13</strong></td><td><strong>Month 20</strong></td></tr>
-          <tr><td style="text-align:left">Stretch <span style="font-size:11px;color:var(--ink-light);font-weight:400">(if execution clicks)</span></td><td>224</td><td>7%</td><td>5,500</td><td>17</td><td>Month 11</td><td>Month 17</td></tr>
+          <tr><td style="text-align:left">Base <span style="font-size:11px;color:var(--ink-light);font-weight:400">(if gates are missed — pricing stays at AED 7K)</span></td><td>204</td><td>10%</td><td>2,500</td><td>6</td><td>Month 13</td><td>Month 21</td></tr>
+          <tr class="milestone"><td style="text-align:left"><strong>Target · our commitment</strong> <span style="font-size:11px;color:var(--accent-dark);font-weight:400">(tiered: 7K→8.5K→10K→12.5K)</span></td><td><strong>213</strong></td><td><strong>9%</strong></td><td><strong>3,500</strong></td><td><strong>11</strong></td><td><strong>Month 14</strong></td><td><strong>Month 20</strong></td></tr>
+          <tr><td style="text-align:left">Stretch <span style="font-size:11px;color:var(--ink-light);font-weight:400">(if execution clicks — same tiered pricing)</span></td><td>224</td><td>7%</td><td>5,500</td><td>17</td><td>Month 12</td><td>Month 17</td></tr>
         </tbody>
       </table>
     </div>
+    <p style="font-size:12.5px;color:var(--ink-light);margin-top:10px;line-height:1.5;font-style:italic">Monthly BE = when MRR from SEO-attributed subs exceeds that month's retainer. Cumulative BE = when accumulated MRR has paid back all retainer fees. Target assumes tiered pricing with all gates hit — if gates miss, pricing stays lower (Base row models this).</p>
 
     <!-- Breakeven line chart -->
     <div class="chart-container" style="margin-top:32px">
@@ -422,31 +520,38 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
         </g>
         <text x="465" y="425" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#0A1330">Month</text>
 
-        <!-- BASE scenario (dashed gray) - cumulative BE at M24 -->
-        <path d="M 110,286.6 L 140.9,293.2 L 171.7,299.8 L 202.6,306.3 L 233.5,312.7 L 264.3,318.8 L 295.2,324.6 L 326.1,330.2 L 357.0,335.4 L 387.8,340.3 L 418.7,344.6 L 449.6,348.4 L 480.4,351.4 L 511.3,353.7 L 542.2,354.9 L 573.0,355.0 L 603.9,353.8 L 634.8,350.8 L 665.7,345.9 L 696.5,338.7 L 727.4,328.6 L 758.3,315.2 L 789.1,297.6 L 820,275.3"
+        <!-- BASE scenario (dashed gray, AED 7K flat retainer if gates miss) - cumulative BE ~M21 -->
+        <path d="M 110,282.3 L 140.9,285.9 L 171.7,289.4 L 202.6,292.8 L 233.5,296.1 L 264.3,299.2 L 295.2,302.2 L 326.1,305.0 L 357.0,307.7 L 387.8,310.1 L 418.7,312.3 L 449.6,314.2 L 480.4,315.6 L 511.3,316.7 L 542.2,317.3 L 573.0,317.2 L 603.9,316.4 L 634.8,314.7 L 665.7,311.9 L 696.5,307.7 L 727.4,301.8 L 758.3,293.8 L 789.1,283.1 L 820,269.0"
               fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="8 4"/>
 
-        <!-- TARGET scenario (bold coral) - monthly BE M13, cumulative BE M20 -->
-        <path d="M 110,286.6 L 140.9,293.2 L 171.7,299.7 L 202.6,306.0 L 233.5,312.1 L 264.3,317.8 L 295.2,323.0 L 326.1,327.7 L 357.0,331.6 L 387.8,334.8 L 418.7,337.0 L 449.6,338.1 L 480.4,337.8 L 511.3,335.9 L 542.2,332.0 L 573.0,325.8 L 603.9,316.9 L 634.8,304.8 L 665.7,288.7 L 696.5,267.9 L 727.4,241.6 L 758.3,208.5 L 789.1,167.4 L 820,116.7"
+        <!-- TARGET scenario (bold coral, tiered retainer 7K→8.5K→10K→12.5K) - monthly BE M14, cumulative BE M20 -->
+        <path d="M 110,286.0 L 140.9,292.0 L 171.7,297.8 L 202.6,303.5 L 233.5,310.1 L 264.3,316.2 L 295.2,321.7 L 326.1,327.7 L 357.0,332.9 L 387.8,337.0 L 418.7,342.1 L 449.6,345.7 L 480.4,347.5 L 511.3,347.2 L 542.2,344.5 L 573.0,338.8 L 603.9,329.5 L 634.8,316.1 L 665.7,297.7 L 696.5,273.2 L 727.4,241.5 L 758.3,201.3 L 789.1,150.6 L 820,87.6"
               fill="none" stroke="#FF6B5C" stroke-width="3.5"/>
 
-        <!-- STRETCH scenario (green) - clipped at top when going above +300K -->
-        <path d="M 110,286.6 L 140.9,293.2 L 171.7,299.7 L 202.6,305.9 L 233.5,311.6 L 264.3,316.8 L 295.2,321.2 L 326.1,324.6 L 357.0,326.7 L 387.8,327.4 L 418.7,326.3 L 449.6,323.3 L 480.4,317.9 L 511.3,309.7 L 542.2,298.1 L 573.0,282.5 L 603.9,262.2 L 634.8,236.2 L 665.7,203.3 L 696.5,162.3 L 727.4,111.6 L 758.3,80"
+        <!-- STRETCH scenario (green dashed, same tiered retainer, but higher acquisition) -->
+        <path d="M 110,286.0 L 140.9,292.0 L 171.7,297.8 L 202.6,303.4 L 233.5,309.6 L 264.3,315.2 L 295.2,319.8 L 326.1,324.2 L 357.0,327.1 L 387.8,329.0 L 418.7,331.5 L 449.6,331.0 L 480.4,327.3 L 511.3,319.9 L 542.2,308.0 L 573.0,291.0 L 603.9,269.5 L 634.8,242.6 L 665.7,209.0 L 696.5,167.1 L 727.4,115.4 L 758.3,80"
               fill="none" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6 2"/>
-        <!-- Stretch continues off-chart — arrow indicates direction -->
         <polygon points="752,80 762,75 762,85" fill="#10B981"/>
         <text x="770" y="77" font-family="Inter" font-size="10" font-weight="600" fill="#065F46" font-style="italic">(continues up)</text>
 
-        <!-- Target breakeven markers: M13 monthly, M20 cumulative -->
-        <line x1="481" y1="80" x2="481" y2="380" stroke="#FF6B5C" stroke-width="1" stroke-dasharray="3 4" opacity="0.45"/>
+        <!-- Target breakeven markers: M14 monthly, M20 cumulative -->
+        <line x1="511" y1="80" x2="511" y2="380" stroke="#FF6B5C" stroke-width="1" stroke-dasharray="3 4" opacity="0.45"/>
         <line x1="666" y1="80" x2="666" y2="380" stroke="#FF6B5C" stroke-width="1" stroke-dasharray="3 4" opacity="0.45"/>
 
         <!-- Marker labels (above plot, no overlap) -->
-        <rect x="423" y="44" width="116" height="26" rx="5" fill="#FFF0EE" stroke="#FF6B5C" stroke-width="1"/>
-        <text x="481" y="61" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#E54A3A">Monthly BE · M13</text>
+        <rect x="453" y="44" width="116" height="26" rx="5" fill="#FFF0EE" stroke="#FF6B5C" stroke-width="1"/>
+        <text x="511" y="61" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#E54A3A">Monthly BE · M14</text>
 
         <rect x="604" y="44" width="124" height="26" rx="5" fill="#FFF0EE" stroke="#FF6B5C" stroke-width="1"/>
         <text x="666" y="61" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#E54A3A">Cumulative BE · M20</text>
+
+        <!-- Gate markers for pricing tier changes -->
+        <line x1="203" y1="330" x2="203" y2="380" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+        <text x="203" y="395" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#059669">G1 · 8.5K</text>
+        <line x1="295" y1="330" x2="295" y2="380" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+        <text x="295" y="395" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#059669">G2 · 10K</text>
+        <line x1="388" y1="330" x2="388" y2="380" stroke="#10B981" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+        <text x="388" y="395" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#059669">G3 · 12.5K</text>
 
         <!-- Zone labels — positioned in safe corners -->
         <rect x="128" y="330" width="120" height="22" rx="5" fill="#94A3B8" opacity="0.15"/>
@@ -469,25 +574,28 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
 
     <!-- TARGET scenario table -->
     <div style="margin-top:32px">
-      <div class="chart-title">Target scenario — month-by-month (AED)</div>
-      <div class="chart-subtitle">From M13, every month's MRR exceeds the retainer. From M20, all accumulated investment is paid back in full. By M24, every AED going in is ~8.7× multiplied by the paid-sub base we've built.</div>
+      <div class="chart-title">Target scenario — month-by-month with tiered retainer (AED)</div>
+      <div class="chart-subtitle">Retainer steps up at Gate reviews (M5, M8, M11). From M14, every month's MRR exceeds retainer. From M20, all accumulated investment is paid back. By M24, every AED in compounds ~7× against the paid-sub base built.</div>
       <div class="breakeven-table-wrap">
         <table class="breakeven">
           <thead>
-            <tr><th>Month</th><th>New Paid Subs</th><th>Active Subs</th><th>MRR (AED)</th><th>Net / month</th><th>Cumulative Net</th></tr>
+            <tr><th>Month</th><th>Retainer</th><th>New Subs</th><th>Active Subs</th><th>MRR</th><th>Net / month</th><th>Cumulative Net</th></tr>
           </thead>
           <tbody>
-            <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>-9,916</td><td>-9,916</td></tr>
-            <tr><td>3</td><td>1</td><td>1</td><td>213</td><td>-9,703</td><td>-29,535</td></tr>
-            <tr><td>6</td><td>3</td><td>6</td><td>1,364</td><td>-8,552</td><td>-56,716</td></tr>
-            <tr><td>9</td><td>6</td><td>19</td><td>3,980</td><td>-5,936</td><td>-77,422</td></tr>
-            <tr><td>12</td><td>11</td><td>39</td><td>8,322</td><td>-1,594</td><td>-87,165</td></tr>
-            <tr class="milestone"><td>13</td><td>13</td><td>49</td><td>10,384</td><td>+468</td><td>-86,697 · monthly BE</td></tr>
-            <tr><td>15</td><td>19</td><td>74</td><td>15,718</td><td>+5,802</td><td>-77,988</td></tr>
-            <tr><td>18</td><td>33</td><td>132</td><td>28,170</td><td>+18,254</td><td>-37,137</td></tr>
-            <tr class="milestone"><td>20</td><td>47</td><td>193</td><td>41,042</td><td>+31,126</td><td>+18,103 · cumulative BE</td></tr>
-            <tr><td>22</td><td>68</td><td>279</td><td>59,495</td><td>+49,579</td><td>+107,203</td></tr>
-            <tr style="background:linear-gradient(90deg,#FFF0EE 0%,#FFE5E2 100%);font-weight:700"><td><strong>24</strong></td><td><strong>98</strong></td><td><strong>404</strong></td><td><strong>86,000</strong></td><td><strong>+76,084</strong></td><td><strong>+244,920</strong></td></tr>
+            <tr><td>1</td><td>7,000</td><td>0</td><td>0</td><td>0</td><td>-7,000</td><td>-7,000</td></tr>
+            <tr><td>3</td><td>7,000</td><td>1</td><td>1</td><td>213</td><td>-6,787</td><td>-20,787</td></tr>
+            <tr style="background:#ECFDF5;font-weight:600"><td>4</td><td>7,000</td><td>1</td><td>2</td><td>407</td><td>-6,593</td><td>-27,380 · Gate 1 review</td></tr>
+            <tr><td>5</td><td>8,500</td><td>2</td><td>4</td><td>796</td><td>-7,704</td><td>-35,084</td></tr>
+            <tr style="background:#ECFDF5;font-weight:600"><td>7</td><td>8,500</td><td>4</td><td>10</td><td>2,093</td><td>-6,407</td><td>-48,628 · Gate 2 review</td></tr>
+            <tr><td>9</td><td>10,000</td><td>6</td><td>19</td><td>3,980</td><td>-6,020</td><td>-61,678</td></tr>
+            <tr style="background:#ECFDF5;font-weight:600"><td>10</td><td>10,000</td><td>7</td><td>24</td><td>5,113</td><td>-4,887</td><td>-66,565 · Gate 3 review</td></tr>
+            <tr><td>11</td><td>12,500</td><td>9</td><td>31</td><td>6,570</td><td>-5,930</td><td>-72,495</td></tr>
+            <tr><td>13</td><td>12,500</td><td>13</td><td>49</td><td>10,384</td><td>-2,116</td><td>-78,789</td></tr>
+            <tr class="milestone"><td>14</td><td>12,500</td><td>16</td><td>60</td><td>12,824</td><td>+324</td><td>-78,466 · monthly BE</td></tr>
+            <tr><td>17</td><td>12,500</td><td>27</td><td>109</td><td>23,268</td><td>+10,768</td><td>-57,818</td></tr>
+            <tr class="milestone"><td>20</td><td>12,500</td><td>47</td><td>193</td><td>41,042</td><td>+28,542</td><td>+7,923 · cumulative BE</td></tr>
+            <tr><td>22</td><td>12,500</td><td>68</td><td>279</td><td>59,495</td><td>+46,995</td><td>+91,855</td></tr>
+            <tr style="background:linear-gradient(90deg,#FFF0EE 0%,#FFE5E2 100%);font-weight:700"><td><strong>24</strong></td><td><strong>12,500</strong></td><td><strong>98</strong></td><td><strong>404</strong></td><td><strong>86,000</strong></td><td><strong>+73,500</strong></td><td><strong>+224,404</strong></td></tr>
           </tbody>
         </table>
       </div>
@@ -552,25 +660,32 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
         </g>
         <text x="460" y="325" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#0A1330">Month</text>
 
-        <!-- Retainer horizontal line — AED 9,916 → y = 40 + 90084/100K × 240 = 256 -->
-        <line x1="100" y1="256" x2="820" y2="256" stroke="#FF6B5C" stroke-width="2" stroke-dasharray="6 4"/>
-        <rect x="714" y="241" width="106" height="22" rx="5" fill="#FFF0EE" stroke="#FF6B5C" stroke-width="1"/>
-        <text x="767" y="256" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#E54A3A">Retainer 9,916</text>
+        <!-- Retainer STEP FUNCTION: 7K (M1-4), 8.5K (M5-7), 10K (M8-10), 12.5K (M11+)
+             Y values: 7K→263.2, 8.5K→259.6, 10K→256, 12.5K→250
+             X boundaries: M4/5 at 225, M7/8 at 319, M10/11 at 413 -->
+        <path d="M 100,263.2 L 225,263.2 L 225,259.6 L 319,259.6 L 319,256 L 413,256 L 413,250 L 820,250"
+              fill="none" stroke="#FF6B5C" stroke-width="2" stroke-dasharray="6 4"/>
+
+        <!-- Retainer step annotations -->
+        <text x="162" y="258" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#E54A3A">7K</text>
+        <text x="272" y="254" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#E54A3A">8.5K</text>
+        <text x="366" y="250" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#E54A3A">10K</text>
+        <rect x="700" y="235" width="118" height="22" rx="5" fill="#FFF0EE" stroke="#FF6B5C" stroke-width="1"/>
+        <text x="759" y="250" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#E54A3A">Retainer · 12,500</text>
 
         <!-- MRR curve (Target scenario).
-             Data→Y: M1:280(0), M3:279.5(213), M6:276.7(1364), M9:270.4(3980),
-             M12:260(8322), M13:255.1(10384), M15:242.3(15718), M17:224.2(23268),
-             M18:212.4(28170), M20:181.5(41042), M22:137.2(59495), M24:73.6(86000) -->
-        <path d="M 100,280 L 131,279.8 L 163,279.5 L 194,279 L 225,278.1 L 257,276.7 L 288,275.0 L 319,272.9 L 350,270.4 L 381,267.7 L 413,264.2 L 444,260 L 476,255.1 L 507,249.3 L 538,242.3 L 570,233.9 L 601,224.2 L 632,212.4 L 663,198.3 L 695,181.5 L 726,161.6 L 757,137.2 L 789,108.3 L 820,73.6 L 820,280 L 100,280 Z"
+             Data→Y: M1:0→280, M4:407→279, M7:2093→274.9, M10:5113→267.7, M13:10384→255.1,
+             M14:12824→249.2, M17:23268→224.2, M20:41042→181.5, M22:59495→137.2, M24:86000→73.6 -->
+        <path d="M 100,280 L 131,279.8 L 163,279.5 L 194,279 L 225,278.1 L 257,276.7 L 288,274.9 L 319,272.9 L 350,270.4 L 381,267.7 L 413,264.2 L 444,260 L 476,255.1 L 507,249.2 L 538,242.3 L 570,234.0 L 601,224.2 L 632,212.4 L 663,198.3 L 695,181.5 L 726,161.6 L 757,137.2 L 789,108.3 L 820,73.6 L 820,280 L 100,280 Z"
               fill="url(#mrrArea)"/>
-        <path d="M 100,280 L 131,279.8 L 163,279.5 L 194,279 L 225,278.1 L 257,276.7 L 288,275.0 L 319,272.9 L 350,270.4 L 381,267.7 L 413,264.2 L 444,260 L 476,255.1 L 507,249.3 L 538,242.3 L 570,233.9 L 601,224.2 L 632,212.4 L 663,198.3 L 695,181.5 L 726,161.6 L 757,137.2 L 789,108.3 L 820,73.6"
+        <path d="M 100,280 L 131,279.8 L 163,279.5 L 194,279 L 225,278.1 L 257,276.7 L 288,274.9 L 319,272.9 L 350,270.4 L 381,267.7 L 413,264.2 L 444,260 L 476,255.1 L 507,249.2 L 538,242.3 L 570,234.0 L 601,224.2 L 632,212.4 L 663,198.3 L 695,181.5 L 726,161.6 L 757,137.2 L 789,108.3 L 820,73.6"
               fill="none" stroke="#10B981" stroke-width="3"/>
 
-        <!-- M13 crossover marker (MRR crosses retainer line) -->
-        <circle cx="476" cy="255.1" r="7" fill="white" stroke="#0A1330" stroke-width="2.5"/>
-        <line x1="476" y1="255.1" x2="420" y2="212" stroke="#0A1330" stroke-width="1" opacity="0.4"/>
-        <rect x="334" y="196" width="86" height="26" rx="5" fill="#0A1330"/>
-        <text x="377" y="213" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="white">M13 crossover</text>
+        <!-- M14 crossover marker (MRR crosses retainer line) -->
+        <circle cx="507" cy="249.2" r="7" fill="white" stroke="#0A1330" stroke-width="2.5"/>
+        <line x1="507" y1="249.2" x2="450" y2="205" stroke="#0A1330" stroke-width="1" opacity="0.4"/>
+        <rect x="360" y="190" width="92" height="26" rx="5" fill="#0A1330"/>
+        <text x="406" y="207" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="white">M14 crossover</text>
 
         <!-- M24 endpoint callout -->
         <circle cx="820" cy="73.6" r="8" fill="white" stroke="#10B981" stroke-width="3"/>
@@ -578,7 +693,7 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
         <text x="756" y="61" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#065F46">M24 · AED 86K MRR</text>
       </svg>
       <div class="chart-legend">
-        <div class="legend-item"><span class="legend-dot" style="background:#FF6B5C"></span> Monthly retainer (flat at AED 9,916)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#FF6B5C"></span> Monthly retainer — step-function: 7K (M1-4) · 8.5K (M5-7) · 10K (M8-10) · 12.5K (M11+)</div>
         <div class="legend-item"><span class="legend-dot" style="background:#10B981"></span> SEO-attributed MRR (compounds with active-sub base)</div>
       </div>
     </div>
@@ -606,8 +721,8 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
           </div>
           <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-sm);padding:20px 22px">
             <div style="font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-bottom:6px">ROI ratio</div>
-            <div style="font-size:32px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1">8.7×</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">MRR ÷ retainer</div>
+            <div style="font-size:32px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1">6.9×</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">MRR ÷ retainer (at terminal 12,500)</div>
           </div>
           <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-sm);padding:20px 22px">
             <div style="font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-bottom:6px">Annualized run-rate</div>
@@ -616,12 +731,12 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
           </div>
           <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-sm);padding:20px 22px">
             <div style="font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-bottom:6px">Monthly net contribution</div>
-            <div style="font-size:32px;font-weight:800;color:white;letter-spacing:-1px;line-height:1">+AED 76K</div>
+            <div style="font-size:32px;font-weight:800;color:white;letter-spacing:-1px;line-height:1">+AED 73K</div>
             <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">straight to SureSpace's bottom line</div>
           </div>
           <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-sm);padding:20px 22px">
             <div style="font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-bottom:6px">Cumulative net</div>
-            <div style="font-size:32px;font-weight:800;color:white;letter-spacing:-1px;line-height:1">+AED 245K</div>
+            <div style="font-size:32px;font-weight:800;color:white;letter-spacing:-1px;line-height:1">+AED 224K</div>
             <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px">all prior investment paid back, plus profit</div>
           </div>
         </div>
