@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>SureSpace — Content Strategy & Ontology | TheProjectSEO</title>
+<meta name="description" content="Semantic ontology (L0-L4), 9 L1 pillar clusters, 1,116-page programmatic plan, 12-month content calendar, differentiation framework.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--brand:#0F1B4C;--brand-dark:#091238;--brand-darker:#050a1f;--brand-soft:#EDF0FA;--accent:#FF6B5C;--accent-dark:#E54A3A;--accent-soft:#FFF0EE;--ink:#0A1330;--ink-light:#64748b;--ink-lighter:#94a3b8;--bg:#F7F9FC;--bg-alt:#FFFFFF;--border:#E5E9F2;--border-soft:#EEF1F7;--success:#10B981;--success-soft:#ECFDF5;--warning:#F59E0B;--radius:12px;--radius-sm:8px;--radius-lg:20px;--shadow-sm:0 1px 2px rgba(10,19,48,.04);--shadow:0 4px 12px rgba(10,19,48,.06);--shadow-lg:0 20px 40px rgba(10,19,48,.10);--dot-grid:radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+.handwritten{font-family:'Caveat',cursive;font-weight:500}
+a{color:var(--accent);text-decoration:none;transition:color .15s}
+a:hover{text-decoration:underline}
+code,.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.92em}
+
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:transparent;pointer-events:none}
+.progress-bar{height:100%;background:var(--accent);width:0%;transition:width .06s linear}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.2px}
+.nav-brand-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav-links{display:flex;gap:2px}
+.nav-link{padding:7px 11px;font-size:13px;font-weight:500;color:var(--ink-light);border-radius:6px;transition:all .15s}
+.nav-link:hover,.nav-link.active{background:var(--brand-soft);color:var(--brand);text-decoration:none}
+.nav-link.active{font-weight:600}
+.nav-cta{padding:8px 16px;background:var(--accent);color:white;border-radius:100px;font-size:13px;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--accent-dark);text-decoration:none;transform:translateY(-1px)}
+@media (max-width:960px){.nav-links{display:none}}
+
+.hero{background:var(--dot-grid) 0 0/24px 24px,radial-gradient(ellipse at top right,rgba(255,107,92,.18),transparent 60%),radial-gradient(ellipse at bottom left,rgba(15,27,76,.4),transparent 60%),linear-gradient(135deg,var(--brand-dark) 0%,var(--brand-darker) 100%);color:white;padding:88px 24px 72px;position:relative;overflow:hidden}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:100px;background:rgba(255,107,92,.15);color:#FFB8AE;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 1.8s ease-in-out infinite}
+.hero h1{font-size:clamp(36px,5vw,56px);font-weight:800;letter-spacing:-1.8px;line-height:1.05;margin-bottom:20px;max-width:940px}
+.hero h1 .serif{font-weight:400;letter-spacing:-1.4px;color:var(--accent);font-style:italic}
+.hero-sub{font-size:clamp(16px,1.7vw,20px);color:rgba(255,255,255,.78);max-width:820px;line-height:1.55;margin-bottom:28px}
+
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:36px;max-width:980px}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:18px 20px;border-radius:var(--radius);backdrop-filter:blur(10px)}
+.stat-value{font-size:30px;font-weight:800;letter-spacing:-1px;color:white;line-height:1}
+.stat-value .accent{color:var(--accent);font-family:'Instrument Serif',serif;font-weight:400;font-style:italic}
+.stat-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px;margin-top:6px;font-weight:500}
+
+.section{padding:88px 24px;position:relative}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-alt{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.section-dark{background:var(--brand-dark);color:rgba(255,255,255,.9);background-image:var(--dot-grid),linear-gradient(135deg,var(--brand-dark) 0%,var(--brand-darker) 100%);background-size:28px 28px,100% 100%}
+.section-header{margin-bottom:44px;max-width:820px}
+.section-eyebrow{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:inline-flex;align-items:center;gap:10px}
+.section-eyebrow::after{content:'';height:1px;width:36px;background:var(--accent);opacity:.4}
+.section h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-1.2px;line-height:1.1;margin-bottom:18px;color:var(--ink)}
+.section h2 .serif{font-weight:400;letter-spacing:-1px;color:var(--accent);font-style:italic}
+.section-dark h2{color:white}
+.section-dark .section-eyebrow{color:var(--accent)}
+.section-lede{font-size:17px;color:var(--ink-light);line-height:1.65}
+.section-dark .section-lede{color:rgba(255,255,255,.72)}
+
+/* ONTOLOGY PYRAMID */
+.ontology-pyramid{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:40px 32px;margin-top:24px}
+.pyramid-layer{display:grid;grid-template-columns:110px 1fr 200px;gap:20px;align-items:center;padding:14px 16px;border-radius:var(--radius-sm);margin-bottom:8px;transition:all .25s}
+@media (max-width:768px){.pyramid-layer{grid-template-columns:1fr;gap:6px}}
+.pyramid-layer:hover{background:var(--bg)}
+.pyramid-layer.L0{background:linear-gradient(135deg,#FF6B5C 0%,#E54A3A 100%);color:white;border-radius:var(--radius);padding:22px 24px}
+.pyramid-layer.L0 .layer-code{background:rgba(255,255,255,.2);color:white}
+.pyramid-layer.L0 .layer-desc{color:rgba(255,255,255,.85)}
+.pyramid-layer.L0 .layer-count{color:white;font-weight:700}
+.pyramid-layer.L1{background:var(--accent-soft)}
+.layer-code{background:var(--brand-soft);color:var(--brand);padding:8px 14px;border-radius:var(--radius-sm);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;text-align:center}
+.layer-name{font-weight:700;font-size:16px;color:var(--ink);margin-bottom:4px;letter-spacing:-.2px}
+.layer-desc{font-size:13.5px;color:var(--ink-light);line-height:1.5}
+.layer-count{font-size:14px;font-weight:600;color:var(--accent-dark);text-align:right;font-variant-numeric:tabular-nums}
+.pyramid-layer.L0 .layer-name{color:white;font-size:18px}
+.pyramid-layer.L0 .layer-code{font-size:15px}
+
+/* L1 CLUSTER GRID */
+.cluster-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:24px}
+.cluster{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;transition:all .25s;position:relative;overflow:hidden}
+.cluster:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.cluster.priority-1{border-left:4px solid var(--accent)}
+.cluster.priority-2{border-left:4px solid #FFB8AE}
+.cluster.priority-3{border-left:4px solid var(--border)}
+.cluster-priority{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:6px}
+.cluster.priority-2 .cluster-priority{color:#E54A3A;opacity:.7}
+.cluster.priority-3 .cluster-priority{color:var(--ink-lighter)}
+.cluster h3{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:8px;line-height:1.3}
+.cluster-meta{display:flex;gap:12px;margin-bottom:12px;font-size:12px;color:var(--ink-light)}
+.cluster-meta .pages{font-weight:700;color:var(--accent)}
+.cluster-url{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-lighter);margin-bottom:10px;word-break:break-all}
+.cluster-note{font-size:13px;color:var(--ink-light);line-height:1.5}
+
+/* PAGE MIX BARS */
+.mix-bars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.mix-bar{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px}
+.mix-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--ink-light);margin-bottom:8px}
+.mix-value{font-size:34px;font-weight:800;letter-spacing:-1.2px;color:var(--ink);line-height:1}
+.mix-value .accent{color:var(--accent);font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;font-size:28px}
+.mix-bar-visual{height:8px;background:var(--bg);border-radius:100px;margin-top:14px;overflow:hidden}
+.mix-bar-fill{height:100%;border-radius:100px}
+.mix-description{font-size:12.5px;color:var(--ink-light);margin-top:10px;line-height:1.4}
+
+/* DIMENSIONS */
+.dim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
+.dim-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:24px 26px}
+.dim-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);margin-bottom:8px}
+.dim-count{font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-1px;line-height:1;margin-bottom:14px}
+.dim-card ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.dim-card ul li{background:var(--bg);padding:4px 10px;border-radius:100px;font-size:12px;color:var(--ink);border:1px solid var(--border-soft)}
+
+/* CALENDAR */
+.calendar{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-top:24px;overflow-x:auto}
+.calendar-grid{display:grid;grid-template-columns:170px repeat(12,minmax(70px,1fr));gap:4px;min-width:900px}
+.cal-head{padding:10px 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--ink-light);text-align:center;border-bottom:1px solid var(--border)}
+.cal-row-label{padding:12px 14px;font-size:13px;font-weight:600;color:var(--ink);display:flex;align-items:center;border-right:1px solid var(--border)}
+.cal-cell{padding:10px 6px;font-size:11px;text-align:center;border-radius:var(--radius-sm);color:var(--ink)}
+.cal-cell.empty{background:var(--bg);color:var(--ink-lighter)}
+.cal-cell.p1{background:#FF6B5C;color:white;font-weight:700}
+.cal-cell.p2{background:#FFB8AE;color:#7F2A22;font-weight:600}
+.cal-cell.p3{background:#FFF0EE;color:var(--accent-dark)}
+.cal-cell.milestone{background:#0F1B4C;color:white;font-weight:700}
+
+/* MATRIX */
+.matrix{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-top:24px;overflow-x:auto}
+.matrix-table{width:100%;border-collapse:separate;border-spacing:4px;font-size:12px;min-width:720px}
+.matrix-table th{padding:8px 6px;text-align:center;font-weight:700;color:var(--ink-light);text-transform:uppercase;letter-spacing:.3px;font-size:10.5px;background:var(--bg);border-radius:var(--radius-sm)}
+.matrix-table td{padding:10px 8px;text-align:center;border-radius:var(--radius-sm);font-weight:600}
+.matrix-table td.dim-label-cell{background:var(--bg);text-align:left;font-size:12px;padding-left:14px}
+.cell-0{background:#FAFBFD;color:var(--ink-lighter)}
+.cell-1{background:#FFF0EE;color:#7F2A22}
+.cell-2{background:#FFB8AE;color:#7F2A22}
+.cell-3{background:#FF6B5C;color:white}
+.cell-4{background:#E54A3A;color:white}
+
+/* DIFFERENTIATION */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+@media (max-width:768px){.diff-grid{grid-template-columns:1fr}}
+.diff-card{padding:28px 30px;border-radius:var(--radius);border:1px solid var(--border)}
+.diff-card.us{background:linear-gradient(135deg,#FFF0EE 0%,#FFE5E2 100%);border-color:#FFB8AE}
+.diff-card.generic{background:white;opacity:.85}
+.diff-header{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:16px}
+.diff-card.us .diff-header{color:var(--accent-dark)}
+.diff-card.generic .diff-header{color:var(--ink-light)}
+.diff-list{list-style:none;padding:0}
+.diff-list li{padding:11px 0 11px 28px;position:relative;font-size:14px;color:var(--ink);line-height:1.55;border-bottom:1px solid rgba(0,0,0,.06)}
+.diff-list li:last-child{border-bottom:none}
+.diff-card.us .diff-list li::before{content:'✓';position:absolute;left:0;top:10px;color:var(--accent);font-weight:700;font-size:16px}
+.diff-card.generic .diff-list li::before{content:'×';position:absolute;left:0;top:10px;color:var(--ink-lighter);font-weight:700;font-size:16px}
+
+/* SAMPLE PAGES */
+.sample-pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:24px}
+.sample-page{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px;transition:all .25s}
+.sample-page:hover{box-shadow:var(--shadow);border-color:var(--accent-soft)}
+.sample-cluster{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px}
+.sample-url{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--accent-dark);background:var(--accent-soft);padding:4px 10px;border-radius:6px;display:inline-block;margin-bottom:12px;word-break:break-all}
+.sample-page h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.2px;line-height:1.35}
+.sample-page p{font-size:13px;color:var(--ink-light);line-height:1.55;margin-bottom:12px}
+.sample-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:11px}
+.sample-meta span{background:var(--bg);padding:4px 8px;border-radius:4px;color:var(--ink-light)}
+
+footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gradient(to bottom,var(--brand-darker),#030614);background-size:26px 26px,100% 100%;color:rgba(255,255,255,.6);padding:56px 24px 40px;border-top:4px solid var(--accent)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
+.footer-brand{color:white;font-weight:700;font-size:16px;margin-bottom:10px;letter-spacing:-.2px}
+.footer-contact{font-size:13.5px;line-height:1.8}
+.footer-contact a{color:var(--accent)}
+.footer-legal{font-size:11.5px;color:rgba(255,255,255,.42);max-width:480px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="./" class="nav-brand"><span class="nav-brand-dot"></span>SureSpace × TheProjectSEO</a>
+    <div class="nav-links">
+      <a href="./" class="nav-link">Overview</a>
+      <a href="./proposal.html" class="nav-link">Proposal</a>
+      <a href="./strategy.html" class="nav-link active">Strategy</a>
+      <a href="./competitors.html" class="nav-link">Competitors</a>
+    </div>
+    <a href="./proposal.html#commit" class="nav-cta">Let's go →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Content Strategy & Ontology</span>
+    <h1>1,116 pages, mapped from a single <span class="serif">L0 decision</span>.</h1>
+    <p class="hero-sub">Every page is a descendant of the positioning: <em style="color:#FFB8AE;font-style:normal">"the platform for meaningful friendships in Dubai."</em> The ontology below is how we translate that positioning into a compounding SEO architecture Google can parse, LLMs can cite, and your team can execute.</p>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-value">9</div><div class="stat-label">L1 pillar clusters</div></div>
+      <div class="stat"><div class="stat-value">91</div><div class="stat-label">L2 subtopics</div></div>
+      <div class="stat"><div class="stat-value">500+</div><div class="stat-label">L3 query clusters</div></div>
+      <div class="stat"><div class="stat-value"><span class="accent">1,116</span></div><div class="stat-label">L4 candidate pages</div></div>
+      <div class="stat"><div class="stat-value">363</div><div class="stat-label">Priority-1 launch set</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- L0-L4 ONTOLOGY -->
+<section class="section" id="ontology">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 1 · The Semantic Ontology</div>
+      <h2>Five layers, <span class="serif">one idea</span></h2>
+      <p class="section-lede">Most agencies start with a keyword list and reason upward. We start at L0 — the entity decision — and reason downward. This is why the pages we build compound in ways a keyword-first approach can't.</p>
+    </div>
+
+    <div class="ontology-pyramid">
+      <div class="pyramid-layer L0">
+        <div class="layer-code">L0</div>
+        <div>
+          <div class="layer-name">Macro-semantic positioning</div>
+          <div class="layer-desc">"Meaningful friendships platform for Dubai professionals, 23-35, subscription-gated for trust."</div>
+        </div>
+        <div class="layer-count">1 entity</div>
+      </div>
+      <div class="pyramid-layer L1">
+        <div class="layer-code">L1</div>
+        <div>
+          <div class="layer-name">Primary topic clusters (pillars)</div>
+          <div class="layer-desc">Friendship · Events · Wingman AI · Community · Moving · Wellness · Networking · Dubai Living · B2B</div>
+        </div>
+        <div class="layer-count">9 pillars</div>
+      </div>
+      <div class="pyramid-layer">
+        <div class="layer-code">L2</div>
+        <div>
+          <div class="layer-name">Subtopic spokes</div>
+          <div class="layer-desc">Per-cluster subtopics — e.g. "Making friends as a new expat," "Female friendship circles in Dubai," "Wingman AI vs Bumble Beeline," etc.</div>
+        </div>
+        <div class="layer-count">91 subtopics</div>
+      </div>
+      <div class="pyramid-layer">
+        <div class="layer-code">L3</div>
+        <div>
+          <div class="layer-name">Query clusters</div>
+          <div class="layer-desc">Each subtopic expands into 5-12 specific query patterns — informational, commercial, navigational, comparison.</div>
+        </div>
+        <div class="layer-count">~500 clusters</div>
+      </div>
+      <div class="pyramid-layer">
+        <div class="layer-code">L4</div>
+        <div>
+          <div class="layer-name">Candidate pages (programmatic + editorial)</div>
+          <div class="layer-desc">Actual URLs — dimension-expanded (Activity × Neighborhood, Audience × Activity, Audience × Neighborhood, Temporal).</div>
+        </div>
+        <div class="layer-count">1,116 pages</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;padding:24px 28px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:var(--radius-sm)">
+      <div style="font-weight:700;color:var(--accent-dark);margin-bottom:8px;font-size:14px;text-transform:uppercase;letter-spacing:.5px">Why this architecture wins</div>
+      <p style="font-size:14.5px;color:var(--ink);line-height:1.65;margin:0">A competitor with 2,000 flat blog posts loses to a site with 800 pages in hub-and-spoke architecture. Google rewards topical authority signal — demonstrated by depth within a cluster + clean linking between pillar/spoke/subtopic. Goldman's current approach: lots of pages, no hierarchy. Ours: fewer pages, better arranged, compounding faster.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 L1 CLUSTERS -->
+<section class="section section-alt" id="pillars">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 2 · The Nine Pillars</div>
+      <h2>Nine L1 clusters, <span class="serif">priority-ranked</span></h2>
+      <p class="section-lede">Ordering is the most important SEO decision after positioning. Networking was demoted from P1 to P3 after founder Q19 — explicit rejection of "networking-only" framing. Friendship + Events + Wingman AI are the P1 pillars.</p>
+    </div>
+
+    <div class="cluster-grid">
+      <div class="cluster priority-1">
+        <div class="cluster-priority">Priority 1 · Core</div>
+        <h3>Friendship &amp; Real Connection</h3>
+        <div class="cluster-meta"><span class="pages">11 pages</span><span>B2C · 23-35</span></div>
+        <div class="cluster-url">/making-friends-dubai/</div>
+        <div class="cluster-note">The stated positioning. Every page reinforces "meaningful friendships" as the entity SureSpace owns.</div>
+      </div>
+      <div class="cluster priority-1">
+        <div class="cluster-priority">Priority 1 · Core</div>
+        <h3>Meetups &amp; Events</h3>
+        <div class="cluster-meta"><span class="pages">897 pages</span><span>B2C + B2B</span></div>
+        <div class="cluster-url">/find-events-dubai/</div>
+        <div class="cluster-note">Core product surface (curated dinners, meetups). IRL attendance is half the north-star metric.</div>
+      </div>
+      <div class="cluster priority-1">
+        <div class="cluster-priority">Priority 1 · Unique</div>
+        <h3>Wingman AI</h3>
+        <div class="cluster-meta"><span class="pages">9 pages</span><span>Pro + Premium</span></div>
+        <div class="cluster-url">/wingman-ai/</div>
+        <div class="cluster-note">No direct competitor. Pre-launch category-creator LLM-citation opportunity. Ships next release cycle.</div>
+      </div>
+      <div class="cluster priority-2">
+        <div class="cluster-priority">Priority 2 · Supporting</div>
+        <h3>Communities &amp; Groups</h3>
+        <div class="cluster-meta"><span class="pages">121 pages</span><span>B2C</span></div>
+        <div class="cluster-url">/community-groups-dubai/</div>
+        <div class="cluster-note">Meetup's weak spot — shallow long-tail beatable by aggregation content.</div>
+      </div>
+      <div class="cluster priority-2">
+        <div class="cluster-priority">Priority 2 · High-LTV</div>
+        <h3>Moving to Dubai</h3>
+        <div class="cluster-meta"><span class="pages">24 pages</span><span>Pre-arrival</span></div>
+        <div class="cluster-url">/moving-to-dubai-social/</div>
+        <div class="cluster-note">Unclaimed pocket. Pre-arrival expats convert at 3-5x. Feeds directly into Pro tier.</div>
+      </div>
+      <div class="cluster priority-2">
+        <div class="cluster-priority">Priority 2 · Emotional</div>
+        <h3>Social Wellness</h3>
+        <div class="cluster-meta"><span class="pages">9 pages</span><span>Emotional-intent</span></div>
+        <div class="cluster-url">/social-wellness-dubai/</div>
+        <div class="cluster-note">Loneliness, new-city isolation. Subscription at AED 150+ fits — users pay to solve the problem.</div>
+      </div>
+      <div class="cluster priority-3">
+        <div class="cluster-priority">Priority 3 · Demoted</div>
+        <h3>Professional Networking</h3>
+        <div class="cluster-meta"><span class="pages">11 pages</span><span>Secondary</span></div>
+        <div class="cluster-url">/networking-events-dubai/</div>
+        <div class="cluster-note">Demoted per founder explicit exclusion: "not networking-only". Traffic volume only; redirect narrative to meaningful connection.</div>
+      </div>
+      <div class="cluster priority-3">
+        <div class="cluster-priority">Priority 3 · Evergreen</div>
+        <h3>Dubai Living Guides</h3>
+        <div class="cluster-meta"><span class="pages">13 pages</span><span>Cross-demo</span></div>
+        <div class="cluster-url">/dubai-living/</div>
+        <div class="cluster-note">Topical authority moat. Feeds internal links to friendship/events.</div>
+      </div>
+      <div class="cluster priority-3">
+        <div class="cluster-priority">Priority 3 · Revenue</div>
+        <h3>For Business (B2B)</h3>
+        <div class="cluster-meta"><span class="pages">21 pages</span><span>Corporate</span></div>
+        <div class="cluster-url">/for-business/</div>
+        <div class="cluster-note">Corporate memberships, venue partnerships (founder Q1 revenue line). Lower SEO priority but feeds link authority.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT MIX -->
+<section class="section" id="content-mix">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 3 · Content Mix</div>
+      <h2>Of those 1,116 pages, <span class="serif">what gets built first</span></h2>
+      <p class="section-lede">Not all pages are equal. Editorial pillars anchor topical authority; editorial spokes answer specific queries; programmatic scales coverage. The mix matters more than the count.</p>
+    </div>
+
+    <div class="mix-bars">
+      <div class="mix-bar">
+        <div class="mix-label">Editorial Pillars (L1)</div>
+        <div class="mix-value">9</div>
+        <div class="mix-bar-visual"><div class="mix-bar-fill" style="width:1%;background:#FF6B5C"></div></div>
+        <div class="mix-description">Hand-written, 2,000+ words, named author, comprehensive cluster intro.</div>
+      </div>
+      <div class="mix-bar">
+        <div class="mix-label">Editorial Spokes (L2)</div>
+        <div class="mix-value">91</div>
+        <div class="mix-bar-visual"><div class="mix-bar-fill" style="width:8%;background:#FFB8AE"></div></div>
+        <div class="mix-description">Subtopic deep-dives, 1,200-1,500 words. Named venues, real events, original angles.</div>
+      </div>
+      <div class="mix-bar">
+        <div class="mix-label">Programmatic 2D (L4)</div>
+        <div class="mix-value">1,011</div>
+        <div class="mix-bar-visual"><div class="mix-bar-fill" style="width:90%;background:#0F1B4C"></div></div>
+        <div class="mix-description">Dimension-expanded: Activity × Neighborhood, Audience × Activity, etc. 600+ unique words per page.</div>
+      </div>
+      <div class="mix-bar">
+        <div class="mix-label">Temporal / Auto-refresh</div>
+        <div class="mix-value">5</div>
+        <div class="mix-bar-visual"><div class="mix-bar-fill" style="width:0.5%;background:var(--success)"></div></div>
+        <div class="mix-description">"Events this weekend," "Events this month" — auto-updated from events calendar.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px">
+      <h3 style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:14px">Programmatic dimensions in play</h3>
+      <div class="dim-grid">
+        <div class="dim-card">
+          <div class="dim-label">Neighborhoods</div>
+          <div class="dim-count">35</div>
+          <ul>
+            <li>Dubai Marina</li><li>JBR</li><li>Downtown</li><li>Business Bay</li>
+            <li>DIFC</li><li>JLT</li><li>Jumeirah</li><li>Palm Jumeirah</li>
+            <li>Dubai Hills</li><li>Arabian Ranches</li><li>City Walk</li>
+            <li>Al Barsha</li><li>+ 23 more</li>
+          </ul>
+        </div>
+        <div class="dim-card">
+          <div class="dim-label">Activities</div>
+          <div class="dim-count">25</div>
+          <ul>
+            <li>coffee meetup</li><li>dinner meetup</li><li>brunch</li><li>book club</li>
+            <li>yoga class</li><li>running group</li><li>business networking</li>
+            <li>founder meetup</li><li>art event</li><li>+ 16 more</li>
+          </ul>
+        </div>
+        <div class="dim-card">
+          <div class="dim-label">Audiences</div>
+          <div class="dim-count">18</div>
+          <ul>
+            <li>new expats</li><li>young professionals</li><li>founders</li>
+            <li>women</li><li>British expats</li><li>Indian expats</li>
+            <li>families</li><li>remote workers</li><li>creatives</li>
+            <li>+ 9 more</li>
+          </ul>
+        </div>
+        <div class="dim-card">
+          <div class="dim-label">Intent stages</div>
+          <div class="dim-count">6</div>
+          <ul>
+            <li>awareness</li><li>problem definition</li>
+            <li>solution exploration</li><li>category comparison</li>
+            <li>product decision</li><li>retention</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIMENSION MATRIX -->
+    <div class="matrix" style="margin-top:32px">
+      <div style="font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px">Sample coverage matrix — Activity × Top Neighborhoods</div>
+      <div style="font-size:13px;color:var(--ink-light);margin-bottom:20px">Each cell = a programmatic page with search-intent validation. Heat indicates build priority (darker = Month 1-2, lighter = Month 6+).</div>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Dubai Marina</th>
+            <th>JBR</th>
+            <th>Downtown</th>
+            <th>Business Bay</th>
+            <th>DIFC</th>
+            <th>JLT</th>
+            <th>Jumeirah</th>
+            <th>Palm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dim-label-cell">Coffee meetup</td>
+            <td class="cell-4">P1</td><td class="cell-4">P1</td><td class="cell-3">P1</td>
+            <td class="cell-3">P1</td><td class="cell-3">P1</td><td class="cell-2">P2</td>
+            <td class="cell-2">P2</td><td class="cell-1">P2</td>
+          </tr>
+          <tr>
+            <td class="dim-label-cell">Dinner meetup</td>
+            <td class="cell-4">P1</td><td class="cell-3">P1</td><td class="cell-4">P1</td>
+            <td class="cell-3">P1</td><td class="cell-4">P1</td><td class="cell-2">P2</td>
+            <td class="cell-3">P1</td><td class="cell-2">P2</td>
+          </tr>
+          <tr>
+            <td class="dim-label-cell">Business networking</td>
+            <td class="cell-2">P2</td><td class="cell-1">P2</td><td class="cell-3">P1</td>
+            <td class="cell-3">P1</td><td class="cell-4">P1</td><td class="cell-2">P2</td>
+            <td class="cell-0">P3</td><td class="cell-0">P3</td>
+          </tr>
+          <tr>
+            <td class="dim-label-cell">Outdoor activity</td>
+            <td class="cell-3">P1</td><td class="cell-4">P1</td><td class="cell-1">P2</td>
+            <td class="cell-1">P2</td><td class="cell-0">P3</td><td class="cell-2">P2</td>
+            <td class="cell-3">P1</td><td class="cell-3">P1</td>
+          </tr>
+          <tr>
+            <td class="dim-label-cell">Book club</td>
+            <td class="cell-2">P2</td><td class="cell-1">P2</td><td class="cell-2">P2</td>
+            <td class="cell-1">P2</td><td class="cell-1">P2</td><td class="cell-1">P2</td>
+            <td class="cell-1">P2</td><td class="cell-0">P3</td>
+          </tr>
+          <tr>
+            <td class="dim-label-cell">Founder meetup</td>
+            <td class="cell-1">P2</td><td class="cell-0">P3</td><td class="cell-3">P1</td>
+            <td class="cell-3">P1</td><td class="cell-4">P1</td><td class="cell-1">P2</td>
+            <td class="cell-0">P3</td><td class="cell-0">P3</td>
+          </tr>
+          <tr>
+            <td class="dim-label-cell">Yoga class</td>
+            <td class="cell-3">P1</td><td class="cell-2">P2</td><td class="cell-2">P2</td>
+            <td class="cell-1">P2</td><td class="cell-1">P2</td><td class="cell-1">P2</td>
+            <td class="cell-2">P2</td><td class="cell-2">P2</td>
+          </tr>
+          <tr>
+            <td class="dim-label-cell">Creative workshop</td>
+            <td class="cell-1">P2</td><td class="cell-1">P2</td><td class="cell-2">P2</td>
+            <td class="cell-1">P2</td><td class="cell-1">P2</td><td class="cell-0">P3</td>
+            <td class="cell-1">P2</td><td class="cell-0">P3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 12-MONTH CALENDAR -->
+<section class="section section-alt" id="calendar">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 4 · 12-Month Content Calendar</div>
+      <h2>What ships <span class="serif">when</span></h2>
+      <p class="section-lede">Phased rollout. Foundation first (pillars + schema + cleanup). Velocity second (programmatic scale + editorial spokes). Compounding third (authority + AEO dominance).</p>
+    </div>
+
+    <div class="calendar">
+      <div class="calendar-grid">
+        <div class="cal-head"></div>
+        <div class="cal-head">M1</div><div class="cal-head">M2</div><div class="cal-head">M3</div>
+        <div class="cal-head">M4</div><div class="cal-head">M5</div><div class="cal-head">M6</div>
+        <div class="cal-head">M7</div><div class="cal-head">M8</div><div class="cal-head">M9</div>
+        <div class="cal-head">M10</div><div class="cal-head">M11</div><div class="cal-head">M12</div>
+
+        <div class="cal-row-label">Pillar pages (L1)</div>
+        <div class="cal-cell p1">3</div><div class="cal-cell p1">3</div><div class="cal-cell p2">2</div>
+        <div class="cal-cell p3">1</div><div class="cal-cell empty">—</div><div class="cal-cell empty">—</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell empty">—</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell empty">—</div>
+
+        <div class="cal-row-label">Editorial spokes (L2)</div>
+        <div class="cal-cell p2">4</div><div class="cal-cell p2">5</div><div class="cal-cell p1">8</div>
+        <div class="cal-cell p1">8</div><div class="cal-cell p1">8</div><div class="cal-cell p1">8</div>
+        <div class="cal-cell p2">6</div><div class="cal-cell p2">6</div><div class="cal-cell p2">6</div>
+        <div class="cal-cell p2">6</div><div class="cal-cell p2">6</div><div class="cal-cell p2">6</div>
+
+        <div class="cal-row-label">Programmatic pages</div>
+        <div class="cal-cell p3">2</div><div class="cal-cell p2">5</div><div class="cal-cell p1">15</div>
+        <div class="cal-cell p1">20</div><div class="cal-cell p1">25</div><div class="cal-cell p1">30</div>
+        <div class="cal-cell p1">25</div><div class="cal-cell p1">25</div><div class="cal-cell p1">25</div>
+        <div class="cal-cell p1">20</div><div class="cal-cell p1">20</div><div class="cal-cell p1">20</div>
+
+        <div class="cal-row-label">Wingman AI content</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell p3">1</div><div class="cal-cell p2">2</div>
+        <div class="cal-cell p1">3</div><div class="cal-cell milestone">Launch</div><div class="cal-cell p1">3</div>
+        <div class="cal-cell p2">2</div><div class="cal-cell p2">2</div><div class="cal-cell p2">1</div>
+        <div class="cal-cell p2">1</div><div class="cal-cell p2">1</div><div class="cal-cell p2">1</div>
+
+        <div class="cal-row-label">UAE-authority backlinks</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell p3">1</div><div class="cal-cell p2">2</div>
+        <div class="cal-cell p2">3</div><div class="cal-cell p2">3</div><div class="cal-cell p1">4</div>
+        <div class="cal-cell p1">4</div><div class="cal-cell p1">4</div><div class="cal-cell p1">5</div>
+        <div class="cal-cell p1">5</div><div class="cal-cell p1">5</div><div class="cal-cell p1">5</div>
+
+        <div class="cal-row-label">Technical milestones</div>
+        <div class="cal-cell milestone">Schema</div><div class="cal-cell milestone">GSC/GA4</div><div class="cal-cell p2">Redirects</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell milestone">CWV audit</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell milestone">AEO refresh</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell milestone">Y2 planning</div>
+
+        <div class="cal-row-label">Review gates</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell milestone">Day-90</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell milestone">H1 review</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell milestone">Q3 review</div>
+        <div class="cal-cell empty">—</div><div class="cal-cell empty">—</div><div class="cal-cell milestone">Annual</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;font-size:13px">
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;background:#FF6B5C;border-radius:4px"></span>Priority 1 (core delivery)</div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;background:#FFB8AE;border-radius:4px"></span>Priority 2 (secondary velocity)</div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;background:#FFF0EE;border:1px solid var(--border);border-radius:4px"></span>Priority 3 (lower volume)</div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="width:16px;height:16px;background:#0F1B4C;border-radius:4px"></span>Milestone / review</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="section" id="differentiation">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 5 · Differentiation</div>
+      <h2>How our content is <span class="serif">different</span> from Goldman's</h2>
+      <p class="section-lede">The word "different" is doing a lot of work here. Pages per week isn't different — Goldman ships 5-10 pages per week. These are the specific *quality* differences that make our output compound and theirs stagnate.</p>
+    </div>
+
+    <div class="diff-grid">
+      <div class="diff-card us">
+        <div class="diff-header">TheProjectSEO Content</div>
+        <ul class="diff-list">
+          <li>Named human authors with real bios, LinkedIn links, schema</li>
+          <li>Named Dubai venues, real events, dates, prices</li>
+          <li>Original data, quotes from real users or community managers</li>
+          <li>Citation capsules (LLM-ready 2-3 sentence answers)</li>
+          <li>FAQ schema on every page — engineered, not accidental</li>
+          <li>Internal linking to L2 subtopic + L1 pillar + 2-3 peer pages</li>
+          <li>UAE geo-tagged, hreflang en-AE</li>
+          <li>Content reviewed against anti-AI-detection checklist</li>
+          <li>Aligned to founder-stated positioning ("meaningful friendships")</li>
+          <li>Target: 1,200-2,500 words with depth, not fluff</li>
+        </ul>
+      </div>
+
+      <div class="diff-card generic">
+        <div class="diff-header">Goldman's Current Content</div>
+        <ul class="diff-list">
+          <li>AI-generated authors ("Goldman Sarah," "Jordan")</li>
+          <li>Generic references, no named venues or real events</li>
+          <li>No data, no quotes, no unique perspective</li>
+          <li>No citation capsules — LLMs can't pull clean answers</li>
+          <li>No FAQ schema (tracked 34-54 AIO keywords but unoptimized)</li>
+          <li>Random internal linking — no topical authority signal</li>
+          <li>61% of impressions from US / UK / India (wrong audience)</li>
+          <li>Generic AI openers ("As the business hub of the world...")</li>
+          <li>Scattered across Dubai + London + Bangkok + designer apps</li>
+          <li>Target: 500-1,500 words, often template shell content</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE PAGES -->
+<section class="section section-dark" id="samples">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Part 6 · Sample Pages</div>
+      <h2>Twelve pages we'd <span class="serif">build first</span></h2>
+      <p class="section-lede">Not all programmatic. The first 12 pages are a deliberate mix of pillar (topical authority), emotional-intent (subscription conversion), and comparison (AEO bait).</p>
+    </div>
+
+    <div class="sample-pages">
+      <div class="sample-page">
+        <div class="sample-cluster">Friendship · L1 Pillar</div>
+        <div class="sample-url">/making-friends-dubai/</div>
+        <h4>Making friends in Dubai — the complete guide for 2026</h4>
+        <p>Hub page. Named author. 2,500 words. Links to every L2 spoke. Target entity anchor: "meaningful friendships Dubai."</p>
+        <div class="sample-meta"><span>Pillar</span><span>2,500 words</span><span>Named author</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Wellness · Emotional-intent</div>
+        <div class="sample-url">/feeling-lonely-dubai/</div>
+        <h4>Feeling lonely in Dubai — why it happens and how to fix it</h4>
+        <p>Undefended SERP. Zero competitor coverage. Subscription-filter converts: users pay to solve the problem.</p>
+        <div class="sample-meta"><span>Emotional</span><span>1,800 words</span><span>Research citations</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Moving · Pre-arrival</div>
+        <div class="sample-url">/moving-to-dubai-social-plan-first-30-days/</div>
+        <h4>Moving to Dubai? Your first 30 days social plan</h4>
+        <p>Highest-LTV capture window. Pre-arrival users convert 3-5x. Deep checklist + community-app positioning.</p>
+        <div class="sample-meta"><span>Pre-arrival</span><span>2,200 words</span><span>Downloadable checklist</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Events · Programmatic 2D</div>
+        <div class="sample-url">/dinner-meetups-dubai-marina/</div>
+        <h4>Small-group dinner meetups in Dubai Marina</h4>
+        <p>Activity × Neighborhood pattern. 15 real venues. 5 upcoming events. Event schema + FAQPage schema.</p>
+        <div class="sample-meta"><span>Programmatic</span><span>800 words</span><span>Event schema</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Wingman AI · Pre-launch</div>
+        <div class="sample-url">/what-is-wingman-ai/</div>
+        <h4>Wingman AI — SureSpace's matching intelligence explained</h4>
+        <p>Category-creator piece. Defines "AI-powered social matching" as a category before anyone else names it. LLM-citation bait.</p>
+        <div class="sample-meta"><span>Category-defining</span><span>1,600 words</span><span>Schema-heavy</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Community · Nationality</div>
+        <div class="sample-url">/british-expat-community-dubai/</div>
+        <h4>The British expat community in Dubai — how to join</h4>
+        <p>InterNations takeover. Their /dubai-expats/brits gets 4 visits/mo — thin content. We rebuild with depth.</p>
+        <div class="sample-meta"><span>Takeover target</span><span>1,400 words</span><span>Event-linked</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Friendship · Female-specific</div>
+        <div class="sample-url">/female-friendship-circles-dubai/</div>
+        <h4>How to find female friendship circles in Dubai (beyond Bumble BFF)</h4>
+        <p>Direct comparison content. High commercial intent. Named apps + real venues + SureSpace as differentiated option.</p>
+        <div class="sample-meta"><span>Comparison</span><span>1,700 words</span><span>Explicit differentiation</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Events · Audience-specific</div>
+        <div class="sample-url">/coffee-meetups-for-founders-dubai/</div>
+        <h4>Coffee meetups for founders in Dubai — curated small groups</h4>
+        <p>Audience × Activity. High-intent professional segment. Pro-tier conversion page. LinkedIn-optimized headline.</p>
+        <div class="sample-meta"><span>Audience-targeted</span><span>1,100 words</span><span>Pro CTA</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Comparison · Category</div>
+        <div class="sample-url">/surespace-vs-timeleft-dubai/</div>
+        <h4>SureSpace vs Timeleft — what's the real difference?</h4>
+        <p>Direct competitor comparison. Timeleft is identical product (6-person dinners). Our advantage: Dubai-native + community-layer.</p>
+        <div class="sample-meta"><span>Competitor comparison</span><span>1,500 words</span><span>Side-by-side table</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Events · Temporal</div>
+        <div class="sample-url">/dubai-events-this-weekend/</div>
+        <h4>Dubai events this weekend — curated picks</h4>
+        <p>Auto-refresh template. Event schema. Updated weekly. Feeds fresh-content signal to Google.</p>
+        <div class="sample-meta"><span>Temporal</span><span>Auto-updated</span><span>Event schema</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">Dubai Living · Guide</div>
+        <div class="sample-url">/dubai-weekend-plans-solo-new-arrivals/</div>
+        <h4>Weekend plans in Dubai for solo new arrivals</h4>
+        <p>Specific ICP hit: 23-35 professionals, just arrived, alone. Maps to Pro-tier conversion moments.</p>
+        <div class="sample-meta"><span>Solo-specific</span><span>1,300 words</span><span>Image-heavy</span></div>
+      </div>
+      <div class="sample-page">
+        <div class="sample-cluster">B2B · Venue partnership</div>
+        <div class="sample-url">/host-events-dubai-marina/</div>
+        <h4>Host events in Dubai Marina — SureSpace venue partnership</h4>
+        <p>B2B page. Backlink magnet (venue mentions). Feeds DR upward. Revenue-diversification support.</p>
+        <div class="sample-meta"><span>B2B</span><span>900 words</span><span>Partnership form</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">TheProjectSEO</div>
+      <div class="footer-contact">
+        <a href="mailto:aditya@theprojectseo.com">aditya@theprojectseo.com</a><br>
+        <a href="https://theprojectseo.com" target="_blank" style="color:rgba(255,255,255,.5)">theprojectseo.com</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      Content strategy prepared for SureSpace. 1,116-page plan generated from the 9-cluster topical ontology. Regeneratable via <code>ontology_builder.py</code> when priorities shift.
+    </div>
+  </div>
+</footer>
+
+<script>
+const bar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  bar.style.width = pct + '%';
+}, { passive: true });
+</script>
+
+</body>
+</html>
