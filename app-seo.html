@@ -502,70 +502,99 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
       <div class="chart-title">Cumulative indexable pages over 24 months</div>
       <div class="chart-subtitle">Static pages (editorial + programmatic from current ontology) plateau. Dynamic pages (app-data-driven) compound.</div>
 
-      <svg class="chart" viewBox="0 0 820 420" style="max-width:100%">
+      <svg class="chart" viewBox="0 0 960 520" style="max-width:100%">
+        <defs>
+          <linearGradient id="coralArea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FF6B5C" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#FF6B5C" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Chart plot area: x 110→880, y 100→420 -->
+        <!-- Y-axis gridlines (evenly spaced, linear scale 0→10K in 2K steps) -->
         <g stroke="#E5E9F2" stroke-width="1">
-          <line x1="70" y1="40" x2="70" y2="360"/>
-          <line x1="70" y1="360" x2="790" y2="360"/>
-          <line x1="70" y1="90" x2="790" y2="90" stroke-dasharray="3 3"/>
-          <line x1="70" y1="140" x2="790" y2="140" stroke-dasharray="3 3"/>
-          <line x1="70" y1="200" x2="790" y2="200" stroke-dasharray="3 3"/>
-          <line x1="70" y1="260" x2="790" y2="260" stroke-dasharray="3 3"/>
-          <line x1="70" y1="310" x2="790" y2="310" stroke-dasharray="3 3"/>
+          <line x1="110" y1="100" x2="880" y2="100" stroke-dasharray="3 4"/>
+          <line x1="110" y1="164" x2="880" y2="164" stroke-dasharray="3 4"/>
+          <line x1="110" y1="228" x2="880" y2="228" stroke-dasharray="3 4"/>
+          <line x1="110" y1="292" x2="880" y2="292" stroke-dasharray="3 4"/>
+          <line x1="110" y1="356" x2="880" y2="356" stroke-dasharray="3 4"/>
         </g>
-        <g font-family="Inter" font-size="11" fill="#64748b">
-          <text x="60" y="44" text-anchor="end">10K</text>
-          <text x="60" y="94" text-anchor="end">7.5K</text>
-          <text x="60" y="144" text-anchor="end">5K</text>
-          <text x="60" y="204" text-anchor="end">2.5K</text>
-          <text x="60" y="264" text-anchor="end">1K</text>
-          <text x="60" y="314" text-anchor="end">500</text>
-          <text x="60" y="364" text-anchor="end">0</text>
-          <text x="25" y="200" text-anchor="middle" font-weight="600" fill="#0A1330" transform="rotate(-90 25 200)">Pages indexed</text>
-        </g>
-        <g font-family="Inter" font-size="11" fill="#64748b" text-anchor="middle">
-          <text x="100" y="380">M1</text>
-          <text x="160" y="380">M3</text>
-          <text x="220" y="380">M6</text>
-          <text x="310" y="380">M9</text>
-          <text x="400" y="380">M12</text>
-          <text x="490" y="380">M15</text>
-          <text x="580" y="380">M18</text>
-          <text x="670" y="380">M21</text>
-          <text x="760" y="380">M24</text>
-          <text x="430" y="405" text-anchor="middle" font-weight="600" fill="#0A1330">Month</text>
+        <!-- Axes -->
+        <line x1="110" y1="420" x2="880" y2="420" stroke="#CBD5E1" stroke-width="1.5"/>
+        <line x1="110" y1="100" x2="110" y2="420" stroke="#CBD5E1" stroke-width="1.5"/>
+
+        <!-- Y-axis labels (linear, even steps: 0, 2K, 4K, 6K, 8K, 10K) -->
+        <g font-family="Inter" font-size="12" fill="#64748b" text-anchor="end">
+          <text x="98" y="105">10K</text>
+          <text x="98" y="169">8K</text>
+          <text x="98" y="233">6K</text>
+          <text x="98" y="297">4K</text>
+          <text x="98" y="361">2K</text>
+          <text x="98" y="425">0</text>
         </g>
 
-        <!-- Phase backgrounds -->
-        <rect x="70" y="40" width="180" height="320" fill="#FFF0EE" opacity="0.3"/>
-        <text x="160" y="55" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#E54A3A" opacity="0.6">PHASE 1 · FOUNDATION</text>
+        <!-- Y-axis title -->
+        <text x="38" y="260" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0A1330" transform="rotate(-90 38 260)">Pages indexed</text>
 
-        <rect x="250" y="40" width="180" height="320" fill="#FEF3C7" opacity="0.3"/>
-        <text x="340" y="55" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#92400E" opacity="0.6">PHASE 2 · DYNAMIC LAUNCH</text>
+        <!-- X-axis labels — evenly spaced M1...M24 (23-month span across 770px, 33.48px/mo) -->
+        <g font-family="Inter" font-size="12" fill="#64748b" text-anchor="middle">
+          <text x="110" y="445">M1</text>
+          <text x="177" y="445">M3</text>
+          <text x="277" y="445">M6</text>
+          <text x="378" y="445">M9</text>
+          <text x="478" y="445">M12</text>
+          <text x="579" y="445">M15</text>
+          <text x="679" y="445">M18</text>
+          <text x="780" y="445">M21</text>
+          <text x="880" y="445">M24</text>
+        </g>
 
-        <rect x="430" y="40" width="360" height="320" fill="#ECFDF5" opacity="0.3"/>
-        <text x="610" y="55" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#065F46" opacity="0.6">PHASE 3 · COMPOUNDING</text>
+        <!-- X-axis title -->
+        <text x="495" y="475" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0A1330">Month</text>
 
-        <!-- Static/editorial line (plateaus around 500-600) -->
-        <!-- M1:280 M3:300 M6:380 M9:450 M12:520 M15:540 M18:555 M24:580 -->
-        <path d="M 100,344 L 160,340 L 220,324 L 310,310 L 400,296 L 490,292 L 580,289 L 670,287 L 760,284"
-              fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <!-- Phase strip at top (thin, above plot, non-overlapping) -->
+        <g>
+          <rect x="110" y="62" width="66" height="22" rx="5" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
+          <text x="143" y="77" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#991B1B">P1 · Foundation</text>
 
-        <!-- Dynamic line (explodes from M4 onward) -->
-        <!-- M1:0 M3:0 M4:20 M6:150 M9:800 M12:1800 M15:3200 M18:5000 M21:7200 M24:9500 -->
-        <path d="M 100,360 L 160,360 L 220,330 L 310,200 L 400,104 L 490,72 L 580,52 L 670,52 L 760,48"
+          <rect x="178" y="62" width="130" height="22" rx="5" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1"/>
+          <text x="243" y="77" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#92400E">P2 · Dynamic launch</text>
+
+          <rect x="310" y="62" width="570" height="22" rx="5" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1"/>
+          <text x="595" y="77" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#065F46">P3 · Compounding</text>
+        </g>
+
+        <!-- Static content line (static pages plateau — 280, 300, 380, 450, 520, 540, 555, 565, 580) -->
+        <!-- Scale: y = 420 - (v/10000)*320 -->
+        <!-- M1:411, M3:410, M6:408, M9:406, M12:403.4, M15:402.7, M18:402.2, M21:401.9, M24:401.4 -->
+        <path d="M 110,411 L 177,410 L 277,408 L 378,406 L 478,403 L 579,403 L 679,402 L 780,402 L 880,401"
+              fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="8 4"/>
+
+        <!-- Dynamic line area fill -->
+        <!-- Data: M1:0, M3:0, M6:150, M9:800, M12:1800, M15:3200, M18:5000, M21:7200, M24:9500 -->
+        <!-- M1:420, M3:420, M6:415, M9:394, M12:362, M15:318, M18:260, M21:190, M24:116 -->
+        <path d="M 110,420 L 177,420 L 277,415 L 378,394 L 478,362 L 579,318 L 679,260 L 780,190 L 880,116 L 880,420 L 110,420 Z"
+              fill="url(#coralArea)"/>
+
+        <!-- Dynamic line -->
+        <path d="M 110,420 L 177,420 L 277,415 L 378,394 L 478,362 L 579,318 L 679,260 L 780,190 L 880,116"
               fill="none" stroke="#FF6B5C" stroke-width="3.5"/>
-        <path d="M 100,360 L 160,360 L 220,330 L 310,200 L 400,104 L 490,72 L 580,52 L 670,52 L 760,48 L 760,360 L 100,360 Z"
-              fill="#FF6B5C" opacity="0.12"/>
 
-        <!-- Markers -->
-        <circle cx="220" cy="330" r="5" fill="#FF6B5C" stroke="white" stroke-width="2"/>
-        <text x="220" y="320" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#E54A3A">Dynamic ships</text>
+        <!-- Milestone: M6 Dynamic ships (vertical line + label callout ABOVE plot) -->
+        <line x1="277" y1="100" x2="277" y2="415" stroke="#FF6B5C" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+        <circle cx="277" cy="415" r="6" fill="white" stroke="#FF6B5C" stroke-width="2.5"/>
 
-        <circle cx="400" cy="104" r="5" fill="#FF6B5C" stroke="white" stroke-width="2"/>
-        <text x="400" y="96" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#E54A3A">~1,800 pages</text>
+        <!-- Milestone: M12 ~1,800 pages (callout positioned to the LEFT of the curve, well away from line) -->
+        <circle cx="478" cy="362" r="6" fill="white" stroke="#FF6B5C" stroke-width="2.5"/>
+        <line x1="478" y1="362" x2="430" y2="338" stroke="#FF6B5C" stroke-width="1" opacity="0.6"/>
+        <rect x="355" y="322" width="75" height="24" rx="5" fill="#FFF0EE" stroke="#FF6B5C" stroke-width="1"/>
+        <text x="392" y="338" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#E54A3A">~1,800</text>
 
-        <circle cx="760" cy="48" r="6" fill="#FF6B5C" stroke="white" stroke-width="2.5"/>
-        <text x="760" y="34" text-anchor="middle" font-family="Inter" font-size="11" font-weight="800" fill="#E54A3A">~9,500 pages</text>
+        <!-- Milestone: M24 ~9,500 pages (callout above-left of endpoint) -->
+        <circle cx="880" cy="116" r="7" fill="white" stroke="#FF6B5C" stroke-width="3"/>
+        <line x1="880" y1="116" x2="830" y2="100" stroke="#FF6B5C" stroke-width="1" opacity="0.6"/>
+        <rect x="748" y="88" width="82" height="24" rx="5" fill="#FF6B5C"/>
+        <text x="789" y="105" text-anchor="middle" font-family="Inter" font-size="12" font-weight="800" fill="white">~9,500</text>
       </svg>
 
       <div class="chart-legend">
