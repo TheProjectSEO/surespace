@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>SureSpace — KPIs &amp; Scope | TheProjectSEO</title>
+<meta name="description" content="The detailed working contract: gate KPIs, scope cards (DO / RECOMMEND / DON'T), Schedule B event bonus, live dashboard, meeting cadence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand: #0F1B4C; --brand-dark: #091238; --brand-darker: #050a1f;
+  --brand-soft: #EDF0FA; --accent: #FF6B5C; --accent-dark: #E54A3A;
+  --accent-soft: #FFF0EE; --ink: #0A1330; --ink-light: #64748b;
+  --ink-lighter: #94a3b8; --bg: #F7F9FC; --bg-alt: #FFFFFF;
+  --border: #E5E9F2; --border-soft: #EEF1F7;
+  --success: #10B981; --success-soft: #ECFDF5;
+  --warning: #F59E0B; --warning-soft: #FFFBEB;
+  --danger: #EF4444; --danger-soft: #FEF2F2;
+  --radius: 12px; --radius-sm: 8px; --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgba(10, 19, 48, 0.04);
+  --shadow: 0 4px 12px rgba(10, 19, 48, 0.06);
+  --shadow-lg: 0 20px 40px rgba(10, 19, 48, 0.10);
+  --dot-grid: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+a{color:var(--accent);text-decoration:none;transition:color .15s}
+a:hover{text-decoration:underline}
+code,pre,.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.92em}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:14.5px;letter-spacing:-.2px}
+.nav-brand-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav-links{display:flex;gap:2px}
+.nav-link{padding:7px 11px;font-size:13px;font-weight:500;color:var(--ink-light);border-radius:6px;transition:all .15s}
+.nav-link:hover,.nav-link.active{background:var(--brand-soft);color:var(--brand);text-decoration:none}
+.nav-link.active{font-weight:600}
+.nav-cta{padding:8px 16px;background:var(--accent);color:white;border-radius:100px;font-size:13px;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--accent-dark);text-decoration:none;transform:translateY(-1px)}
+@media (max-width:960px){.nav-links{display:none}}
+
+.hero{background:var(--dot-grid) 0 0/24px 24px,radial-gradient(ellipse at top right,rgba(255,107,92,.18),transparent 60%),radial-gradient(ellipse at bottom left,rgba(15,27,76,.4),transparent 60%),linear-gradient(135deg,var(--brand-dark) 0%,var(--brand-darker) 100%);color:white;padding:64px 24px 56px;position:relative;overflow:hidden}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:100px;background:rgba(255,107,92,.15);color:#FFB8AE;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:clamp(30px,4.4vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.05;margin-bottom:16px;max-width:880px}
+.hero h1 .serif{font-weight:400;letter-spacing:-1px;color:var(--accent);font-style:italic}
+.hero-sub{font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.78);max-width:780px;line-height:1.55}
+
+.section{padding:72px 24px;position:relative}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-alt{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.section-header{margin-bottom:36px;max-width:820px}
+.section-eyebrow{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section h2{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:14px;color:var(--ink)}
+.section h2 .serif{font-weight:400;letter-spacing:-.8px;color:var(--accent);font-style:italic}
+.section-lede{font-size:16px;color:var(--ink-light);line-height:1.6}
+.section-lede strong{color:var(--ink);font-weight:600}
+
+.gate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+@media (max-width:880px){.gate-grid{grid-template-columns:1fr}}
+.gate-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.gate-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:white;font-weight:800;font-size:14px;margin-bottom:10px}
+.gate-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:4px}
+.gate-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:14px;letter-spacing:-.2px}
+.gate-list{list-style:none;padding:0;font-size:13.5px}
+.gate-list li{padding:7px 0 7px 18px;position:relative;color:var(--ink);line-height:1.5;border-bottom:1px solid var(--border-soft)}
+.gate-list li:last-child{border-bottom:none}
+.gate-list li::before{content:'✓';position:absolute;left:0;top:7px;color:var(--accent);font-weight:700;font-size:13px}
+
+.summary-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:24px}
+.summary-card-title{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.3px}
+.summary-card-subtitle{font-size:13.5px;color:var(--ink-light);margin-bottom:20px}
+
+table.numbers-table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+table.numbers-table th,table.numbers-table td{padding:11px 14px;border-bottom:1px solid var(--border-soft);text-align:right}
+table.numbers-table th{background:var(--bg);color:var(--ink);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid var(--border)}
+table.numbers-table th:first-child,table.numbers-table td:first-child{text-align:left}
+table.numbers-table tr:last-child td{border-bottom:none}
+table.numbers-table tr.highlight-row{background:var(--accent-soft)}
+table.numbers-table tr.highlight-row td{font-weight:700;color:var(--accent-dark)}
+
+.scope-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+@media (max-width:880px){.scope-grid-3{grid-template-columns:1fr}}
+.scope-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .25s}
+.scope-card:hover{box-shadow:var(--shadow)}
+.scope-card.do-card{border-top:4px solid var(--success)}
+.scope-card.rec-card{border-top:4px solid var(--warning)}
+.scope-card.dont-card{border-top:4px solid var(--danger)}
+.scope-card-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;padding:4px 10px;border-radius:100px;margin-bottom:14px}
+.scope-card.do-card .scope-card-tag{background:var(--success-soft);color:#047857}
+.scope-card.rec-card .scope-card-tag{background:var(--warning-soft);color:#92400E}
+.scope-card.dont-card .scope-card-tag{background:var(--danger-soft);color:#B91C1C}
+.scope-card h3{font-size:18px;font-weight:800;margin-bottom:12px;color:var(--ink);letter-spacing:-.3px}
+.scope-list{list-style:none;padding:0}
+.scope-list li{padding:9px 0 9px 24px;position:relative;font-size:14px;color:var(--ink);line-height:1.5;border-bottom:1px solid var(--border-soft)}
+.scope-list li:last-child{border-bottom:none}
+.scope-list li::before{content:'✓';position:absolute;left:0;top:9px;color:var(--success);font-weight:700;font-size:14px}
+.scope-card.rec-card .scope-list li::before{content:'→';color:var(--warning)}
+.scope-card.dont-card .scope-list li::before{content:'×';color:var(--danger)}
+
+.callout{padding:18px 22px;border-radius:var(--radius-sm);margin-top:20px;line-height:1.6;font-size:14.5px}
+.callout.accent{background:var(--accent-soft);border-left:3px solid var(--accent);color:var(--ink)}
+.callout.accent strong{color:var(--accent-dark)}
+.callout.warn{background:var(--warning-soft);border-left:3px solid var(--warning);color:#422006}
+.callout.warn strong{color:#92400E}
+.callout.muted{background:var(--bg);border:1px dashed var(--border);font-size:13.5px;color:var(--ink-light)}
+.callout.muted strong{color:var(--ink);font-weight:700}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px}
+.kpi{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;transition:all .25s}
+.kpi:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.kpi-category{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px}
+.kpi-metric{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.2px;margin-bottom:6px;line-height:1.3}
+.kpi-desc{font-size:13px;color:var(--ink-light);line-height:1.5}
+
+footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gradient(to bottom,var(--brand-darker),#030614);background-size:26px 26px,100% 100%;color:rgba(255,255,255,.6);padding:48px 24px 36px;border-top:4px solid var(--accent)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-start}
+.footer-brand{color:white;font-weight:700;font-size:16px;margin-bottom:10px}
+.footer-contact{font-size:13.5px;line-height:1.8}
+.footer-contact a{color:var(--accent)}
+.footer-legal{font-size:11.5px;color:rgba(255,255,255,.42);max-width:480px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="./index.html" class="nav-brand"><span class="nav-brand-dot"></span>SureSpace × TheProjectSEO</a>
+    <div class="nav-links">
+      <a href="./index.html" class="nav-link">Overview</a>
+      <a href="./proposal.html" class="nav-link">Proposal</a>
+      <a href="./kpi-scope.html" class="nav-link active">KPIs &amp; Scope</a>
+      <a href="./strategy.html" class="nav-link">Strategy</a>
+      <a href="./competitors.html" class="nav-link">Competitors</a>
+      <a href="./app-seo.html" class="nav-link">App SEO</a>
+    </div>
+    <a href="./proposal.html#commit" class="nav-cta">Approve →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Working Contract · April 2026</span>
+    <h1>The detail behind the proposal — <span class="serif">KPIs, scope, and the line we won't cross</span>.</h1>
+    <p class="hero-sub">Three KPI gates. Three scope columns (DO / RECOMMEND / DON'T). One opt-in event bonus. One live dashboard with a clear meeting cadence. Everything we're on the hook for is here. Everything we're not is here too.</p>
+  </div>
+</section>
+
+<!-- KPI GATES -->
+<section class="section" id="gates">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Section 1 · KPI Gates</div>
+      <h2>Three gates — <span class="serif">all on outputs we control</span>.</h2>
+      <p class="section-lede">Every gate item below is something we can move via web SEO, AEO, content, and link building — outputs we own end-to-end. The line of accountability is unambiguous on purpose.</p>
+    </div>
+
+    <div class="gate-grid">
+      <div class="gate-card">
+        <span class="gate-num">1</span>
+        <div class="gate-label">Gate 1 · End of Month 4</div>
+        <div class="gate-title">Foundation unlock · 7K → 9.5K</div>
+        <ul class="gate-list">
+          <li><strong>≥ 100 web→App Store outbound clicks/mo</strong> via tracked smart link</li>
+          <li><strong>≥ 50 attributable app installs/mo</strong> (Firebase first_open with web source tag)</li>
+          <li>25+ indexable pages shipped · all 7 schema types deployed</li>
+          <li>3+ keywords ranking top 20</li>
+          <li>1+ AEO citation across major LLMs</li>
+          <li>5+ event landing pages indexed</li>
+          <li>1+ external listicle placement secured</li>
+        </ul>
+      </div>
+      <div class="gate-card">
+        <span class="gate-num">2</span>
+        <div class="gate-label">Gate 2 · End of Month 7</div>
+        <div class="gate-title">Engine validation · pricing holds at 9.5K</div>
+        <ul class="gate-list">
+          <li><strong>≥ 250 web→App Store clicks/mo</strong></li>
+          <li><strong>≥ 125 attributable app installs/mo</strong></li>
+          <li>10+ keywords ranking top 10</li>
+          <li>5+ AEO citations across LLMs</li>
+          <li>3+ live external listicle placements</li>
+          <li>Domain Rating + 5 vs baseline</li>
+          <li>Branded search +50% vs Month 1</li>
+        </ul>
+      </div>
+      <div class="gate-card">
+        <span class="gate-num">3</span>
+        <div class="gate-label">Gate 3 · Month 11+</div>
+        <div class="gate-title">Terminal unlock · 9.5K → 11K → 12.5K</div>
+        <ul class="gate-list">
+          <li><strong>≥ 500 web→App Store clicks/mo</strong> sustained</li>
+          <li><strong>≥ 250 attributable app installs/mo</strong> sustained</li>
+          <li>25+ keywords ranking top 10</li>
+          <li>10+ AEO citations across LLMs</li>
+          <li>6+ external listicle placements</li>
+          <li>Domain Rating + 10 vs baseline</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <strong>Why two install numbers — clicks AND attributable installs.</strong> The first (web→App Store clicks) is something we control 100% via web traffic + landing-page CTAs. The second (attributable installs) depends on the first × the click→install rate set by App Store / Play Store flows (~50% industry standard). Both numbers are countable in Branch.io. We commit to both so it's clear where the line of control is.
+    </div>
+
+    <div class="callout muted">
+      <strong>What "install" means here.</strong> "Attributable app install" = a Firebase <code>first_open</code> event tagged via Branch.io with a web source — i.e., we can prove this person came from sure-space.com → tapped a smart link → installed → opened the app. The metric stops at first_open. Anything after that point is in your app, not on us.
+    </div>
+  </div>
+</section>
+
+<!-- FULL COMMIT TABLE -->
+<section class="section section-alt" id="commits">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Section 2 · Full Commit Matrix</div>
+      <h2>Today → M4 → M7 → M11+. <span class="serif">One row per metric</span>.</h2>
+      <p class="section-lede">The same KPIs above, laid out as a single table so it's easy to track quarter over quarter. Items below the divider are tracked but not committed — your dashboard sees them; we are not measured on them.</p>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-card-title">What we commit to at each gate</div>
+      <div class="summary-card-subtitle">Only items we can move via web SEO, AEO, content, and link building — outputs we own end-to-end.</div>
+      <table class="numbers-table">
+        <thead>
+          <tr><th>Lever</th><th>Today</th><th>Gate 1 (M4)</th><th>Gate 2 (M7)</th><th>Gate 3 (M11+)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Web→App Store outbound clicks/mo</strong> (we control 100%)</td><td>untracked</td><td>≥ 100</td><td>≥ 250</td><td>≥ 500 sustained</td></tr>
+          <tr><td><strong>Attributable app installs/mo</strong> (Branch → Firebase first_open)</td><td>0</td><td>≥ 50</td><td>≥ 125</td><td>≥ 250 sustained</td></tr>
+          <tr><td>Website new users from Organic Search</td><td>210/mo</td><td>≥ 250/mo</td><td>≥ 350/mo</td><td>≥ 500/mo sustained</td></tr>
+          <tr><td>Keywords ranking top 10</td><td>baseline at M1 audit</td><td>3+ top 20</td><td>10+</td><td>25+</td></tr>
+          <tr><td>AEO citations across LLMs</td><td>0</td><td>1+</td><td>5+</td><td>10+</td></tr>
+          <tr><td>External listicle placements</td><td>0</td><td>1+ secured</td><td>3+ live</td><td>6+ live</td></tr>
+          <tr><td>Domain Rating delta</td><td>baseline 19-20 (Ahrefs Apr 2026)</td><td>+1-2</td><td>+5</td><td>+10</td></tr>
+          <tr><td>Indexed event landing pages</td><td>≥4 currently indexed</td><td>+5 new (≥9 total)</td><td>15+ total</td><td>30+ total</td></tr>
+          <tr><td>Branded search volume</td><td>—</td><td>baseline at M1</td><td>+50% vs M1</td><td>+150% vs M1</td></tr>
+          <tr class="highlight-row"><td><em>Tracked, not committed:</em> Total app installs/mo</td><td>214-224</td><td>~250 expected</td><td>~325 expected</td><td>~450 expected</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE -->
+<section class="section" id="scope">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Section 3 · Scope</div>
+      <h2>Three columns. <span class="serif">No ambiguity</span>.</h2>
+      <p class="section-lede">What we DO inside the AED 9,500 retainer · what we RECOMMEND your team execute · what's OUT of our scope entirely.</p>
+    </div>
+
+    <div class="callout warn" style="margin-bottom:24px">
+      <strong>The scope line, stated plainly.</strong> Our work is on the marketing website (sure-space.com) only — SEO, content, AEO, schema, attribution. <strong>We are not building a web product or web app.</strong> All user accounts, signups, profiles, messaging, and in-app behaviour live on iOS and Android — that stays entirely with your team. The website's only job is to drive qualified traffic to the App Store / Play Store install pages.
+    </div>
+
+    <div class="scope-grid-3">
+      <div class="scope-card do-card">
+        <span class="scope-card-tag">What we DO</span>
+        <h3>Marketing website only · bundled at retainer</h3>
+        <ul class="scope-list">
+          <li><strong>Attribution build:</strong> Branch.io smart links + UTM-tagged store buttons so web→install is countable for the first time</li>
+          <li><strong>Strategy:</strong> 9-cluster topical ontology · biweekly internal review</li>
+          <li><strong>Content:</strong> 8-10 pages/mo · editorial + programmatic + listicles</li>
+          <li><strong>Schema:</strong> MobileApplication · FAQPage · Organization · Article · Person · Event · BreadcrumbList</li>
+          <li><strong>AEO:</strong> Citation capsules · LLM monitoring · entity content</li>
+          <li><strong>Link building:</strong> 3-5 DR 40+ authority placements/mo (UAE prioritised where defensible, but not exclusive — we go where the relevance and authority are)</li>
+          <li><strong>Cleanup:</strong> Zombie URL audit (Bangkok pages flagged) · 404 repairs · canonical fixes</li>
+          <li><strong>Web SEO dev:</strong> CWV · schema deployment · CTA placement</li>
+          <li><strong>Cadence:</strong> Live dashboard always on · weekly calls Month 1 only · biweekly calls Month 2+ · monthly written status · gate reviews at M4 / M7 / M11</li>
+          <li><strong>Competitor tracking:</strong> Timeleft · Platinumlist · Meetup · InterNations</li>
+        </ul>
+      </div>
+
+      <div class="scope-card rec-card">
+        <span class="scope-card-tag">What we RECOMMEND</span>
+        <h3>Your team executes · we advise</h3>
+        <ul class="scope-list">
+          <li>Onboarding flow tweaks based on landing-page intent data</li>
+          <li>Push notification cadence and content suggestions</li>
+          <li>Email lifecycle automation for re-engagement</li>
+          <li>Wingman launch — landing page + keyword coverage as the feature ships</li>
+          <li>Paywall placement + trigger experimentation</li>
+          <li>Profile completeness + verification UX nudges</li>
+          <li>Event RSVP → attendance reminder flow</li>
+        </ul>
+      </div>
+
+      <div class="scope-card dont-card">
+        <span class="scope-card-tag">What's OUT</span>
+        <h3>Not our scope · not our metric</h3>
+        <ul class="scope-list">
+          <li>In-app product changes · matching algorithm</li>
+          <li>Push notifications + email lifecycle automation</li>
+          <li>Paywall placement, pricing, conversion UX</li>
+          <li>Event programming + on-day execution</li>
+          <li>Paid media buying · creative production</li>
+          <li>Customer support · community moderation</li>
+          <li>App Store / Play Store organic discovery</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout muted">
+      <strong>Why this delineation matters.</strong> This proposal puts us on the hook only for outputs we control end-to-end: clicks, installs from those clicks, rankings, AEO citations, listicle placements, DR. Everything in the RECOMMEND column we'll advise on; your team executes inside their tooling. Everything in the OUT column is fully outside our scope.
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE B -->
+<section class="section section-alt" id="schedule-b">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Section 4 · Schedule B</div>
+      <h2>Schedule B — <span class="serif">opt-in</span> event promotion bonus.</h2>
+      <p class="section-lede">Ties payment only to events we successfully promoted via SEO. You sign just the retainer or retainer + Schedule B — your call.</p>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-card-title">Per-event trigger</div>
+      <div class="summary-card-subtitle">All three conditions must be met for the bonus to fire on any single event.</div>
+      <table class="numbers-table">
+        <thead>
+          <tr><th>Trigger condition</th><th>Threshold</th><th>How verified</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Event promoted via SEO landing page we built</td><td>Yes</td><td>URL exists, indexed, in our content tracker</td></tr>
+          <tr><td>Total attendees on event day</td><td>≥ 6</td><td>Your event ops headcount</td></tr>
+          <tr><td>Attendees attributable to SEO landing page</td><td>≥ 3</td><td>UTM-tracked RSVP from our pages</td></tr>
+          <tr class="highlight-row"><td>Bonus per qualifying event</td><td>AED 600</td><td>Capped at 3 events/mo (AED 1,800/mo max)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD PREVIEW -->
+<section class="section" id="dashboard">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Section 5 · Dashboard &amp; Cadence</div>
+      <h2>Live dashboard. <span class="serif">Disciplined cadence</span>.</h2>
+      <p class="section-lede">The dashboard refreshes automatically — you can check it any time. Calls and written reports run on a fixed schedule we both agree to:</p>
+      <div class="callout accent" style="margin-top:14px">
+        <strong>Meeting cadence (so we're not eating each other's schedules):</strong><br>
+        · <strong>Month 1:</strong> weekly 30-min calls (onboarding, baseline, attribution build)<br>
+        · <strong>Month 2 onwards:</strong> biweekly 30-min calls<br>
+        · <strong>Monthly:</strong> written status memo + dashboard walkthrough<br>
+        · <strong>M4 / M7 / M11:</strong> formal gate review with documented go/no-go decision
+      </div>
+      <p class="section-lede" style="margin-top:18px">The KPI cards below are what the live dashboard surfaces. Committed metrics first. Tracked-but-not-committed metrics second, clearly marked. No mixing the two.</p>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-category">Acquisition · committed</div><div class="kpi-metric">Web→App Store outbound clicks/mo</div><div class="kpi-desc">Tracked smart-link clicks from sure-space.com to App Store / Play Store. We control this 100% via traffic + landing-page CTAs.</div></div>
+      <div class="kpi"><div class="kpi-category">Acquisition · committed</div><div class="kpi-metric">Attributable app installs/mo</div><div class="kpi-desc">Branch.io-tagged Firebase first_open events. Confirms web traffic actually converted to installs.</div></div>
+      <div class="kpi"><div class="kpi-category">Search · committed</div><div class="kpi-metric">Keywords ranking top 10</div><div class="kpi-desc">Standard SEO output. Compounds with content velocity.</div></div>
+      <div class="kpi"><div class="kpi-category">AEO · committed</div><div class="kpi-metric">Citations across LLMs</div><div class="kpi-desc">ChatGPT, Perplexity, Gemini, Claude. Tracked weekly via Brand Radar + manual probe set.</div></div>
+      <div class="kpi"><div class="kpi-category">Authority · committed</div><div class="kpi-metric">Domain Rating delta + listicle placements</div><div class="kpi-desc">Earned through outreach we run within the retainer.</div></div>
+      <div class="kpi"><div class="kpi-category">Brand · committed</div><div class="kpi-metric">Branded search volume</div><div class="kpi-desc">Compounds with AEO + listicle work. Read on GSC monthly.</div></div>
+      <div class="kpi"><div class="kpi-category">Tracked, not committed</div><div class="kpi-metric">Total app installs/mo</div><div class="kpi-desc">Whole-funnel install count from Firebase. Includes App Store organic, social, direct, etc. Visible on dashboard so you see total trajectory; not a committed gate because we don't control non-web sources.</div></div>
+    </div>
+
+    <div class="callout accent" style="margin-top:32px">
+      <strong>Read this with the proposal.</strong> The pricing tiers, three-phase execution plan, and operational commitments are on the <a href="./proposal.html">main proposal page</a>. This page is the working contract that the proposal references.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">TheProjectSEO</div>
+      <div class="footer-contact">
+        <a href="mailto:seo@theprojectseo.com">seo@theprojectseo.com</a><br>
+        <a href="https://theprojectseo.com">theprojectseo.com</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      KPIs &amp; Scope · companion to the Engagement Proposal · prepared for Anish Suri (CEO, SureSpace) · April 2026.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
