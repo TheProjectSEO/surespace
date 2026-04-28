@@ -315,7 +315,7 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
             <li>Attribution tracking live + GSC/GA4 wired</li>
             <li>3+ keywords ranking top 10</li>
             <li><strong>1st curated event filled via SEO-attributed attendees</strong></li>
-            <li><strong>D30 retention ≥ 2.5%</strong> (1.8× current 1.4% — achievable through landing pages + email + content within our scope alone)</li>
+            <li><strong>D30 retention ≥ 2.5%</strong> (1.8× current 1.4% — top end of what's achievable from landing-page + email + content scope alone; if we're stuck below 2% at M4 we flag it as needing onboarding cooperation from your product team, not as our miss)</li>
           </ul>
 
           <!-- Stretch — validates the thesis -->
@@ -428,8 +428,9 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
 
       <!-- Firebase re-modeling callout (28-Apr update) -->
       <div style="margin-top:24px;padding:22px 26px;background:linear-gradient(135deg,#FEF3C7 0%,#FDE68A 100%);border-left:4px solid #F59E0B;border-radius:var(--radius-sm);color:#422006">
-        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:#92400E;margin-bottom:8px">Re-modeled on Firebase data · 28 April 2026</div>
-        <p style="font-size:14.5px;line-height:1.6;margin:0">You asked me to amend the breakeven section once Firebase access landed. I did. The questionnaire targets we modeled around (D7 18%, D30 25%) were aspirational — pulling 1,180 user records and running cohort math, the actual D30 retention is <strong>1.4%</strong>. The model below replaces the original. <strong>Same tier structure, same Month 20 cumulative breakeven for TARGET</strong>, but every input is now grounded in your real cohort data, not aspirational targets.</p>
+        <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:#92400E;margin-bottom:8px">Retention re-modeled on Firebase data · 28 April 2026</div>
+        <p style="font-size:14.5px;line-height:1.6;margin:0">You asked me to amend the breakeven section once Firebase access landed. I did. The questionnaire targets we modeled around (D7 18%, D30 25%) were aspirational — pulling 1,180 user records and running cohort math, actual D30 retention is <strong>1.4%</strong>. The model below replaces the original. <strong>Same tier structure, same Month 20 cumulative breakeven for TARGET</strong>, but retention is now grounded in your real cohort data.</p>
+        <p style="font-size:13px;line-height:1.55;margin:10px 0 0;color:#78350F"><strong>Honest caveat:</strong> I have Firebase Auth access, not Firestore yet. So <em>retention</em> is your real cohort data; <em>visit-to-paid conversion (0.18%)</em> and <em>paid-customer churn (8%/mo)</em> are still industry benchmarks. Once Firestore Viewer is granted (one IAM line), I refine these with actual paying-cohort behavior by end of Month 1. Until then, the BE math has known unknowns I'm flagging openly.</p>
       </div>
 
       <!-- Layman storyline -->
@@ -461,7 +462,7 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
               <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)">Visit → paid conversion</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)">0.38% (industry mid)</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)"><strong>0.18%</strong> (cohort-grounded)</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft);color:var(--accent-dark)">-0.20pp</td></tr>
               <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)">Blended ARPU</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)">AED 213 /mo</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)"><strong>AED 187 /mo net</strong> (after 85% margin)</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft);color:var(--ink-light)">honest framing</td></tr>
               <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)">Monthly churn (paid)</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)">9% /mo</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)"><strong>8% /mo</strong> (paid cohort, retained)</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft);color:var(--success)">slightly better</td></tr>
-              <tr style="background:#ECFDF5"><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)"><strong>Cumulative breakeven (TARGET)</strong></td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)">Month 20</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)"><strong>Month 20 (unchanged)</strong></td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft);color:var(--success)"><strong>Same. Defensible now.</strong></td></tr>
+              <tr style="background:#ECFDF5"><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)"><strong>Cumulative breakeven (TARGET)</strong></td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)">Month 20</td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft)"><strong>Month 20 (modeled)</strong></td><td style="padding:9px 14px;border-bottom:1px solid var(--border-soft);color:var(--success)"><strong>Recalibrate at M4 with real V→P data</strong></td></tr>
             </tbody>
           </table>
         </div>
