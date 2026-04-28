@@ -208,11 +208,11 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
     </div>
 
     <div class="callout warn">
-      <strong>Why two install numbers — clicks AND attributable installs.</strong> The first (web→App Store clicks) is something we control 100% via web traffic + landing-page CTAs. The second (attributable installs) depends on the first × the click→install rate set by App Store / Play Store flows (~50% industry standard). Both numbers are countable in Branch.io. We commit to both so it's clear where the line of control is.
+      <strong>Why two install numbers — clicks AND attributable installs.</strong> The first (web→App Store clicks) is something we control 100% via web traffic + landing-page CTAs. The second (attributable installs) depends on the first × the click→install rate set by App Store / Play Store flows (~50% industry standard). Both numbers are countable in any standard mobile-attribution platform. We commit to both so it's clear where the line of control is.
     </div>
 
     <div class="callout muted">
-      <strong>What "install" means here.</strong> "Attributable app install" = a Firebase <code>first_open</code> event tagged via Branch.io with a web source — i.e., we can prove this person came from sure-space.com → tapped a smart link → installed → opened the app. The metric stops at first_open. Anything after that point is in your app, not on us.
+      <strong>What "install" means here.</strong> "Attributable app install" = a Firebase <code>first_open</code> event tagged with a web source via the chosen attribution layer — i.e., we can prove this person came from sure-space.com → tapped a smart link → installed → opened the app. The metric stops at first_open. Anything after that point is in your app, not on us.
     </div>
   </div>
 </section>
@@ -235,7 +235,7 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
         </thead>
         <tbody>
           <tr><td><strong>Web→App Store outbound clicks/mo</strong> (we control 100%)</td><td>untracked</td><td>≥ 100</td><td>≥ 250</td><td>≥ 500 sustained</td></tr>
-          <tr><td><strong>Attributable app installs/mo</strong> (Branch → Firebase first_open)</td><td>0</td><td>≥ 50</td><td>≥ 125</td><td>≥ 250 sustained</td></tr>
+          <tr><td><strong>Attributable app installs/mo</strong> (smart-link → Firebase first_open)</td><td>0</td><td>≥ 50</td><td>≥ 125</td><td>≥ 250 sustained</td></tr>
           <tr><td>Website new users from Organic Search</td><td>210/mo</td><td>≥ 250/mo</td><td>≥ 350/mo</td><td>≥ 500/mo sustained</td></tr>
           <tr><td>Keywords ranking top 10</td><td>baseline at M1 audit</td><td>3+ top 20</td><td>10+</td><td>25+</td></tr>
           <tr><td>AEO citations across LLMs</td><td>0</td><td>1+</td><td>5+</td><td>10+</td></tr>
@@ -268,7 +268,7 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
         <span class="scope-card-tag">What we DO</span>
         <h3>Marketing website only · bundled at retainer</h3>
         <ul class="scope-list">
-          <li><strong>Attribution build:</strong> Branch.io smart links + UTM-tagged store buttons so web→install is countable for the first time</li>
+          <li><strong>Attribution build:</strong> smart-link attribution + UTM-tagged store buttons so web→install is countable for the first time (vendor selected jointly in Week 1 — Branch / AppsFlyer / Adjust / Firebase-native, based on cost + stack fit)</li>
           <li><strong>Strategy:</strong> 9-cluster topical ontology · biweekly internal review</li>
           <li><strong>Content:</strong> 8-10 pages/mo · editorial + programmatic + listicles</li>
           <li><strong>Schema:</strong> MobileApplication · FAQPage · Organization · Article · Person · Event · BreadcrumbList</li>
@@ -362,7 +362,7 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
 
     <div class="kpi-grid">
       <div class="kpi"><div class="kpi-category">Acquisition · committed</div><div class="kpi-metric">Web→App Store outbound clicks/mo</div><div class="kpi-desc">Tracked smart-link clicks from sure-space.com to App Store / Play Store. We control this 100% via traffic + landing-page CTAs.</div></div>
-      <div class="kpi"><div class="kpi-category">Acquisition · committed</div><div class="kpi-metric">Attributable app installs/mo</div><div class="kpi-desc">Branch.io-tagged Firebase first_open events. Confirms web traffic actually converted to installs.</div></div>
+      <div class="kpi"><div class="kpi-category">Acquisition · committed</div><div class="kpi-metric">Attributable app installs/mo</div><div class="kpi-desc">Smart-link-tagged Firebase first_open events. Confirms web traffic actually converted to installs.</div></div>
       <div class="kpi"><div class="kpi-category">Search · committed</div><div class="kpi-metric">Keywords ranking top 10</div><div class="kpi-desc">Standard SEO output. Compounds with content velocity.</div></div>
       <div class="kpi"><div class="kpi-category">AEO · committed</div><div class="kpi-metric">Citations across LLMs</div><div class="kpi-desc">ChatGPT, Perplexity, Gemini, Claude. Tracked weekly via Brand Radar + manual probe set.</div></div>
       <div class="kpi"><div class="kpi-category">Authority · committed</div><div class="kpi-metric">Domain Rating delta + listicle placements</div><div class="kpi-desc">Earned through outreach we run within the retainer.</div></div>

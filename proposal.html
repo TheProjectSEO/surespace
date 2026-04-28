@@ -341,7 +341,7 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
     </div>
 
     <div class="callout warn">
-      <strong>The attribution gap is the whole game.</strong> Your website pulls 210 new visitors from Organic Search every month. Your app picks up 214-224 installs. Today nothing connects them — the App Store / Play Store buttons aren't tagged, and stores don't pass attribution into Firebase by default. So when you ask "what's SEO actually delivering?", the honest answer today is "we can't count it." Phase 1 builds the deferred-deep-link infrastructure (Branch.io smart links + UTM tagging) that makes web→install countable for the first time. Every Gate KPI below assumes this is built.
+      <strong>The attribution gap is the whole game.</strong> Your website pulls 210 new visitors from Organic Search every month. Your app picks up 214-224 installs. Today nothing connects them — the App Store / Play Store buttons aren't tagged, and stores don't pass attribution into Firebase by default. So when you ask "what's SEO actually delivering?", the honest answer today is "we can't count it." Phase 1 builds the deferred-deep-link infrastructure (smart-link attribution + UTM tagging on store buttons) that makes web→install countable for the first time. Specific tool selection (Branch / AppsFlyer / Adjust / Firebase-native) is a Week-1 onboarding decision with you and Naman based on cost, privacy posture, and stack fit. Every Gate KPI below assumes this layer is built — vendor-neutral.
     </div>
 
     <div class="callout accent" style="margin-top:24px">
@@ -367,7 +367,7 @@ footer{background:var(--brand-darker);background-image:var(--dot-grid),linear-gr
         <h4>Attribution, schema, baseline lift</h4>
         <ul>
           <li>Phase 0 audit: existing-asset inventory + KEEP/REPLACE/RETIRE per page</li>
-          <li><strong>Deferred-deep-link attribution built</strong> (Branch.io smart links + UTM-tagged store buttons → web→install countable for the first time)</li>
+          <li><strong>Deferred-deep-link attribution built</strong> (smart-link attribution + UTM-tagged store buttons → web→install countable for the first time; tool selected jointly with Naman in Week 1)</li>
           <li>25+ indexable pages live, all 7 schema types deployed</li>
           <li>GSC + GA4 + Firebase wired into one dashboard</li>
           <li>3+ keywords ranking top 20, 1+ AEO citation</li>
